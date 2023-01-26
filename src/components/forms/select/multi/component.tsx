@@ -18,7 +18,6 @@ import {
 } from 'components/forms/select/constants/popper-modifiers';
 import THEME from 'components/forms/select/constants/theme';
 import Menu from 'components/forms/select/menu';
-import Toggle from 'components/forms/select/toggle';
 import { SelectProps, SelectOptionProps } from 'components/forms/select/types';
 
 export const MultiSelect: FC<SelectProps> = ({
@@ -204,22 +203,7 @@ export const MultiSelect: FC<SelectProps> = ({
         [THEME.states[status]]: true,
       })}
     >
-      <div className="relative w-full" ref={triggerRef}>
-        <Toggle
-          options={getOptionsEnabled}
-          theme={theme}
-          size={size}
-          status={status}
-          prefix={prefix}
-          disabled={disabled}
-          multiple
-          opened={isOpen}
-          selectedItems={selectedItems}
-          placeholder={placeholder}
-          getToggleButtonProps={getToggleButtonProps}
-          getDropdownProps={getDropdownProps}
-        />
-      </div>
+      <div className="relative w-full" ref={triggerRef}></div>
 
       {/* Menu */}
       {createPortal(
@@ -243,21 +227,6 @@ export const MultiSelect: FC<SelectProps> = ({
             opened={isOpen}
             attributes={attributes}
           >
-            <Toggle
-              options={getOptionsEnabled}
-              theme={theme}
-              size={size}
-              status={status}
-              prefix={prefix}
-              disabled={disabled}
-              multiple={multiple}
-              opened={isOpen}
-              selectedItems={selectedItems}
-              placeholder={placeholder}
-              getToggleButtonProps={getToggleButtonProps}
-              getDropdownProps={getDropdownProps}
-            />
-
             <ul
               {...getMenuProps({ onFocus, onBlur })}
               className={cx({

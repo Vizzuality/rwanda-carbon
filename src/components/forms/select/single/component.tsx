@@ -17,7 +17,6 @@ import {
 } from 'components/forms/select/constants/popper-modifiers';
 import THEME from 'components/forms/select/constants/theme';
 import Menu from 'components/forms/select/menu';
-import Toggle from 'components/forms/select/toggle';
 import { SelectProps, SelectOptionProps } from 'components/forms/select/types';
 
 export const SingleSelect: FC<SelectProps> = ({
@@ -157,20 +156,7 @@ export const SingleSelect: FC<SelectProps> = ({
         [THEME.states[status]]: true,
       })}
     >
-      <div className="relative w-full" ref={triggerRef}>
-        <Toggle
-          options={getOptions}
-          theme={theme}
-          size={size}
-          status={status}
-          prefix={prefix}
-          disabled={disabled}
-          opened={isOpen}
-          selectedItems={selectedItems}
-          placeholder={placeholder}
-          getToggleButtonProps={getToggleButtonProps}
-        />
-      </div>
+      <div className="relative w-full" ref={triggerRef}></div>
 
       {/* Menu */}
       {createPortal(
@@ -193,19 +179,6 @@ export const SingleSelect: FC<SelectProps> = ({
             opened={isOpen}
             attributes={attributes}
           >
-            <Toggle
-              options={options}
-              theme={theme}
-              size={size}
-              status={status}
-              prefix={prefix}
-              disabled={disabled}
-              opened={isOpen}
-              selectedItems={selectedItems}
-              placeholder={placeholder}
-              getToggleButtonProps={getToggleButtonProps}
-            />
-
             <ul
               {...getMenuProps({ onFocus, onBlur })}
               className={cx({
