@@ -52,3 +52,5 @@ tsconfig.tsbuildinfo
 
 # storybook
 /storybook-static/
+
+.vscode
