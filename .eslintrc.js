@@ -9,6 +9,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.eslint.json'],
   },
+  plugins: ['@typescript-eslint'],
   rules: {
     // ! enabling @typescript-eslint/recommended-requiring-type-checking triggers a lot of errors
     // ! as type-checking is more strict than usual. In order to fix those errors progressively,
