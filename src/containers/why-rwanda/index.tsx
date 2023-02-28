@@ -1,16 +1,16 @@
 import cx from 'classnames';
 
-type WhyRwandaLayoutProps = {
+type WrapperProps = {
   className?: string;
   children: React.ReactNode;
 };
 
-const WhyRwandaLayout: React.FC<WhyRwandaLayoutProps> = (props: WhyRwandaLayoutProps) => {
+const Wrapper: React.FC<WrapperProps> = (props: WrapperProps) => {
   const { children, className } = props;
 
   return (
     <div
-      className={cx('box-content space-y-8 bg-blue-1 p-24 text-white', {
+      className={cx('relative box-content space-y-8 pr-24 text-white', {
         [className]: !!className,
       })}
     >
@@ -20,4 +20,4 @@ const WhyRwandaLayout: React.FC<WhyRwandaLayoutProps> = (props: WhyRwandaLayoutP
   );
 };
 
-export default WhyRwandaLayout;
+export default Wrapper;

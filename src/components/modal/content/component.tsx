@@ -8,14 +8,12 @@ import Icon from 'components/icon';
 
 import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
 
-import { CONTENT_CLASSES } from './constants';
+import { COMMON_CONTENT_CLASSES } from './constants';
 import type { ModalContentProps } from './types';
 
 export const ModalContent: FC<ModalContentProps> = ({
-  size = 'default',
   children,
   className,
-  viewport,
   floating,
   getFloatingProps,
   onOpenChange,
@@ -23,20 +21,14 @@ export const ModalContent: FC<ModalContentProps> = ({
   const contentFramerVariants = {
     initial: {
       opacity: 0,
-      x: viewport === 'sm' ? '-50%' : '0',
-      y: viewport === 'sm' ? '-60%' : '-52.5%',
     },
     animate: {
       opacity: 1,
-      x: viewport === 'sm' ? '-50%' : '0',
-      y: '-50%',
       transition: {
-        delay: 0.125,
+        delay: 0.1,
       },
     },
     exit: {
-      x: viewport === 'sm' ? '-50%' : '0',
-      y: viewport === 'sm' ? '-60%' : '-52.5%',
       transition: {
         delay: 0,
         duration: 0.25,
@@ -50,20 +42,20 @@ export const ModalContent: FC<ModalContentProps> = ({
       initial="initial"
       animate="animate"
       exit="exit"
-      className={cx({ [CONTENT_CLASSES[size]]: true, [className]: !!className })}
+      className={cx({ [COMMON_CONTENT_CLASSES]: true, [className]: !!className })}
       {...getFloatingProps({
         ref: floating,
       })}
     >
-      <div className="relative flex grow flex-col overflow-hidden">
+      <div className="relative flex grow flex-col">
         <button
           type="button"
           onClick={() => {
             onOpenChange(false);
           }}
-          className="absolute top-6 right-6 flex items-center px-4 py-4 text-sm text-gray-300"
+          className="absolute top-0 -right-12 flex h-screen translate-y-0 transform items-center bg-transparent px-4 py-4 text-sm text-gray-300"
         >
-          <Icon icon={CLOSE_SVG} className="inline-block h-3 w-3 text-black" />
+          <Icon icon={CLOSE_SVG} className="inline-block h-3.5 w-3.5 text-white" />
         </button>
 
         {children}

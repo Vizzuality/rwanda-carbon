@@ -22,7 +22,7 @@ const Template: Story<TooltipProps> = (args: TooltipProps) => (
         </div>
       }
     >
-      <span className="text-blue-500 underline">HOVER ME!</span>
+      <span className="text-cobalt-500 underline">HOVER ME!</span>
     </Tooltip>{' '}
     quisquam explicabo iure nihil, eveniet dolorum at hic voluptatem in maxime enim a aspernatur?{' '}
     <Tooltip
@@ -31,12 +31,12 @@ const Template: Story<TooltipProps> = (args: TooltipProps) => (
       trigger="click"
       content={
         <div className="rounded bg-white p-5 text-gray-500">
-          <h2 className="text-lg text-blue-500">Title</h2>
+          <h2 className="text-cobalt-500 text-lg">Title</h2>
           <p>This is a content. We could have whateveryouwant</p>
         </div>
       }
     >
-      <span className="text-blue-500 underline">CLICK ME!</span>
+      <span className="text-cobalt-500 underline">CLICK ME!</span>
     </Tooltip>{' '}
     doloremque iusto! Sunt, dignissimos sint. Lorem ipsum dolor sit amet consectetur adipisicing
     elit. Harum doloremque, voluptas aut inventore facere asperiores soluta, minima iste voluptate a
