@@ -268,7 +268,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
             <div className="flex grow flex-col overflow-hidden py-10">
               <h1 className="px-10 text-xl font-medium">Modal content</h1>
               <div className="relative flex grow flex-col overflow-hidden py-px">
-                <div className="pointer-events-none absolute left-0 -top-1 z-10 h-5 w-full bg-gradient-to-b from-white via-white" />
+                <div className="pointer-events-none absolute left-0 -top-1 h-5 w-full bg-gradient-to-b from-white via-white" />
                 <div className="relative flex grow flex-col overflow-hidden">
                   <div className="flex grow flex-col overflow-y-auto overflow-x-hidden px-10 py-5">
                     <p>

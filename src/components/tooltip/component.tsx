@@ -16,7 +16,6 @@ import {
   useRole,
   useDismiss,
   FloatingPortal,
-  safePolygon,
 } from '@floating-ui/react-dom-interactions';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -63,7 +62,6 @@ export const Tooltip = ({
     useHover(context, {
       enabled: trigger === 'hover',
       restMs: 40,
-      handleClose: safePolygon(),
     }),
     useClick(context, {
       enabled: trigger === 'click',

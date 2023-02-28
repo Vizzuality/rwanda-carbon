@@ -16,6 +16,6 @@ const Template: Story<IconProps> = (args) => <Icon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'w-5 h-5 text-blue-500',
+  className: 'w-5 h-5 text-cobalt-500',
   icon: DOWNLOAD_SVG,
 };
