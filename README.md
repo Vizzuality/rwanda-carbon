@@ -4,17 +4,19 @@
 
 Invest in Rwanda Carbon Credits is an engaging and user-friendly online platform that makes it easy to discover the economic and environmental potential benefits of carbon market investment in Rwanda. With clear and concise information presented in an intuitive format, the platform is designed to provide a comprehensive resource for showcasing Rwanda's carbon-related opportunities and commitments. Whether you are a seasoned investor or new to the world of carbon market investment and looking to contribute to a cleaner, greener future, Invest in Rwanda Carbon Credits provides the tools and resources to help you take action.
 
+![RwandaCarbonTracker](https://user-images.githubusercontent.com/33252015/221893127-1b0c19ec-1267-438f-95f3-990f250e8cca.jpg)
 
 The website was inspired by UNDP's vision of a better, more sustainable future for Rwanda. It includes estimations of the potential impacts of carbon market investment in terms of CO2 reduction, revenue generation, and job creation. The platform showcases a series of national goals for carbon reduction, land use, water management, and energy efficiency. Invest in Rwanda Carbon Credits serves as a starting point to monitor Rwanda's carbon-related commitments as part of the national plan to achieve a carbon-neutral economy.
 
-This platform built upon [Vizzuality's scaffold project](https://github.com/Vizzuality/front-end-scaffold)and it's using the following resources:
+## Project implementation
+
+This platform is built upon [Vizzuality's scaffold project](https://github.com/Vizzuality/front-end-scaffold)and it's using the following resources:
 
 - [React](https://reactjs.org/) as a UI library
 - [Next.js](https://nextjs.org/) as a framework
 - [Tailwind CSS](https://tailwindcss.com/) as a styles framework
 - [Storybook](https://storybook.js.org/) as a sandbox for the UI components
 - [React Aria](https://react-spectrum.adobe.com/react-aria/index.html) to facilitate the application's accessibility
-- [React Query](https://react-query.tanstack.com/) as a network layer
 
 The application's design files can be found here:
 
@@ -31,8 +33,8 @@ In order to start modifying the app, please make sure to correctly configure you
 5. (Optional) Configure your editor to “format [code] on save” with ESLint and Prettier **(1)**
 6. Use the correct Node.js version for this app by running `nvm use`; if you didn't install NVM (step 2), then manually install the Node.js version described in `.nvmrc`
 7. Install the dependencies: `yarn`
-8. Create a `.env` file at the root of the project by copying `.env.sample` and giving a value for each of the variables (see next section for details)
-9. Run the server: `yarn dev`
+8. Run the server: `yarn dev`
+9. Run storybook if you want to visualize the components: `yarn storybook:dev`
 
 You can access a hot-reloaded version of the app on [http://localhost:3000](http://localhost:3000).
 
