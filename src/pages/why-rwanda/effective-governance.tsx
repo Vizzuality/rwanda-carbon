@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
 
+import Legend from 'containers/legend';
 import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/why-rwanda';
 import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
@@ -37,6 +38,7 @@ const EffectiveGovernanceContentPage: FC = () => {
             partner.
           </article>
           <NavigationButtons previous="/why-rwanda" next="smart-carbon" />
+          <Legend />
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">
           <ParentSize>
