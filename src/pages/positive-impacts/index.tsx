@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Footer from 'containers/footer/component';
 import MetaTags from 'containers/meta-tags';
 
 import Modal from 'components/modal';
@@ -12,6 +13,7 @@ const ImpactsPage: React.FC = () => {
       <Modal title="Learn more about" open={isModalOpen} onOpenChange={() => setModalVisibility}>
         LEARN MORE ABOUT DATA
       </Modal>
+      <Footer />
     </div>
   );
 };

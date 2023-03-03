@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+import Footer from 'containers/footer/component';
 import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/why-rwanda';
 import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
@@ -131,6 +132,7 @@ const WhyRwandaPage: FC = () => {
               </div>
             </div>
           </ContentLayout>
+          <Footer />
         </motion.div>
       </AnimatePresence>
     </div>
