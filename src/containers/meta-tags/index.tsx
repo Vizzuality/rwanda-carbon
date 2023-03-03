@@ -17,7 +17,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   <Head>
     <title>{title}</title>
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=1024, initial-scale=1" />
     <meta name="description" content={description} />
 
     <meta name="og:title" content={title} />

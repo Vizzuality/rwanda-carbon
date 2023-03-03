@@ -3,9 +3,12 @@ import { FC } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import Footer from 'containers/footer';
+
 const Home: FC = () => (
   <div className="m-auto h-screen bg-[url('/images/landing.png')] bg-center bg-no-repeat">
     <Head>
+      <meta name="viewport" content="width=1024, initial-scale=1" />
       <title>Rwanda carbon tracker</title>
     </Head>
     <div className="m-auto flex h-full w-full flex-col items-center justify-center space-y-4 text-center leading-8">
@@ -31,6 +34,7 @@ const Home: FC = () => (
         </Link>
       </div>
     </div>
+    <Footer />
   </div>
 );
 

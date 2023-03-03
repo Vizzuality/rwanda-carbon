@@ -10,7 +10,7 @@ const Wrapper: React.FC<WrapperProps> = (props: WrapperProps) => {
 
   return (
     <div
-      className={cx('relative box-content space-y-8 pr-24 text-white', {
+      className={cx('relative z-10 box-content space-y-8 pr-24 text-white', {
         [className]: !!className,
       })}
     >

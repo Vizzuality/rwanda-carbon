@@ -30,7 +30,7 @@ const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTy
 
       <div className="flex space-x-5 py-0">
         <Button theme="cyan" size="xs" onClick={() => setModalVisibility(!isModalOpen)}>
-          LEARN MORE
+          DATA AND SOURCES
         </Button>
 
         <Modal
@@ -47,20 +47,16 @@ const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTy
             </div>
           </div>
         </Modal>
-
-        {next && (
-          <Link
-            href={next}
-            as={next}
-            className="relative rounded-3xl border border-cyan-0 px-8 py-2"
-          >
-            <Icon
-              icon={ARROW}
-              className="text-cobalt-500 absolute top-1/2 h-3 w-3 -translate-y-1/2 rotate-180 transform transition-transform"
-            />
-          </Link>
-        )}
       </div>
+
+      {next && (
+        <Link href={next} as={next} className="relative rounded-3xl border border-cyan-0 px-8 py-2">
+          <Icon
+            icon={ARROW}
+            className="text-cobalt-500 absolute top-1/2 h-3 w-3 -translate-y-1/2 rotate-180 transform transition-transform"
+          />
+        </Link>
+      )}
     </div>
   );
 };

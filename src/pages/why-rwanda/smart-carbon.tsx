@@ -1,12 +1,19 @@
 import { FC } from 'react';
 
+import dynamic from 'next/dynamic';
+
+import ParentSize from '@visx/responsive/lib/components/ParentSize';
+
 import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/why-rwanda';
 import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
 
+import { dataArea as data } from 'components/chart/data';
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
+
+const Chart = dynamic(() => import('components/chart/area'), { ssr: false });
 
 const SmartCarbonContentPage: FC = () => {
   return (
@@ -26,6 +33,11 @@ const SmartCarbonContentPage: FC = () => {
           <NavigationButtons previous="effective-governance" next="sustainable-land-use" />
           <p className="text-sm font-bold">Viewing emissions in MtCO2e</p>
         </Wrapper>
+        <div className="absolute top-0 left-0 h-full w-full">
+          <ParentSize>
+            {({ width, height }) => <Chart data={data} width={width} height={height} />}
+          </ParentSize>
+        </div>
       </ContentLayout>
     </div>
   );

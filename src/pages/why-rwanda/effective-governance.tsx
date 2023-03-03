@@ -8,47 +8,16 @@ import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/why-rwanda';
 import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
 
+import { dataRadialAfrica as data } from 'components/chart/data';
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
 
-const AreaChart = dynamic(() => import('components/chart/area'), { ssr: false });
+const Chart = dynamic(() => import('components/chart/radial'), { ssr: false });
 export type XYChartProps = {
   width: number;
   height: number;
 };
-export const demographics = [
-  {
-    year: 2010,
-    country: 'China',
-    present: 3,
-    future: 3,
-  },
-  {
-    year: 2020,
-    country: 'China',
-    present: 4,
-    future: 4,
-  },
-  {
-    year: 2030,
-    country: 'China',
-    present: 5,
-    future: 10,
-  },
-  {
-    year: 2040,
-    country: 'China',
-    present: 9,
-    future: 16,
-  },
-  {
-    year: 2050,
-    country: 'China',
-    present: 17,
-    future: 28,
-  },
-];
 
 const EffectiveGovernanceContentPage: FC = () => {
   return (
@@ -71,7 +40,7 @@ const EffectiveGovernanceContentPage: FC = () => {
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">
           <ParentSize>
-            {({ width, height }) => <AreaChart data={demographics} width={width} height={height} />}
+            {({ width, height }) => <Chart data={data} width={width} height={height} />}
           </ParentSize>
         </div>
       </ContentLayout>

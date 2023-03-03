@@ -1,5 +1,3 @@
-import Footer from 'containers/footer';
-
 type ApplicationLayoutProps = {
   children: React.ReactNode;
 };
@@ -13,7 +11,6 @@ const ApplicationLayout: React.FC<ApplicationLayoutProps> = (props: ApplicationL
         {/* Content */}
         {children}
       </main>
-      <Footer />
     </div>
   );
 };
