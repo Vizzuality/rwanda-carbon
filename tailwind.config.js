@@ -28,11 +28,20 @@ module.exports = {
           0: '#47DCAF',
           1: '#34CA9D',
         },
-        blue: {
-          0: '#5BCEFB',
-          1: '#002E65',
-          2: '#00489D',
+        cobalt: {
+          0: '#002E65',
+          1: '#00489D',
         },
+        cyan: {
+          0: '#5BCEFB',
+        },
+      },
+      letterSpacing: {
+        tight: '-.01em',
+        tighter: '-.03em',
+      },
+      backgroundImage: {
+        'smart-carbon': "url('/images/smart-carbon')",
       },
     },
   },

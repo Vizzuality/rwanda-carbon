@@ -9,8 +9,8 @@ import type { ToastTheme } from './types';
 export const THEME: ToastTheme = {
   info: {
     icon: INFO_SVG,
-    bg: 'from-blue-400 to-blue-700',
-    hoverBg: 'from-blue-100 to-blue-400',
+    bg: 'from-cobalt-400 to-cobalt-700',
+    hoverBg: 'from-cobalt-000 to-cobalt-400',
   },
   success: {
     icon: SUCCESS_SVG,
