@@ -32,14 +32,14 @@ export const Header: FC<HeaderProps> = ({ className, ...restProps }: HeaderProps
         placement="bottom-end"
         trigger="click"
         content={
-          <div className="space-y-2 rounded-3xl bg-white p-8 font-bold text-cobalt-0">
+          <div className="space-y-4 rounded-3xl bg-white p-8 font-bold text-cobalt-0">
             <Link href="/positive-impacts">Positive impacts</Link>
             <div className="space-y-2 divide-y-2 divide-opacity-70">
-              <Link href="/why-rwanda" className="border-box mb-4 pb-2">
+              <Link href="/why-rwanda" className="border-box pb-2">
                 Why Rwanda
               </Link>
               <div>
-                <ul className="mt-2">
+                <ul className="mt-4">
                   {RwandaReasons.map(({ slug, name }) => (
                     <li key={slug} className="pb-4 last-of-type:pb-0">
                       <Link href={`/why-rwanda/${slug}`} as={`/why-rwanda/${slug}`}>
