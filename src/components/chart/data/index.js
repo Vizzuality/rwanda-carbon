@@ -1,22 +1,22 @@
 export const dataArea = [
   {
     year: 2010,
-    present: 0,
-    future: 2,
+    present: 3,
+    future: 0,
   },
   {
     year: 2020,
-    present: 0,
-    future: 5,
+    present: 4,
+    future: 0,
   },
   {
     year: 2030,
-    present: 4,
+    present: 6,
     future: 6,
   },
   {
     year: 2040,
-    present: 4,
+    present: 7,
     future: 8,
   },
   {
@@ -62,5 +62,50 @@ export const dataRadialAfrica = [
     label: 'Political stability',
     africa: 43.3513483714081,
     rwanda: 62.4804862546967,
+  },
+];
+
+export const dataRealArea = [
+  {
+    year: 2006,
+    historical: 4.035,
+  },
+  {
+    year: 2007,
+    historical: 4.383,
+  },
+  {
+    year: 2008,
+    historical: 4.599,
+  },
+  {
+    year: 2009,
+    historical: 4.833,
+  },
+  {
+    year: 2010,
+    historical: 5.213,
+  },
+
+  {
+    year: 2020,
+    historical: 0,
+  },
+  {
+    year: 2035,
+    historical: 4,
+    business: 16.13,
+    intervention: 10,
+  },
+
+  {
+    year: 2040,
+    historical: 4,
+  },
+  {
+    year: 2050,
+    historical: 17,
+    business: 28.3,
+    intervention: 17.5,
   },
 ];

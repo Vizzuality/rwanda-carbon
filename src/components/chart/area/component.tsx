@@ -11,6 +11,11 @@ import { extent } from 'd3-array';
 import { format } from 'd3-format';
 import { motion } from 'framer-motion';
 
+const getXValue = (x, width) => {
+  if (x > 0 && x < width) return x;
+  if (x === 0) return 20;
+  if (x === width) return `${x - 20}`;
+};
 type MarginType = {
   top: number;
   bottom: number;
@@ -91,8 +96,6 @@ const Chart = ({
                 initial={false}
                 animate={{ d: path(stack) }}
                 key={`stack-${stack.key}`}
-                stroke="black"
-                strokeWidth={0.5}
                 fill={stack.key === 'future' ? "url('#lines')" : colorScale(stack.key)}
               />
             ))
@@ -112,18 +115,18 @@ const Chart = ({
           verticalAnchor={'middle'}
           showAnchorLine={false}
         >
-          <p className="text-s flex text-white">
+          <p className="block w-[110px] items-center text-xs text-white">
             Usual business <span className="text-base font-bold">{usual}</span>
           </p>
         </HtmlLabel>
         <HtmlLabel
           x={width - 20}
-          y={yScale(target)}
+          y={yScale(target) + 70}
           horizontalAnchor="end"
           verticalAnchor="start"
           showAnchorLine={false}
         >
-          <p className="text-s flex text-white">
+          <p className="flex items-center text-xs text-white">
             Target <span className="ml-2 text-base font-bold">{target}</span>
           </p>
         </HtmlLabel>
@@ -135,9 +138,10 @@ const Chart = ({
           top={innerHeight - 40}
           tickFormat={format('d')}
           tickComponent={(p) => {
+            const x = getXValue(p.x, width);
             return (
               [2010, 2020, 2030, 2040, 2050].includes(Number(p.formattedValue)) && (
-                <Text {...p} dy={-5} fill="white" fontSize={12}>
+                <Text {...p} x={x} fill="white" fontSize={12}>
                   {p.formattedValue}
                 </Text>
               )
