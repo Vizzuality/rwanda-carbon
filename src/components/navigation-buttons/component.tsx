@@ -9,7 +9,7 @@ import Modal from 'components/modal';
 import ARROW from 'svgs/ui/arrow.svg?sprite';
 
 type NavigationTypes = Readonly<{
-  previous: string;
+  previous?: string;
   next?: string;
 }>;
 
@@ -17,16 +17,18 @@ const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTy
   const [isModalOpen, setModalVisibility] = useState(false);
   return (
     <div className="flex space-x-2">
-      <Link
-        href={previous}
-        as={previous}
-        className="relative rounded-3xl border border-cyan-0 px-8 py-2"
-      >
-        <Icon
-          icon={ARROW}
-          className="absolute top-1/2 right-5 h-3 w-3 -translate-y-1/2 transform text-white transition-transform"
-        />
-      </Link>
+      {previous && (
+        <Link
+          href={previous}
+          as={previous}
+          className="relative rounded-3xl border border-cyan-0 px-8 py-2"
+        >
+          <Icon
+            icon={ARROW}
+            className="absolute top-1/2 right-5 h-3 w-3 -translate-y-1/2 transform text-white transition-transform"
+          />
+        </Link>
+      )}
 
       <div className="flex space-x-5 py-0">
         <Button theme="cyan" size="xs" onClick={() => setModalVisibility(!isModalOpen)}>

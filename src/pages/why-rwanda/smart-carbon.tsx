@@ -5,8 +5,8 @@ import dynamic from 'next/dynamic';
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
 
 import MetaTags from 'containers/meta-tags';
-import Wrapper from 'containers/why-rwanda';
-import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
+import Wrapper from 'containers/wrapper';
+import TitleLayout from 'containers/wrapper/title';
 
 import { dataArea as data } from 'components/chart/data';
 import Header from 'components/header';
@@ -22,9 +22,9 @@ const SmartCarbonContentPage: FC = () => {
         <MetaTags title="Rwanda Carbon Tracker - Smart Carbon" description="" type="website" />
         <Header />
       </div>
-      <ContentLayout>
+      <ContentLayout half>
         <Wrapper className="max-w-sm">
-          <WhyRwandaTitleLayout>Smart carbon</WhyRwandaTitleLayout>
+          <TitleLayout small>Smart carbon</TitleLayout>
           <article className="text-xl">
             Rwanda is carving out a clear path forward to curb future emissions in ambitious yet
             attainable ways. Africa’s largest green investment fund stands to help in turning this

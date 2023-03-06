@@ -6,8 +6,8 @@ import ParentSize from '@visx/responsive/lib/components/ParentSize';
 
 import Legend from 'containers/legend';
 import MetaTags from 'containers/meta-tags';
-import Wrapper from 'containers/why-rwanda';
-import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
+import Wrapper from 'containers/wrapper';
+import TitleLayout from 'containers/wrapper/title';
 
 import { dataRadialAfrica as data } from 'components/chart/data';
 import Header from 'components/header';
@@ -27,17 +27,17 @@ const EffectiveGovernanceContentPage: FC = () => {
         <MetaTags title="Rwanda Carbon Tracker" description="" type="website" />
         <Header />
       </div>
-      <ContentLayout>
+      <ContentLayout half>
         <Wrapper>
-          <WhyRwandaTitleLayout className="max-w-lg pr-5">
+          <TitleLayout small className="max-w-lg pr-5">
             Effective governance
-          </WhyRwandaTitleLayout>
+          </TitleLayout>
           <article className="max-w-md text-xl">
             Rwanda has reduced poverty, strengthened the rule of law, and raised living standards.
             Mindful of fiscal transparency, equality, and security, Rwanda has emerged a trusted
             partner.
           </article>
-          <NavigationButtons previous="/why-rwanda" next="smart-carbon" />
+          <NavigationButtons next="smart-carbon" />
           <Legend />
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import MetaTags from 'containers/meta-tags';
-import Wrapper from 'containers/why-rwanda';
-import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
+import Wrapper from 'containers/wrapper';
+import TitleLayout from 'containers/wrapper/title';
 
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
@@ -18,11 +18,11 @@ const RenewableWaterSourcesContentPage: FC = () => (
       />
       <Header />
     </div>
-    <ContentLayout>
+    <ContentLayout half>
       <Wrapper>
-        <WhyRwandaTitleLayout className="max-w-lg pr-5">
+        <TitleLayout small className="max-w-lg pr-5">
           Renewable water sources
-        </WhyRwandaTitleLayout>
+        </TitleLayout>
         <article className="max-w-md text-xl">
           Rwanda’s pristine lakes and rivers will undergo renewed conservation efforts. The
           benefactor will be society whose share of rechargeable fresh water sources will increase

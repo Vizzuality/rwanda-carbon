@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cn from 'lib/analytics/classnames';
 
 type WrapperProps = {
   className?: string;
@@ -10,7 +10,8 @@ const Wrapper: React.FC<WrapperProps> = (props: WrapperProps) => {
 
   return (
     <div
-      className={cx('relative z-10 box-content space-y-8 pr-24 text-white', {
+      className={cn({
+        'relative z-10 box-content space-y-8 pr-24 text-white': true,
         [className]: !!className,
       })}
     >
