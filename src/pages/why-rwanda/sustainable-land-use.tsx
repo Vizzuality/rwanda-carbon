@@ -5,8 +5,8 @@ import cx from 'classnames';
 import Link from 'next/link';
 
 import MetaTags from 'containers/meta-tags';
-import Wrapper from 'containers/why-rwanda';
-import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
+import Wrapper from 'containers/wrapper';
+import TitleLayout from 'containers/wrapper/title';
 
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
@@ -22,9 +22,11 @@ const SustainableLandUseContentPage: FC = () => (
       />
       <Header />
     </div>
-    <ContentLayout>
+    <ContentLayout half>
       <Wrapper>
-        <WhyRwandaTitleLayout className="max-w-lg pr-5">Sustainable land use</WhyRwandaTitleLayout>
+        <TitleLayout small className="max-w-lg pr-5">
+          Sustainable land use
+        </TitleLayout>
         <article className="max-w-md text-xl">
           Numerous wetland and forest conservation areas illustrate Rwanda’s environmental
           integrity. With sustainable agroforestry drives and forestry training schemes underway,

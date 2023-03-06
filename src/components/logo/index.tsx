@@ -7,7 +7,7 @@ import type { LogoProps } from './types';
 
 export const Logo: FC<LogoProps> = ({ size = 'sm' }: LogoProps) => (
   <h1
-    className={cx('flex flex-col font-serif text-xl tracking-wide text-white', {
+    className={cx('flex flex-col text-center font-serif text-xl tracking-wide text-white', {
       [SIZE[size]]: !!size,
     })}
   >

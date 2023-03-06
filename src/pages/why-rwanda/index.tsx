@@ -6,11 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Footer from 'containers/footer/component';
 import MetaTags from 'containers/meta-tags';
-import Wrapper from 'containers/why-rwanda';
-import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
+import Wrapper from 'containers/wrapper';
+import TitleLayout from 'containers/wrapper/title';
 
 import Header from 'components/header';
 import ContentLayout from 'layouts/content';
+import cn from 'lib/analytics/classnames';
 import RwandaReasons from 'utils/constants';
 
 const WhyRwandaPage: FC = () => {
@@ -52,7 +53,7 @@ const WhyRwandaPage: FC = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="m-auto flex h-screen flex-col justify-center text-center font-serif text-[200px] leading-[77%] tracking-tighter text-white"
+          className="m-auto flex h-screen flex-col justify-center text-center font-serif text-[242px] leading-[77%] tracking-tighter text-white"
         >
           <motion.span variants={item}>Fuel</motion.span>
           <motion.span variants={item}>a nation&apos;s</motion.span>
@@ -66,9 +67,11 @@ const WhyRwandaPage: FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 2.1 }}
         >
-          <ContentLayout>
+          <ContentLayout half>
             <Wrapper>
-              <WhyRwandaTitleLayout className="max-w-lg">Why Rwanda</WhyRwandaTitleLayout>
+              <TitleLayout small className="max-w-lg">
+                Why Rwanda
+              </TitleLayout>
               <article className="max-w-md space-y-3 text-xl">
                 <p>
                   Energized by upward socio-economic momentum, Rwanda is poised to modernize its
@@ -81,7 +84,7 @@ const WhyRwandaPage: FC = () => {
                 </p>
                 <p>
                   <a
-                    href="https://drive.google.com/file/d/159ogNmA9qoPD_oB2BCpnetcrombjxYok/view"
+                    href="https://www.ndcs.undp.org/content/dam/LECB/docs/pubs-reports/undp-ndcsp-rwanda-ndc2-2020.pdf?download"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-yellow-0 underline"
@@ -93,7 +96,7 @@ const WhyRwandaPage: FC = () => {
                 </p>
                 <p>
                   <a
-                    href="https://www.figma.com/exit?url=https%3A%2F%2Fwww.minecofin.gov.rw%2Ffileadmin%2Fuser_upload%2FMinecofin%2FPublications%2FREPORTS%2FNational_Development_Planning_and_Research%2FVision_2050%2FEnglish-Vision_2050_Abridged_version_WEB_Final.pdf"
+                    href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-yellow-0 underline"
@@ -125,8 +128,17 @@ const WhyRwandaPage: FC = () => {
                   </Link>
                 ))}
                 <Link href="/positive-impacts" className="flex-1">
-                  <div className="flex h-full items-center justify-center bg-[url('/images/positive-impacts.png')] bg-cover hover:bg-white hover:text-cobalt-0">
-                    Positive impact
+                  <div
+                    style={{
+                      backgroundImage: isHover['positive-impacts']
+                        ? 'none'
+                        : `url('/images/positive-impacts.png')`,
+                    }}
+                    onMouseEnter={() => handleMouseEnter('positive-impacts')}
+                    onMouseLeave={() => handleMouseLeave('positive-impacts')}
+                    className=" flex h-full items-center justify-center bg-cover hover:bg-white hover:text-cobalt-0"
+                  >
+                    Positive impacts
                   </div>
                 </Link>
               </div>

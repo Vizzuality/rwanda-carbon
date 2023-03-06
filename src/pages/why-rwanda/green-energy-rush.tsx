@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import MetaTags from 'containers/meta-tags';
-import Wrapper from 'containers/why-rwanda';
-import WhyRwandaTitleLayout from 'containers/why-rwanda/title';
+import Wrapper from 'containers/wrapper';
+import TitleLayout from 'containers/wrapper/title';
 
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
@@ -15,9 +15,11 @@ const GreenEnergyRushContentPage: FC = () => {
         <MetaTags title="Rwanda Carbon Tracker - Green energy rush" description="" type="website" />
         <Header />
       </div>
-      <ContentLayout>
+      <ContentLayout half>
         <Wrapper>
-          <WhyRwandaTitleLayout className="max-w-lg pr-5">Green energy rush</WhyRwandaTitleLayout>
+          <TitleLayout small className="max-w-lg pr-5">
+            Green energy rush
+          </TitleLayout>
           <article className="max-w-md text-xl">
             Off-grid solar and micro-hydro plants are leading the way. Future innovation and foreign
             direct investment will boost renewables to make up over 60% of Rwanda’s energy mix by
