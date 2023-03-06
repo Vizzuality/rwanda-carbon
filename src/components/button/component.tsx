@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import cx from 'classnames';
-
 import Link from 'next/link';
+
+import cn from 'lib/analytics/classnames';
 
 import { THEME, SIZE } from './constants';
 import type { ButtonProps, AnchorProps, Overload } from './types';
@@ -11,7 +11,7 @@ import type { ButtonProps, AnchorProps, Overload } from './types';
 const hasHref = (props: ButtonProps | AnchorProps): props is AnchorProps => 'href' in props;
 
 function buildClassName({ className, disabled, size, theme }) {
-  return cx({
+  return cn({
     'flex items-center justify-center rounded-3xl cursor': true,
     [THEME[theme]]: true,
     [SIZE[size]]: true,

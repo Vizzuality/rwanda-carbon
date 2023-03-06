@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import cx from 'classnames';
+import cn from 'lib/analytics/classnames';
 
 import useStatus from '../utils';
 
@@ -23,7 +23,7 @@ export const Checkbox: FC<CheckboxProps> = ({
       {...props}
       type="checkbox"
       disabled={disabled}
-      className={cx({
+      className={cn({
         'form-checkbox': true,
         [THEME[theme].base]: true,
         [THEME[theme].status[st]]: true,

@@ -116,7 +116,13 @@ const Chart = ({
             Usual business <span className="text-base font-bold">{usual}</span>
           </p>
         </HtmlLabel>
-        <HtmlLabel x={width - 20} y={yScale(target)} horizontalAnchor="end" verticalAnchor="start">
+        <HtmlLabel
+          x={width - 20}
+          y={yScale(target)}
+          horizontalAnchor="end"
+          verticalAnchor="start"
+          showAnchorLine={false}
+        >
           <p className="text-s flex text-white">
             Target <span className="ml-2 text-base font-bold">{target}</span>
           </p>
