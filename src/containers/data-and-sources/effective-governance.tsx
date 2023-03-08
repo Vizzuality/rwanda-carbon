@@ -1,16 +1,22 @@
 import { FC } from 'react';
 
-const ModalContent: FC = () => (
-  <div>
-    <h1>EFFECTIVE GOVERNANCE</h1>
+import Heading from './heading';
+import Section from './section';
+import SmallHeading from './small-heading';
+import Title from './title';
+
+const EffectiveGovernanceModalContent: FC = () => (
+  <div className="space-y-8">
+    <Heading />
+    <Title>EFFECTIVE GOVERNANCE</Title>
     <p>
       To indicate Rwanda’s institutional governance performance, we used the World Bank’s governance
       indicators for 2021. All indicators were rescaled to range from 0 to 100 for ease of
       interpretation and comparison. We also calculated a mean value for each indicator across all
       other African countries as a reference for Rwanda’s indicator values..
     </p>
-    <div>
-      <h3>METHODOLOGY</h3>
+    <Section>
+      <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
         Values for indicators of governance were obtained from the World Bank governance indicator
         project (Kaufmann et al., 2010). The six aggregate indicators produced by the World Bank are
@@ -22,9 +28,9 @@ const ModalContent: FC = () => (
         country. We extracted the rescaled indicator values for Rwanda and calculated average values
         for other countries across Africa to compare the Rwanda values against.{' '}
       </p>
-    </div>
-    <div>
-      <h3 className="font-bold tracking-tight">SOURCES</h3>
+    </Section>
+    <Section>
+      <SmallHeading>SOURCES</SmallHeading>
       <ul>
         <li>
           Daniel Kaufmann, Aart Kraay and Massimo Mastruzzi (2010). `&quot;`The Worldwide World Bank
@@ -38,11 +44,11 @@ const ModalContent: FC = () => (
           </a>
         </li>
       </ul>
-    </div>
-    <div>
-      <h3>DATA FORMAT</h3>
-    </div>
+    </Section>
+    <Section>
+      <SmallHeading>DATA FORMAT</SmallHeading>
+    </Section>
   </div>
 );
 
-export default ModalContent;
+export default EffectiveGovernanceModalContent;

@@ -1,3 +1,12 @@
+export type PositiveImpactsTypes = {
+  title: string;
+  subtitle: string;
+  type: 'greenJobCreation' | 'revenueGeneration' | 'carbonReduction';
+  lineColor: string;
+  postUnit?: string;
+  preUnit?: string;
+};
+
 type MarginType = {
   top: number;
   bottom: number;
@@ -5,7 +14,7 @@ type MarginType = {
   right: number;
 };
 
-type AreaData = {
+type PositiveImpactsDataTypes = {
   carbonPrice: number;
   carbonReduction: number;
   greenJobCreation: number;

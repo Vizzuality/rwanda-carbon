@@ -10,13 +10,13 @@ import { format } from 'd3-format';
 
 const numberFormat = format(',.2f');
 
-import type { ChartTypes } from './types';
+import type { ChartTypes } from 'types/positive-impacts';
 const PositiveImpactsChart = ({
   data,
   width,
   height,
   type,
-  margin = { top: 0, bottom: 0, left: 0, right: 0 },
+  margin = { top: 30, bottom: 30, left: 30, right: 30 },
   lineColor,
   value,
   preUnit,
@@ -44,7 +44,6 @@ const PositiveImpactsChart = ({
 
   const label = dataFiltered[dataFiltered.length - 1]?.[type];
   const strokeWidth = 8;
-
   return (
     <svg width={width} height={height + 40}>
       <Group width={width + 20} height={height + 20} top={margin.top}>
@@ -58,10 +57,10 @@ const PositiveImpactsChart = ({
           strokeLinejoin="round"
         />
         <HtmlLabel
-          x={xScale(value)}
+          x={xScale(value) + (xScale(value) + 95 < innerWidth ? +5 : -5)}
           y={yScale(label)}
-          horizontalAnchor="start"
-          verticalAnchor="start"
+          horizontalAnchor={xScale(value) + 95 < innerWidth ? 'start' : 'end'}
+          verticalAnchor={yScale(label) + 50 < innerHeight ? 'start' : 'end'}
           showAnchorLine={false}
         >
           <p style={{ color: lineColor }} className="text-s flex text-base font-bold">
