@@ -12,12 +12,13 @@ import Wrapper from 'containers/wrapper';
 import TitleLayout from 'containers/wrapper/title';
 
 import { positiveImpacts as data } from 'components/chart/data';
-import type { ChartTypes } from 'components/chart/positive-impacts/types';
 import Header from 'components/header';
 import Icon from 'components/icon';
 import Modal from 'components/modal';
 import Slider from 'components/slider';
+import { IMPACTS } from 'constants/positive-impacts';
 import ContentLayout from 'layouts/content';
+import type { ChartTypes } from 'types/positive-impacts';
 
 import QUESTION from 'svgs/ui/question.svg';
 
@@ -40,7 +41,7 @@ const ImpactsPage: FC = () => {
         <Header />
       </div>
       <ContentLayout>
-        <Wrapper className="m-auto min-w-min justify-center space-y-7">
+        <Wrapper className="m-auto min-w-min justify-center space-y-14">
           <TitleLayout className="m-auto text-center">
             Potential positive impacts of carbon market investment
           </TitleLayout>
@@ -82,53 +83,25 @@ const ImpactsPage: FC = () => {
             </Modal>
           </div>
           <div className="space-3 flex h-60 w-full flex-1 justify-between">
-            <div className="m-6 min-w-[244px] space-y-14">
-              <SmallHeading title="Green job creation" subtitle="(Jobs)" />
-              <ParentSize>
-                {({ width, height }) => (
-                  <Chart
-                    type="greenJobCreation"
-                    lineColor="#47DCAF"
-                    data={data}
-                    width={width}
-                    height={height}
-                    value={value}
-                    preUnit="K"
-                  />
-                )}
-              </ParentSize>
-            </div>
-            <div className="m-6 min-w-[244px] space-y-14">
-              <SmallHeading title="Revenue generation" subtitle="(USD)" />
-              <ParentSize>
-                {({ width, height }) => (
-                  <Chart
-                    lineColor="#FAD201"
-                    data={data}
-                    type="revenueGeneration"
-                    width={width}
-                    height={height}
-                    value={value}
-                    postUnit="$"
-                  />
-                )}
-              </ParentSize>
-            </div>
-            <div className="m-6 min-w-[244px] space-y-14">
-              <SmallHeading title="Carbon reduction" subtitle="(MtCO²e)" />
-              <ParentSize>
-                {({ width, height }) => (
-                  <Chart
-                    lineColor="#5BCEFB"
-                    data={data}
-                    type="carbonReduction"
-                    width={width}
-                    height={height}
-                    value={value}
-                  />
-                )}
-              </ParentSize>
-            </div>
+            {IMPACTS.map((i) => (
+              <div className="m-6  space-y-14" key={i.type}>
+                <SmallHeading title={i.title} subtitle={i.subtitle} />
+                <ParentSize>
+                  {({ width, height }) => (
+                    <Chart
+                      type={i.type}
+                      lineColor={i.lineColor}
+                      data={data}
+                      width={width}
+                      height={height}
+                      value={value}
+                      preUnit={i.preUnit ?? null}
+                      postUnit={i.postUnit ?? null}
+                    />
+                  )}
+                </ParentSize>
+              </div>
+            ))}
           </div>
           <Footer />
         </Wrapper>

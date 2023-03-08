@@ -8,12 +8,12 @@ import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/wrapper';
 import TitleLayout from 'containers/wrapper/title';
 
-import { dataArea as data } from 'components/chart/data';
+import { dataSmartCarbon as data } from 'components/chart/data';
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
 
-const Chart = dynamic(() => import('components/chart/area'), { ssr: false });
+const Chart = dynamic(() => import('components/chart/smart-carbon'), { ssr: false });
 
 const SmartCarbonContentPage: FC = () => {
   return (

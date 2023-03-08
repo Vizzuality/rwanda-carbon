@@ -2,7 +2,11 @@ import { FC, useState } from 'react';
 
 import Link from 'next/link';
 
+import EffectiveGovernanceModalContent from 'containers/data-and-sources/effective-governance';
+import GreenEnergyRushModalContent from 'containers/data-and-sources/green-energy-rush';
+import RenewableWaterSourcesModalContent from 'containers/data-and-sources/renewable-water-sources';
 import SmartCarbonModalContent from 'containers/data-and-sources/smart-carbon';
+import SustainableLandUseModalContent from 'containers/data-and-sources/sustainable-land-use';
 
 import Button from 'components/button';
 import Icon from 'components/icon';
@@ -56,7 +60,21 @@ const NavigationButtons: FC<NavigationTypes> = ({
             setModalVisibility(o);
           }}
         >
-          {current === 'smart-carbon' && <SmartCarbonModalContent />}
+          <div className="md:max-w-8xl m-auto flex min-h-screen w-full flex-col space-y-10 py-28 lg:max-w-7xl">
+            {current === 'effective-governance' && <EffectiveGovernanceModalContent />}
+            {current === 'smart-carbon' && <SmartCarbonModalContent />}
+            {current === 'sustainable-land-use' && <SustainableLandUseModalContent />}
+            {current === 'renewable-water-sources' && <RenewableWaterSourcesModalContent />}
+            {current === 'green-energy-rush' && <GreenEnergyRushModalContent />}
+            <Button
+              theme="cobalt"
+              size="s"
+              className="self-center tracking-tight"
+              onClick={() => setModalVisibility(false)}
+            >
+              Close
+            </Button>
+          </div>
         </Modal>
       </div>
 

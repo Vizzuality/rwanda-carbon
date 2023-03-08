@@ -1,4 +1,4 @@
-export const dataArea = [
+export const dataSmartCarbon = [
   {
     year: 2010,
     present: 3,

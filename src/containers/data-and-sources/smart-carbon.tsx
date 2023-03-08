@@ -1,19 +1,22 @@
 import { FC } from 'react';
 
+import Heading from './heading';
+import Section from './section';
+import SmallHeading from './small-heading';
+import Title from './title';
+
 const SmartCarbonModalContent: FC = () => (
   <div className="z-50 m-auto h-screen max-w-2xl grow justify-center space-y-4 overflow-auto py-10 text-center font-inter">
-    <span className="font-serif font-bold uppercase tracking-tight">Learn more about</span>
-    <h1 className="font-montserrat text-5xl uppercase tracking-tighter">Smart carbon</h1>
+    <Heading />
+    <Title>Smart carbon</Title>
     <p className="text-left">
       This indicator presents how Rwanda’s greenhouse gas (GHG) emissions have evolved in the past
       and how Rwanda aims to reduce its emissions in the future. Rwanda’s envisioned emission
       reduction target is shown by comparing emissions from a business as usual scenario to those
       from a scenario in which Rwanda has implemented interventions to reduce emissions.
     </p>
-    <div className="space-y-4">
-      <h3 className="font-montserrat font-bold uppercase tracking-tight">
-        Methodology and discussion
-      </h3>
+    <Section>
+      <SmallHeading>Methodology and discussion</SmallHeading>
       <p className="text-left">
         We wanted to highlight Rwanda’s vision for reducing emissions whilst expanding its economy
         between 2020 and 2050. We sourced historic emissions from national GHG inventory reporting
@@ -54,7 +57,8 @@ const SmartCarbonModalContent: FC = () => (
         that target emissions from livestock and increasing uptake in forest lands have the
         potential to accelerate Rwanda’s decarbonisation.
       </p>
-    </div>
+    </Section>
+
     <div>
       <h3 className="font-montserrat font-bold uppercase tracking-tight">SOURCES</h3>
       <ul>
