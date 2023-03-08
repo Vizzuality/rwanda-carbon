@@ -47,11 +47,10 @@ const SustainableLandUseChart = ({
   height,
   margin = { top: 0, left: 0, right: 0, bottom: 0 },
 }: ChartDataTypes) => {
-  const dataParsed = stratify<Shakespeare>()
+  const dataParsed = stratify<Data>()
     .id((d) => d.id)
     .parentId((d) => d.parent)(data)
     .sum((d) => d.size ?? 0);
-
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
   const root = hierarchy(dataParsed).sort((a, b) => (b.value || 0) - (a.value || 0));

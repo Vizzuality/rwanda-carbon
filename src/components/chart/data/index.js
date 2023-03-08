@@ -229,7 +229,7 @@ export const sustainableLandUseData = {
   2019: [
     { id: 'Chart', parent: null, size: 0 },
     { id: 'Comedies', parent: 'Chart', size: null, color: 'red' },
-    { id: 'Land cover', parent: 'null', size: 0, color: 'red' },
+    { id: 'Land cover', parent: 'Comedies', size: 0, color: 'red' },
     { id: 'Agriculture', parent: 'Land cover', size: 10949, color: '#FAD201' },
     { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 2888, color: '#00152E' },
     { id: 'Forests', parent: 'Land cover', size: 7647, color: '#47DCAF' },
