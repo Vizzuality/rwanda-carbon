@@ -28,7 +28,11 @@ const RenewableWaterSourcesContentPage: FC = () => (
           benefactor will be society whose share of rechargeable fresh water sources will increase
           significantly.
         </article>
-        <NavigationButtons previous="sustainable-land-use" next="green-energy-rush" />
+        <NavigationButtons
+          previous="sustainable-land-use"
+          current="renewable-water-source"
+          next="green-energy-rush"
+        />
         <p className="text-sm font-bold"> Viewing units of 1000 km2 in 2019 and 2050</p>
       </Wrapper>
     </ContentLayout>

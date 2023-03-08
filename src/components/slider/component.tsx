@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef } from 'react';
 
 import * as SliderPrimitive from '@radix-ui/react-slider';
 
@@ -7,9 +7,7 @@ import cn from 'lib/analytics/classnames';
 const Slider = forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, defaultValue, onValueChange, ...props }, ref) => {
-  const [value, setValue] = useState(defaultValue);
-
+>(({ className, defaultValue, onValueChange, value, ...props }, ref) => {
   return (
     <SliderPrimitive.Root
       ref={ref}
@@ -18,10 +16,11 @@ const Slider = forwardRef<
         [className]: !!className,
       })}
       onValueChange={(v) => {
-        setValue(v);
         if (onValueChange) onValueChange(v);
       }}
       defaultValue={defaultValue}
+      step={10}
+      aria-label="carbon price"
       {...props}
     >
       <SliderPrimitive.Track

@@ -6915,6 +6915,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/d3-hierarchy@npm:^1.1.6":
+  version: 1.1.8
+  resolution: "@types/d3-hierarchy@npm:1.1.8"
+  checksum: fb661b4d4727c8726ca5bc8dcd425811f1473cff7294dce55b0943d223b8d547c0f1d000c0b4ca7a7ce42e683e255521730a93b255f3ff3c9c8528420815415e
+  languageName: node
+  linkType: hard
+
 "@types/d3-interpolate@npm:^3.0.1":
   version: 3.0.1
   resolution: "@types/d3-interpolate@npm:3.0.1"
@@ -7729,6 +7736,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@visx/gradient@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@visx/gradient@npm:3.0.0"
+  dependencies:
+    "@types/react": "*"
+    prop-types: ^15.5.7
+  peerDependencies:
+    react: ^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0
+  checksum: 471b4a4e1ec329e26cedb5aeef627b7c6393b54d85f76fa2707ec4f2b75a67007c5d9e4c9ffbdf58d37853228c21e285780466ab958b22dbba41f209c5212182
+  languageName: node
+  linkType: hard
+
 "@visx/grid@npm:3.0.1":
   version: 3.0.1
   resolution: "@visx/grid@npm:3.0.1"
@@ -7757,6 +7776,22 @@ __metadata:
   peerDependencies:
     react: ^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0
   checksum: f52b946fb39cfcd4798bd5c77b729ceb41b2041e0464edeef2f15955c4022d51ed9f7626f2a7ac331f8430c84037254be5dd38f8282881a63d1680b27f41d04d
+  languageName: node
+  linkType: hard
+
+"@visx/hierarchy@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@visx/hierarchy@npm:3.0.0"
+  dependencies:
+    "@types/d3-hierarchy": ^1.1.6
+    "@types/react": "*"
+    "@visx/group": 3.0.0
+    classnames: ^2.3.1
+    d3-hierarchy: ^1.1.4
+    prop-types: ^15.6.1
+  peerDependencies:
+    react: ^16.3.0-0 || ^17.0.0-0 || ^18.0.0-0
+  checksum: b0375f36ec0ddc0995bc606297a7727960752c1d1b0f18ad9c1c40e2f152b9d3f9346d658bfcbeaf77a1f3a0043325873e688121b66f2f8c5c14cbe7cef3d4d0
   languageName: node
   linkType: hard
 
@@ -10536,6 +10571,13 @@ __metadata:
   version: 3.1.2
   resolution: "d3-hierarchy@npm:3.1.2"
   checksum: 0fd946a8c5fd4686d43d3e11bbfc2037a145fda29d2261ccd0e36f70b66af6d7638e2c0c7112124d63fc3d3127197a00a6aecf676bd5bd392a94d7235a214263
+  languageName: node
+  linkType: hard
+
+"d3-hierarchy@npm:^1.1.4":
+  version: 1.1.9
+  resolution: "d3-hierarchy@npm:1.1.9"
+  checksum: 5fd8761c302252cb9abe9ce2a0934fc97104dd0df8d1b5de6472532903416f40e13b4b58d03ce215a0b816d7129c4ed4503bd4fdbc00a130fdcf46a63d734a52
   languageName: node
   linkType: hard
 
@@ -17537,7 +17579,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.0.0, prop-types@npm:^15.5.10, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.0.0, prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -18657,6 +18699,8 @@ __metadata:
     "@visx/axis": ^3.0.1
     "@visx/curve": ^3.0.0
     "@visx/glyph": ^3.0.0
+    "@visx/gradient": ^3.0.0
+    "@visx/hierarchy": ^3.0.0
     "@visx/legend": ^3.0.0
     "@visx/mock-data": ^3.0.0
     "@visx/pattern": ^3.0.0

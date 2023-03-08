@@ -15,10 +15,6 @@ import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
 
 const Chart = dynamic(() => import('components/chart/radial'), { ssr: false });
-export type XYChartProps = {
-  width: number;
-  height: number;
-};
 
 const EffectiveGovernanceContentPage: FC = () => {
   return (
@@ -37,7 +33,7 @@ const EffectiveGovernanceContentPage: FC = () => {
             Mindful of fiscal transparency, equality, and security, Rwanda has emerged a trusted
             partner.
           </article>
-          <NavigationButtons next="smart-carbon" />
+          <NavigationButtons current="effective-governance" next="smart-carbon" />
           <Legend />
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">
