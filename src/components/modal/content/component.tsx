@@ -47,13 +47,13 @@ export const ModalContent: FC<ModalContentProps> = ({
         ref: floating,
       })}
     >
-      <div className="relative flex grow flex-col">
+      <div className="relative z-50 flex grow flex-col">
         <button
           type="button"
           onClick={() => {
             onOpenChange(false);
           }}
-          className="absolute top-0 -right-12 flex h-screen translate-y-0 transform items-center bg-transparent px-4 py-4 text-sm text-gray-300"
+          className="absolute top-0 -right-12 z-10 flex h-screen translate-y-0 transform items-center bg-transparent px-4 py-4 text-sm text-gray-300"
         >
           <Icon icon={CLOSE_SVG} className="inline-block h-3.5 w-3.5 text-white" />
         </button>

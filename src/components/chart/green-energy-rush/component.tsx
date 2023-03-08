@@ -2,8 +2,9 @@ import React from 'react';
 
 import { HtmlLabel } from '@visx/annotation';
 import { AxisBottom, AxisLeft } from '@visx/axis';
+import { LinearGradient } from '@visx/gradient';
 import { Group } from '@visx/group';
-import { PatternLines } from '@visx/pattern';
+import { Pattern, PatternLines } from '@visx/pattern';
 import { scaleLinear, scaleOrdinal } from '@visx/scale';
 import { AreaStack, LinePath } from '@visx/shape';
 import { Text } from '@visx/text';
@@ -44,7 +45,7 @@ const Chart = ({
 }: ChartDataTypes) => {
   // set dimensions
   const innerWidth = width - margin.left - margin.right;
-  const innerHeight = height - margin.top - margin.bottom;
+  const innerHeight = height - margin.bottom - margin.top;
 
   // create accessor functions
   const x = (d) => d.year;
@@ -62,26 +63,38 @@ const Chart = ({
   const target = Math.max(...data.map((d) => d.present));
   const usual = target + Math.max(...data.map((d) => d.future));
   const yScale = scaleLinear({
-    domain: [0, usual * 1.5],
+    domain: [40, usual * 1.5],
     range: [innerHeight, 0],
   });
 
   const colorScale = scaleOrdinal({
     domain: keys,
-    range: ['#00152E', '#47DCAF'],
+    range: ['#002E65', '#47DCAF'],
   });
 
   return (
     <svg width={width} height={height}>
+      <LinearGradient
+        id="gradient"
+        from="#47DCAF"
+        fromOpacity={1}
+        to="#47DCAF"
+        toOpacity={0}
+        orientation={'horizontal'}
+      />
       <PatternLines
         id="lines"
-        height={15}
-        width={15}
-        stroke="#47DCAF"
-        background="#002E65"
-        strokeWidth={3}
+        height={10}
+        width={10}
+        stroke="#002E65"
+        strokeWidth={5}
         orientation={['diagonalRightToLeft']}
       />
+      <Pattern width={width} height={innerHeight} id="both">
+        <rect width="100%" height="100%" fill="url('#gradient')" />
+        <rect width="100%" height="100%" fill="url('#lines')" />
+      </Pattern>
+
       <Group top={margin.top}>
         <AreaStack
           data={data}
@@ -96,7 +109,7 @@ const Chart = ({
                 initial={false}
                 animate={{ d: path(stack) }}
                 key={`stack-${stack.key}`}
-                fill={stack.key === 'future' ? "url('#lines')" : colorScale(stack.key)}
+                fill={stack.key === 'future' ? "url('#both')" : colorScale(stack.key)}
               />
             ))
           }
@@ -108,26 +121,33 @@ const Chart = ({
           stroke="white"
           strokeWidth={3}
         />
+        <LinePath
+          data={data}
+          x={(d) => xScale(d.year) ?? 0}
+          y={yScale(52)}
+          stroke="#47DCAF"
+          strokeDasharray="7 7"
+        />
         <HtmlLabel
-          x={width - 20}
-          y={yScale(usual)}
+          x={width - 24}
+          y={yScale(usual) - 10}
           horizontalAnchor="end"
           verticalAnchor={'middle'}
           showAnchorLine={false}
         >
-          <p className="block w-[110px] items-center text-xs text-white">
-            Usual business <span className="text-base font-bold">{usual}</span>
+          <p className="block w-[100px] items-center justify-end text-xs text-white">
+            Higher target <span className="text-base font-bold">{usual}</span>
           </p>
         </HtmlLabel>
         <HtmlLabel
-          x={width - 20}
-          y={yScale(target) + 70}
+          x={width - 24}
+          y={yScale(target)}
           horizontalAnchor="end"
           verticalAnchor="start"
           showAnchorLine={false}
         >
-          <p className="flex items-center text-xs text-white">
-            Target <span className="ml-2 text-base font-bold">{target}</span>
+          <p className="flex w-[100px] items-center justify-end text-xs text-white">
+            Low target <span className="ml-2 text-base font-bold">{target}</span>
           </p>
         </HtmlLabel>
         <AxisBottom
@@ -140,7 +160,7 @@ const Chart = ({
           tickComponent={(p) => {
             const x = getXValue(p.x, width);
             return (
-              [2010, 2020, 2030, 2040, 2050].includes(Number(p.formattedValue)) && (
+              [2020, 2030, 2040, 2050].includes(Number(p.formattedValue)) && (
                 <Text {...p} x={x} fill="white" fontSize={12}>
                   {p.formattedValue}
                 </Text>
@@ -152,7 +172,7 @@ const Chart = ({
         <AxisLeft
           tickComponent={(p) => {
             return (
-              [5, 10, 15, 20, 25].includes(Number(p.formattedValue)) && (
+              [60, 70, 80, 90].includes(Number(p.formattedValue)) && (
                 <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
                   {p.formattedValue}
                 </Text>

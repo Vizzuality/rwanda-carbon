@@ -45,7 +45,7 @@ export const Modal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <FloatingOverlay lockScroll>
+          <FloatingOverlay lockScroll className="z-50">
             <motion.div
               variants={overlayFramerVariants}
               initial="initial"

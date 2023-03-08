@@ -2,18 +2,28 @@ import { FC, useState } from 'react';
 
 import Link from 'next/link';
 
+import SmartCarbonModalContent from 'containers/data-and-sources/smart-carbon';
+
 import Button from 'components/button';
 import Icon from 'components/icon';
 import Modal from 'components/modal';
+import cn from 'lib/analytics/classnames';
 
 import ARROW from 'svgs/ui/arrow.svg?sprite';
 
 type NavigationTypes = Readonly<{
   previous?: string;
+  current: string;
   next?: string;
+  theme?: 'cobalt' | 'cyan';
 }>;
 
-const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTypes) => {
+const NavigationButtons: FC<NavigationTypes> = ({
+  previous,
+  current,
+  next,
+  theme = 'cyan',
+}: NavigationTypes) => {
   const [isModalOpen, setModalVisibility] = useState(false);
   return (
     <div className="flex space-x-2">
@@ -21,7 +31,10 @@ const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTy
         <Link
           href={previous}
           as={previous}
-          className="relative rounded-3xl border border-cyan-0 px-8 py-2"
+          className={cn({
+            'relative rounded-3xl border border-cyan-0 px-8 py-2': true,
+            'border border-cobalt-0 bg-cobalt-0 text-white': theme === 'cobalt',
+          })}
         >
           <Icon
             icon={ARROW}
@@ -31,7 +44,7 @@ const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTy
       )}
 
       <div className="flex space-x-5 py-0">
-        <Button theme="cyan" size="xs" onClick={() => setModalVisibility(!isModalOpen)}>
+        <Button theme={theme} size="xs" onClick={() => setModalVisibility(!isModalOpen)}>
           DATA AND SOURCES
         </Button>
 
@@ -43,16 +56,19 @@ const NavigationButtons: FC<NavigationTypes> = ({ previous, next }: NavigationTy
             setModalVisibility(o);
           }}
         >
-          <div className="flex grow flex-col space-y-5 overflow-auto py-10">
-            <div className="grow px-10">
-              <h2>LEARN MORE ABOUT</h2>
-            </div>
-          </div>
+          {current === 'smart-carbon' && <SmartCarbonModalContent />}
         </Modal>
       </div>
 
       {next && (
-        <Link href={next} as={next} className="relative rounded-3xl border border-cyan-0 px-8 py-2">
+        <Link
+          href={next}
+          as={next}
+          className={cn({
+            'relative rounded-3xl border border-cyan-0 px-8 py-2': true,
+            'border border-cobalt-0 bg-cobalt-0 text-white': theme === 'cobalt',
+          })}
+        >
           <Icon
             icon={ARROW}
             className="text-cobalt-500 absolute top-1/2 h-3 w-3 -translate-y-1/2 rotate-180 transform transition-transform"

@@ -378,7 +378,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
                     </p>
                   </div>
                 </div>
-                <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-5 w-full bg-gradient-to-t from-white via-white" />
+                <div className="pointer-events-none absolute bottom-0 left-0 z-50 h-5 w-full bg-gradient-to-t from-white via-white" />
               </div>
             </div>
           </Modal>

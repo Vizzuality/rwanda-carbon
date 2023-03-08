@@ -56,6 +56,8 @@
     "@visx/axis": "^3.0.1",
     "@visx/curve": "^3.0.0",
     "@visx/glyph": "^3.0.0",
+    "@visx/gradient": "^3.0.0",
+    "@visx/hierarchy": "^3.0.0",
     "@visx/legend": "^3.0.0",
     "@visx/mock-data": "^3.0.0",
     "@visx/pattern": "^3.0.0",

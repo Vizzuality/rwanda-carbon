@@ -30,7 +30,11 @@ const SmartCarbonContentPage: FC = () => {
             attainable ways. Africa’s largest green investment fund stands to help in turning this
             pledge into a reality.
           </article>
-          <NavigationButtons previous="effective-governance" next="sustainable-land-use" />
+          <NavigationButtons
+            previous="effective-governance"
+            current="smart-carbon"
+            next="sustainable-land-use"
+          />
           <p className="text-sm font-bold">Viewing emissions in MtCO2e</p>
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">
