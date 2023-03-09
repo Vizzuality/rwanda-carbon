@@ -1,12 +1,13 @@
 import { FC } from 'react';
 
+import { STYLES_WRAPPER } from './constants';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
 const GreenEnergyRushModalContent: FC = () => (
-  <div className="space-y-8">
+  <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Green energy rush</Title>
     <p>The proportion of power generation that comes from renewable sources.</p>
