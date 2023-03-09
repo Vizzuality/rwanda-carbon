@@ -63,13 +63,13 @@ const Chart = ({
   const target = Math.max(...data.map((d) => d.present));
   const usual = target + Math.max(...data.map((d) => d.future));
   const yScale = scaleLinear({
-    domain: [40, usual * 1.5],
+    domain: [50, 100],
     range: [innerHeight, 0],
   });
 
   const colorScale = scaleOrdinal({
     domain: keys,
-    range: ['#002E65', '#47DCAF'],
+    range: ['#00152E', '#47DCAF'],
   });
 
   return (

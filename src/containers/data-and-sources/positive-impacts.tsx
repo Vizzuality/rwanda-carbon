@@ -1,12 +1,13 @@
 import { FC } from 'react';
 
+import { STYLES_WRAPPER } from './constants';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
 const PositiveImpactsModalContent: FC = () => (
-  <div className="space-y-8">
+  <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Calculation of carbon reduction, economic revenue and job creation potentials</Title>
     <p>

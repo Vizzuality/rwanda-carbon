@@ -30,7 +30,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
         </article>
         <NavigationButtons
           previous="sustainable-land-use"
-          current="renewable-water-source"
+          current="renewable-water-sources"
           next="green-energy-rush"
         />
         <p className="text-sm font-bold"> Viewing units of 1000 km2 in 2019 and 2050</p>

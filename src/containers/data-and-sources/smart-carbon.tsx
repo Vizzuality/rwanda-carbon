@@ -1,12 +1,13 @@
 import { FC } from 'react';
 
+import { STYLES_WRAPPER } from './constants';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
 const SmartCarbonModalContent: FC = () => (
-  <div className="z-50 m-auto h-screen max-w-2xl grow justify-center space-y-4 overflow-auto py-10 text-center font-inter">
+  <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Smart carbon</Title>
     <p className="text-left">
@@ -24,11 +25,13 @@ const SmartCarbonModalContent: FC = () => (
         emissions excluding forestry, and other land uses (FOLU) reported in Table 2.3 of Rwanda’s
         First Biennial Update Report for the years 2006 to 2018.
       </p>
-      <ul className="text-left">
+      <p className="text-left">
         Future emissions were extracted from Rwanda’s Vision 2050, which articulates Rwanda’s
         ambitions and strategic direction for achieving them. The strategy has two overarching goals
         of promoting economic growth and prosperity, and achieving a high quality of life for
         Rwandans. It is arranged under 5 pillars:
+      </p>
+      <ul className="list-inside list-disc space-y-2 text-left">
         <li>Human development</li>
         <li>Competitiveness and integration</li>
         <li>Agriculture for wealth creation</li>
@@ -70,13 +73,13 @@ const SmartCarbonModalContent: FC = () => (
       </ul>
     </div>
     <div>
-      <h3>DATA FORMAT</h3>
+      <SmallHeading>DATA FORMAT</SmallHeading>
       TABULAR DATA
     </div>
     <div>
-      <h3>DATA FORMAT</h3>
+      <SmallHeading>DATA FORMAT</SmallHeading>
       **** GRAPHIC
-      <ul>
+      <ul className="list-disc">
         <li>I B - International Bunkers</li>
         <li>5.B - Other (please specify)</li>
         <li>

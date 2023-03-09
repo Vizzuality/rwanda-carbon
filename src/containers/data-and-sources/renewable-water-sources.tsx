@@ -1,12 +1,13 @@
 import { FC } from 'react';
 
+import { STYLES_WRAPPER } from './constants';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
 const RenewableWaterSourcesModalContent: FC = () => (
-  <div className="space-y-8">
+  <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Renewable water sources</Title>
     <p>

@@ -124,12 +124,12 @@ export const greenEnergyRushChart = [
   {
     year: 2035,
     present: 60,
-    future: 10,
+    future: 7,
   },
   {
     year: 2040,
     present: 60,
-    future: 25,
+    future: 15,
   },
   {
     year: 2050,
