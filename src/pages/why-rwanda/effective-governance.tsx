@@ -9,12 +9,12 @@ import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/wrapper';
 import TitleLayout from 'containers/wrapper/title';
 
-import { dataRadialAfrica as data } from 'components/chart/data';
+import { effectiveGovernanceChartData as data } from 'components/chart/data';
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
 
-const Chart = dynamic(() => import('components/chart/radial'), { ssr: false });
+const Chart = dynamic(() => import('components/chart/effective-governance'), { ssr: false });
 
 const EffectiveGovernanceContentPage: FC = () => {
   return (

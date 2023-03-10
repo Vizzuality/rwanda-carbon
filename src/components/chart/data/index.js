@@ -1,44 +1,95 @@
-export const dataSmartCarbon = [
+export const smartCarbonChartData = [
+  {
+    year: 2006,
+    business_as_usual: 4.035,
+    historical: 4.035,
+    intervention: 0,
+  },
+  {
+    year: 2007,
+    business_as_usual: 4.383,
+    historical: 4.383,
+    intervention: 0,
+  },
+  {
+    year: 2008,
+    business_as_usual: 4.599,
+    historical: 4.599,
+    intervention: 0,
+  },
+  {
+    year: 2009,
+    business_as_usual: 4.833,
+    historical: 4.833,
+    intervention: 0,
+  },
   {
     year: 2010,
-    present: 3,
-    future: 0,
+    business_as_usual: 5.213,
+    ical: 5.213,
+    intervention: 0,
   },
   {
-    year: 2020,
-    present: 4,
-    future: 0,
+    year: 2011,
+    historical: 5.01,
+    intervention: 0,
+    business_as_usual: 5.01,
   },
   {
-    year: 2030,
-    present: 6,
-    future: 6,
+    year: 2012,
+    historical: 5.16,
+    business_as_usual: 5.16,
+    intervention: 0,
   },
   {
-    year: 2040,
-    present: 7,
-    future: 8,
+    year: 2013,
+    historical: 5.353,
+    business_as_usual: 5.353,
+    intervention: 0,
+  },
+  {
+    year: 2014,
+    historical: 5.509,
+    business_as_usual: 5.509,
+    intervention: 0,
+  },
+  {
+    year: 2015,
+    historical: 6.01,
+    business_as_usual: 6.01,
+    intervention: 0,
+  },
+  {
+    year: 2016,
+    historical: 5.971,
+    business_as_usual: 5.971,
+    intervention: 0,
+  },
+  {
+    year: 2017,
+    historical: 6.276,
+    business_as_usual: 6.276,
+    intervention: 0,
+  },
+  {
+    year: 2018,
+    historical: 6.756,
+    business_as_usual: 6.756,
+    intervention: 0,
+  },
+  {
+    year: 2035,
+    business_as_usual: 16.13,
+    intervention: 10,
   },
   {
     year: 2050,
-    present: 17,
-    future: 11,
+    business_as_usual: 28.3,
+    intervention: 17.5,
   },
 ];
 
-export const dataRadialAfrica = [
-  {
-    shortLabel: 'GE',
-    label: 'Government effectiveness',
-    africa: 34.7080387753359,
-    rwanda: 56.5628062583581,
-  },
-  {
-    shortLabel: 'RQ',
-    label: 'Regulatory quality',
-    africa: 34.6524419806273,
-    rwanda: 52.613942548939,
-  },
+export const effectiveGovernanceChartData = [
   {
     shortLabel: 'RL',
     label: 'Rule of Law',
@@ -63,73 +114,30 @@ export const dataRadialAfrica = [
     africa: 43.3513483714081,
     rwanda: 62.4804862546967,
   },
-];
-
-export const dataRealArea = [
   {
-    year: 2006,
-    historical: 4.035,
+    shortLabel: 'GE',
+    label: 'Government effectiveness',
+    africa: 34.7080387753359,
+    rwanda: 56.5628062583581,
   },
   {
-    year: 2007,
-    historical: 4.383,
-  },
-  {
-    year: 2008,
-    historical: 4.599,
-  },
-  {
-    year: 2009,
-    historical: 4.833,
-  },
-  {
-    year: 2010,
-    historical: 5.213,
-  },
-
-  {
-    year: 2020,
-    historical: 0,
-  },
-  {
-    year: 2035,
-    historical: 4,
-    business: 16.13,
-    intervention: 10,
-  },
-
-  {
-    year: 2040,
-    historical: 4,
-  },
-  {
-    year: 2050,
-    historical: 17,
-    business: 28.3,
-    intervention: 17.5,
+    shortLabel: 'RQ',
+    label: 'Regulatory quality',
+    africa: 34.6524419806273,
+    rwanda: 52.613942548939,
   },
 ];
 
 export const greenEnergyRushChart = [
   {
     year: 2020,
-    present: 52,
+    present: 53.78,
     future: 0,
-  },
-  {
-    year: 2030,
-    present: 58,
-    future: 3,
   },
   {
     year: 2035,
     present: 60,
-    future: 7,
-  },
-  {
-    year: 2040,
-    present: 60,
-    future: 15,
+    future: 10,
   },
   {
     year: 2050,
@@ -140,89 +148,65 @@ export const greenEnergyRushChart = [
 
 export const positiveImpacts = [
   {
-    carbonPrice: 0,
-    greenJobCreation: 6602.943174,
+    carbonPrice: 10,
+    greenJobCreation: 6602.943174 / 1000,
     revenueGeneration: 18.45444126,
     carbonReduction: 1.845444126,
   },
   {
-    carbonPrice: 10,
-    greenJobCreation: 19784.19354,
+    carbonPrice: 20,
+    greenJobCreation: 19784.19354 / 1000,
     revenueGeneration: 59.74729722,
     carbonReduction: 2.987364861,
   },
   {
-    carbonPrice: 20,
-    greenJobCreation: 39543.75111,
+    carbonPrice: 30,
+    greenJobCreation: 39543.75111 / 1000,
     revenueGeneration: 123.8785679,
     carbonReduction: 4.1292855967236,
   },
   {
-    carbonPrice: 30,
-    greenJobCreation: 65881.61588,
+    carbonPrice: 40,
+    greenJobCreation: 65881.61588 / 1000,
     revenueGeneration: 210.8482533,
     carbonReduction: 5.271206332,
   },
   {
-    carbonPrice: 30,
-    greenJobCreation: 98797.78784,
+    carbonPrice: 50,
+    greenJobCreation: 98797.78784 / 1000,
     revenueGeneration: 320.6563534,
     carbonReduction: 6.413127068,
   },
   {
-    carbonPrice: 40,
-    greenJobCreation: 121775.7336,
+    carbonPrice: 60,
+    greenJobCreation: 121775.7336 / 1000,
     revenueGeneration: 393.2117174,
     carbonReduction: 6.553528623,
   },
   {
-    carbonPrice: 50,
-    greenJobCreation: 145826.4754,
+    carbonPrice: 70,
+    greenJobCreation: 145826.4754 / 1000,
     revenueGeneration: 468.5751124,
     carbonReduction: 6.693930178,
   },
   {
-    carbonPrice: 60,
-    greenJobCreation: 546.7465386,
+    carbonPrice: 80,
+    greenJobCreation: 546.7465386 / 1000,
     revenueGeneration: 170950.0133,
     carbonReduction: 6.834331732,
   },
   {
-    carbonPrice: 70,
-    greenJobCreation: 197146.3473,
+    carbonPrice: 90,
+    greenJobCreation: 197146.3473 / 1000,
     revenueGeneration: 627.7259958,
     carbonReduction: 6.974733287,
   },
   {
-    carbonPrice: 80,
-    greenJobCreation: 224415.4773,
+    carbonPrice: 100,
+    greenJobCreation: 224415.4773 / 1000,
     revenueGeneration: 711.5134842,
     carbonReduction: 7.115134842,
   },
-  // {
-  //   carbonPrice: 90,
-  //   greenJobCreation: 17,
-  //   revenueGeneration: 11,
-  //   carbonReduction: 90,
-  // },
-  // {
-  //   carbonPrice: 100,
-  //   greenJobCreation: 3,
-  //   revenueGeneration: 0,
-  //   carbonReduction: 90,
-  // },
-  // {
-  //   carbonPrice: 110,
-  //   greenJobCreation: 4,
-  //   revenueGeneration: 0,
-  //   carbonReduction: 90,
-  // },
-  // {
-  //   carbonPrice: 120,
-  //   greenJobCreation: 6,
-  //   revenueGeneration: 6,
-  //   carbonReduction: 90,
-  // },
 ];
 
 export const sustainableLandUseData = {

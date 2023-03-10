@@ -39,23 +39,24 @@ const Chart = ({
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.bottom - margin.top;
 
-  const xMax = width - margin.left - margin.right;
-  const yMax = height - margin.top - margin.bottom;
-  const radius = Math.min(xMax, yMax) / 1.45;
+  const yMax = Math.max(...data.map((d) => d.rwanda));
   const radialScale = scaleLinear({
-    domain: [0, 62],
+    domain: [0, yMax],
     range: [0, innerHeight / 2.5],
   });
+  const radius = radialScale(yMax);
 
   const genPoints = (length: number, radius: number) => {
     const step = (Math.PI * 2) / length;
+    const offsetAngleRwanda = Math.PI / 180 + 100;
+    const offsetAngleAfrica = Math.PI / 180 - 120;
     return [...new Array(length)].map((_, i) => ({
-      rwandaX: ((radius * data[i].rwanda) / 100) * Math.sin(i * step + (step / 2) * 7.19),
-      rwandaY: ((radius * data[i].rwanda) / 100) * Math.cos(i * step + (step / 2) * 7.19),
-      africaX: ((radius * data[i].africa) / 100) * Math.sin(i * step + (step / 2) * 7.19 + 4),
-      africaY: ((radius * data[i].africa) / 100) * Math.cos(i * step + (step / 2) * 7.19 + 4),
-      labelX: ((radius * (data[i].rwanda + 7)) / 100) * Math.sin(i * step + (step / 2) * 7.19),
-      labelY: ((radius * (data[i].rwanda + 7)) / 100) * Math.cos(i * step + (step / 2) * 7.19),
+      rwandaX: ((radius * data[i].rwanda) / yMax) * Math.sin(i * step + offsetAngleRwanda),
+      rwandaY: ((radius * data[i].rwanda) / yMax) * Math.cos(i * step + offsetAngleRwanda),
+      africaX: ((radius * data[i].africa) / yMax) * Math.sin(i * step + offsetAngleAfrica),
+      africaY: ((radius * data[i].africa) / yMax) * Math.cos(i * step + offsetAngleAfrica),
+      labelX: radius * ((data[i].rwanda + 5) / yMax) * Math.sin(i * step + offsetAngleRwanda),
+      labelY: radius * ((data[i].rwanda + 5) / yMax) * Math.cos(i * step + offsetAngleRwanda),
       label: data[i].shortLabel,
     }));
   };
@@ -73,14 +74,7 @@ const Chart = ({
             numTicks={3}
             strokeWidth={1}
           />
-          <motion.g
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 1 }}
-            transition={{
-              delay: 0.1,
-            }}
-          >
+          <motion.g>
             <AxisLeft
               top={-height / 2.5}
               scale={reverseYScale}
@@ -89,7 +83,7 @@ const Chart = ({
               stroke="transparent"
               tickComponent={(p) => {
                 return (
-                  <HtmlLabel {...p} x={p.x - 10} y={p.y - 12} showAnchorLine={false}>
+                  <HtmlLabel {...p} x={p.x + 25} y={p.y + 10} showAnchorLine={false}>
                     <div className="rounded-3xl border border-cyan-0 border-opacity-30 bg-cobalt-0 px-2 py-0.5 text-xs text-cyan-0">
                       {p.formattedValue}
                     </div>

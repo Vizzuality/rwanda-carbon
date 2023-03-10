@@ -7,7 +7,7 @@ import cn from 'lib/analytics/classnames';
 const Slider = forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, defaultValue, onValueChange, value, ...props }, ref) => {
+>(({ className, defaultValue, onValueChange, value, min, max, ...props }, ref) => {
   return (
     <SliderPrimitive.Root
       ref={ref}
@@ -19,6 +19,8 @@ const Slider = forwardRef<
         if (onValueChange) onValueChange(v);
       }}
       defaultValue={defaultValue}
+      min={min}
+      max={max}
       step={10}
       aria-label="carbon price"
       {...props}

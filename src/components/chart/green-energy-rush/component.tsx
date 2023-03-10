@@ -62,6 +62,7 @@ const Chart = ({
 
   const target = Math.max(...data.map((d) => d.present));
   const usual = target + Math.max(...data.map((d) => d.future));
+  const baseline = Math.min(...data.map((d) => d.present));
   const yScale = scaleLinear({
     domain: [50, 100],
     range: [innerHeight, 0],
@@ -77,10 +78,12 @@ const Chart = ({
       <LinearGradient
         id="gradient"
         from="#47DCAF"
+        fromOffset={0.4}
+        toOffset={10}
         fromOpacity={1}
         to="#47DCAF"
         toOpacity={0}
-        orientation={'horizontal'}
+        orientation="horizontal"
       />
       <PatternLines
         id="lines"
@@ -124,7 +127,7 @@ const Chart = ({
         <LinePath
           data={data}
           x={(d) => xScale(d.year) ?? 0}
-          y={yScale(52)}
+          y={yScale(baseline)}
           stroke="#47DCAF"
           strokeDasharray="7 7"
         />
@@ -135,7 +138,10 @@ const Chart = ({
           verticalAnchor={'middle'}
           showAnchorLine={false}
         >
-          <p className="block w-[100px] items-center justify-end text-xs text-white">
+          <p
+            style={{ width: innerWidth }}
+            className="flex items-center justify-end text-xs text-white"
+          >
             Higher target <span className="text-base font-bold">{usual}</span>
           </p>
         </HtmlLabel>
@@ -146,8 +152,25 @@ const Chart = ({
           verticalAnchor="start"
           showAnchorLine={false}
         >
-          <p className="flex w-[100px] items-center justify-end text-xs text-white">
-            Low target <span className="ml-2 text-base font-bold">{target}</span>
+          <p
+            style={{ width: innerWidth }}
+            className="flex items-center justify-end text-xs text-white"
+          >
+            Lower target <span className="ml-2 text-base font-bold">{target}</span>
+          </p>
+        </HtmlLabel>
+        <HtmlLabel
+          x={width - 24}
+          y={yScale(baseline)}
+          horizontalAnchor="end"
+          verticalAnchor="end"
+          showAnchorLine={false}
+        >
+          <p
+            style={{ width: innerWidth }}
+            className="flex items-center justify-end text-xs text-white"
+          >
+            Baseline <span className="ml-2 text-base font-bold">{baseline}</span>
           </p>
         </HtmlLabel>
         <AxisBottom
