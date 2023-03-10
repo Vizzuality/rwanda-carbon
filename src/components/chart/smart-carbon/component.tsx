@@ -25,8 +25,9 @@ type MarginType = {
 
 type AreaData = {
   year: number;
-  present: number;
-  future: number;
+  intervention: number;
+  business_as_usual: number;
+  historical?: number;
 };
 
 interface ChartDataTypes {
@@ -51,7 +52,7 @@ const Chart = ({
   const y0 = (d) => d[0];
   const y1 = (d) => d[1];
 
-  const keys = Object.keys(data[0]).filter((key) => key !== 'year');
+  const keys = ['business_as_usual', 'intervention'];
 
   // create scales
   const xScale = scaleLinear({
@@ -59,10 +60,10 @@ const Chart = ({
     domain: extent(data, x),
   });
 
-  const target = Math.max(...data.map((d) => d.present));
-  const usual = target + Math.max(...data.map((d) => d.future));
+  const target = Math.max(...data.map((d) => d.business_as_usual));
+  const businessWithIntervention = target + Math.max(...data.map((d) => d.intervention));
   const yScale = scaleLinear({
-    domain: [0, usual * 1.5],
+    domain: [0, businessWithIntervention * 1.2],
     range: [innerHeight, 0],
   });
 
@@ -96,32 +97,36 @@ const Chart = ({
                 initial={false}
                 animate={{ d: path(stack) }}
                 key={`stack-${stack.key}`}
-                fill={stack.key === 'future' ? "url('#lines')" : colorScale(stack.key)}
+                fill={stack.key === 'intervention' ? "url('#lines')" : colorScale(stack.key)}
               />
             ))
           }
         </AreaStack>
         <LinePath
           data={data}
-          x={(d) => xScale(d.year) ?? 0}
-          y={(d) => yScale(d.present) ?? 0}
+          x={(d) => xScale(d.year)}
+          y={(d) => yScale(d.business_as_usual)}
           stroke="white"
           strokeWidth={3}
         />
         <HtmlLabel
           x={width - 20}
-          y={yScale(usual)}
+          y={yScale(businessWithIntervention)}
           horizontalAnchor="end"
-          verticalAnchor={'middle'}
+          verticalAnchor="end"
           showAnchorLine={false}
         >
-          <p className="block w-[110px] items-center text-xs text-white">
-            Usual business <span className="text-base font-bold">{usual}</span>
+          <p
+            style={{ width: innerWidth }}
+            className="flex items-center justify-end text-xs text-white"
+          >
+            Usual business{' '}
+            <span className="ml-2 text-base font-bold">{businessWithIntervention}</span>
           </p>
         </HtmlLabel>
         <HtmlLabel
           x={width - 20}
-          y={yScale(target) + 70}
+          y={yScale(target) + 40}
           horizontalAnchor="end"
           verticalAnchor="start"
           showAnchorLine={false}
@@ -137,14 +142,13 @@ const Chart = ({
           scale={xScale}
           top={innerHeight - 40}
           tickFormat={format('d')}
+          numTicks={5}
           tickComponent={(p) => {
             const x = getXValue(p.x, width);
             return (
-              [2010, 2020, 2030, 2040, 2050].includes(Number(p.formattedValue)) && (
-                <Text {...p} x={x} fill="white" fontSize={12}>
-                  {p.formattedValue}
-                </Text>
-              )
+              <Text {...p} x={x} fill="white" fontSize={12}>
+                {p.formattedValue}
+              </Text>
             );
           }}
         />
@@ -152,7 +156,7 @@ const Chart = ({
         <AxisLeft
           tickComponent={(p) => {
             return (
-              [5, 10, 15, 20, 25].includes(Number(p.formattedValue)) && (
+              Number(p.formattedValue) < businessWithIntervention && (
                 <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
                   {p.formattedValue}
                 </Text>
@@ -165,6 +169,7 @@ const Chart = ({
           left={60}
           hideAxisLine
           hideTicks
+          numTicks={5}
         />
       </Group>
     </svg>

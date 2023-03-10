@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
+
 import { STYLES_WRAPPER } from './constants';
 import Heading from './heading';
 import Section from './section';
@@ -144,19 +146,26 @@ const PositiveImpactsModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>Other info</SmallHeading>
-      <p>
-        ** GRAPHIC COMING SOON
-        <caption>
+      <p className="max-w-2xl p-4">
+        ** NEW GRAPHIC COMING SOON
+        <Image
+          alt="Calculation of carbon reduction, economic revenue and job creation potentials"
+          src="/images/modal/carbon-calculation.png"
+          width={550}
+          height={550}
+        />
+        <i className="font-italic w-full">
           Figure 1. Carbon reduction cost curves for the measures considered for land-based carbon
           reduction in Rwanda.
-        </caption>
+        </i>
       </p>
     </Section>
     <Section>
       <SmallHeading>Disclaimer</SmallHeading>
       <p>
-        Figure 1. Carbon reduction cost curves for the measures considered for land-based carbon
-        reduction in Rwanda.
+        The calculations described above are estimates using the best available data published in
+        the scientific literature, they should be treated as indicative of potential carbon
+        reduction, economic revenue and job creation potentials.
       </p>
     </Section>
   </div>

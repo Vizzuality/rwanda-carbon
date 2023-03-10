@@ -8,7 +8,7 @@ import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/wrapper';
 import TitleLayout from 'containers/wrapper/title';
 
-import { dataSmartCarbon as data } from 'components/chart/data';
+import { smartCarbonChartData as data } from 'components/chart/data';
 import Header from 'components/header';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
