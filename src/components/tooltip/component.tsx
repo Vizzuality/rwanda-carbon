@@ -102,6 +102,7 @@ export const Tooltip = ({
                   position: strategy,
                   top: y ?? '',
                   left: x ?? '',
+                  zIndex: 100,
                 },
               })}
             >
