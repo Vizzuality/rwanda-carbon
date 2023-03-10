@@ -147,23 +147,25 @@ const PositiveImpactsModalContent: FC = () => (
     <Section>
       <SmallHeading>Other info</SmallHeading>
       <p className="max-w-2xl p-4">
-        ** GRAPHIC COMING SOON
+        ** NEW GRAPHIC COMING SOON
         <Image
           alt="Calculation of carbon reduction, economic revenue and job creation potentials"
           src="/images/modal/carbon-calculation.png"
-          fill
+          width={550}
+          height={550}
         />
-        <caption>
+        <i className="font-italic w-full">
           Figure 1. Carbon reduction cost curves for the measures considered for land-based carbon
           reduction in Rwanda.
-        </caption>
+        </i>
       </p>
     </Section>
     <Section>
       <SmallHeading>Disclaimer</SmallHeading>
       <p>
-        Figure 1. Carbon reduction cost curves for the measures considered for land-based carbon
-        reduction in Rwanda.
+        The calculations described above are estimates using the best available data published in
+        the scientific literature, they should be treated as indicative of potential carbon
+        reduction, economic revenue and job creation potentials.
       </p>
     </Section>
   </div>

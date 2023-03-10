@@ -51,7 +51,7 @@ const ImpactsPage: FC = () => {
         <Header />
       </div>
       <ContentLayout>
-        <Wrapper className="m-auto min-w-min justify-center space-y-14">
+        <Wrapper className="m-auto min-w-min flex-1 justify-center space-y-14">
           <TitleLayout className="m-auto text-center">
             Potential positive impacts of carbon market investment
           </TitleLayout>
@@ -104,9 +104,9 @@ const ImpactsPage: FC = () => {
               </div>
             </Modal>
           </div>
-          <div className="space-3 flex h-60 w-full flex-1 justify-between">
+          <div className="space-3 m-auto flex h-72 w-full max-w-5xl flex-1 justify-between">
             {IMPACTS.map((i) => (
-              <div className="m-6  space-y-14" key={i.type}>
+              <div className="m-6  flex-1 space-y-14" key={i.type}>
                 <SmallHeading title={i.title} subtitle={i.subtitle} />
                 <ParentSize>
                   {({ width, height }) => (
