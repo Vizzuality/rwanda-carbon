@@ -71,17 +71,18 @@ const ImpactsPage: FC = () => {
             </div>
           </section>
 
-          <div className="fixed top-1/4 right-24 z-50  space-x-5 py-0">
+          <div className="absolute top-1/4 right-24  space-x-5 py-0">
             <AnimatePresence>
-              <motion.div
-              // transformTemplate={template}
-              // animate={{ rotate: 360 }}
-              // style={{ rotate: 0, x: 'calc(50vh - 100px)' }}
+              <button
+                type="button"
+                // transformTemplate={template}
+                // initial={{ rotate: 0 }}
+                // animate={{ rotate: 360 }}
+                // style={{ rotate: 0, x: 'calc(50vh - 100px)' }}
+                onClick={() => setModalVisibility(!isModalOpen)}
               >
-                <button type="button" onClick={() => setModalVisibility(!isModalOpen)}>
-                  <Icon icon={QUESTION} className="z-20 h-auto w-12" />
-                </button>
-              </motion.div>
+                <Icon icon={QUESTION} className="h-auto w-12" />
+              </button>
             </AnimatePresence>
             <Modal
               title="LEARN MORE ABOUT"

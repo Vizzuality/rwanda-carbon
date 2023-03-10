@@ -18,13 +18,13 @@ import type { HeaderProps } from './types';
 export const Header: FC<HeaderProps> = ({ className, ...restProps }: HeaderProps) => (
   <header
     className={cn({
-      'fixed top-0 left-0 z-20 w-full': true,
+      'fixed top-0 left-0 z-40 w-full': true,
       [className]: !!className,
     })}
     {...restProps}
   >
     <MetaTags title="Rwanda Carbon Tracker" description="" type="website" />
-    <div className="z-10 flex items-center justify-between py-4 px-6">
+    <div className="z-40 flex items-center justify-between py-4 px-6">
       <Link href="/">
         <Logo size="sm" />
       </Link>
@@ -39,7 +39,7 @@ export const Header: FC<HeaderProps> = ({ className, ...restProps }: HeaderProps
                 Why Rwanda
               </Link>
               <div>
-                <ul className="mt-4">
+                <ul className="z-40 mt-4">
                   {RwandaReasons.map(({ slug, name }) => (
                     <li key={slug} className="pb-4 last-of-type:pb-0">
                       <Link href={`/why-rwanda/${slug}`} as={`/why-rwanda/${slug}`}>

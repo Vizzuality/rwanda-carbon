@@ -91,16 +91,16 @@ const SustainableLandUseChart = ({
                         {node.depth > 2 && (
                           <HtmlLabel
                             x={nodeWidth}
-                            y={node.y1 - node.y0 - 20}
+                            y={node.y1 - node.y0 - 30}
                             showAnchorLine={false}
                             horizontalAnchor="end"
                             verticalAnchor="middle"
                           >
                             <p
-                              className="flex justify-end p-2 pr-8 text-end text-xs font-bold uppercase"
+                              className="flex h-12 items-end justify-end p-2 pr-8 text-end text-xs font-bold uppercase"
                               style={{
                                 color: COLORS[node.data.id]?.textColor,
-                                minWidth: nodeWidth,
+                                width: nodeWidth,
                               }}
                             >
                               {node.data.id}
