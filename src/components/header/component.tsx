@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import MetaTags from 'containers/meta-tags';
@@ -15,7 +16,11 @@ import MENU from 'svgs/ui/menu.svg?sprite';
 
 import type { HeaderProps } from './types';
 
-export const Header: FC<HeaderProps> = ({ className, ...restProps }: HeaderProps) => (
+export const Header: FC<HeaderProps> = ({
+  className,
+  isAnimated = false,
+  ...restProps
+}: HeaderProps) => (
   <header
     className={cn({
       'fixed top-0 left-0 z-40 w-full': true,
@@ -25,8 +30,9 @@ export const Header: FC<HeaderProps> = ({ className, ...restProps }: HeaderProps
   >
     <MetaTags title="Rwanda Carbon Tracker" description="" type="website" />
     <div className="z-40 flex items-center justify-between py-4 px-6">
-      <Link href="/">
-        <Logo size="sm" />
+      <Link href="/" className="flex items-center space-x-4">
+        <Image alt="CUNDP logo" src="/images/UNDP_logo.svg" width={37} height={75} />
+        <Logo size="sm" isAnimated={isAnimated} />
       </Link>
       <Tooltip
         placement="bottom-end"

@@ -94,31 +94,33 @@ const Chart = ({
           </motion.g>
 
           {data.map((a, i) => (
-            <motion.g
-              key={a.label}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 1 }}
-              transition={{
-                delay: 0.1,
-              }}
-            >
-              <Line
-                key={`radar-line-${a.shortLabel}`}
-                from={{ x: 0, y: 0 }}
-                to={{ x: points[i].africaX, y: points[i].africaY }}
-                stroke="#5BCEFB"
-                strokeWidth={8}
-                strokeLinecap="round"
-              />
-              <Line
-                key={`radar-line-${a.shortLabel}`}
-                from={{ x: 0, y: 0 }}
-                to={{ x: points[i].rwandaX, y: points[i].rwandaY }}
-                stroke="white"
-                strokeWidth={8}
-                strokeLinecap="round"
-              />
+            <g key={a.label}>
+              <motion.g
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{
+                  delay: 0.1,
+                  duration: 1,
+                }}
+              >
+                <Line
+                  key={`radar-line-${a.shortLabel}`}
+                  from={{ x: 0, y: 0 }}
+                  to={{ x: points[i].africaX, y: points[i].africaY }}
+                  stroke="#5BCEFB"
+                  strokeWidth={8}
+                  strokeLinecap="round"
+                />
+                <Line
+                  key={`radar-line-${a.shortLabel}`}
+                  from={{ x: 0, y: 0 }}
+                  to={{ x: points[i].rwandaX, y: points[i].rwandaY }}
+                  stroke="white"
+                  strokeWidth={8}
+                  strokeLinecap="round"
+                />
+              </motion.g>
               <HtmlLabel
                 x={points[i].labelX - 10}
                 y={points[i].labelY - 15}
@@ -130,7 +132,7 @@ const Chart = ({
                   {a.shortLabel}
                 </p>
               </HtmlLabel>
-            </motion.g>
+            </g>
           ))}
           <Circle key={`radar-point-circle`} cx={0} cy={0} r={radius / 20} fill="white" />
         </AnimatePresence>

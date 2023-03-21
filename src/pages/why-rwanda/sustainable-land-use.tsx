@@ -3,10 +3,10 @@ import { FC, useCallback, useState } from 'react';
 import dynamic from 'next/dynamic';
 
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import MetaTags from 'containers/meta-tags';
 import Wrapper from 'containers/wrapper';
-import TitleLayout from 'containers/wrapper/title';
 
 import { sustainableLandUseData as data } from 'components/chart/data';
 import Header from 'components/header';
@@ -25,6 +25,7 @@ const SustainableLandUseContentPage: FC = () => {
   const handleClick = useCallback((e) => {
     setYear(e);
   }, []);
+  const delay = 1.3;
   return (
     <div>
       <div>
@@ -33,19 +34,33 @@ const SustainableLandUseContentPage: FC = () => {
           description=""
           type="website"
         />
-        <Header />
+        <Header isAnimated={true} />
       </div>
       <ContentLayout half>
         <Wrapper>
-          <TitleLayout small className="max-w-lg pr-5 text-cobalt-0">
-            Sustainable land use
-          </TitleLayout>
-          <article className="max-w-md text-xl text-cobalt-0">
-            Numerous wetland and forest conservation areas illustrate Rwanda’s environmental
-            integrity. With sustainable agroforestry drives and forestry training schemes underway,
-            the future home of Africa’s first green city is set to preserve and regreen its
-            magnificent landscapes.
-          </article>
+          <AnimatePresence>
+            <motion.p
+              className="max-w-xs justify-center pr-5 font-serif text-5xl text-white"
+              initial={{ color: '#FFFF' }}
+              animate={{ color: '#002E65' }}
+              exit={{ color: '#FFFF' }}
+              transition={{ delay, duration: 0.01 }}
+            >
+              Sustainable land use
+            </motion.p>
+            <motion.article
+              initial={{ color: '#FFFF' }}
+              animate={{ color: '#002E65' }}
+              exit={{ color: '#FFFF' }}
+              transition={{ delay, duration: 0.01 }}
+              className="max-w-md text-xl"
+            >
+              Numerous wetland and forest conservation areas illustrate Rwanda’s environmental
+              integrity. With sustainable agroforestry drives and forestry training schemes
+              underway, the future home of Africa’s first green city is set to preserve and regreen
+              its magnificent landscapes.
+            </motion.article>
+          </AnimatePresence>
           <NavigationButtons
             previous="smart-carbon"
             current="sustainable-land-use"
