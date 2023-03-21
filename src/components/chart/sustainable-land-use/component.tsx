@@ -1,9 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { HtmlLabel } from '@visx/annotation';
 import { Group } from '@visx/group';
 import { Treemap, hierarchy, stratify, treemapSquarify } from '@visx/hierarchy';
-import shakespeare, { Shakespeare } from '@visx/mock-data/lib/mocks/shakespeare';
+import { motion, AnimatePresence } from 'framer-motion';
+
 export const background = '#00152E'; // navy
 
 type Data = {
@@ -41,6 +42,8 @@ const COLORS = {
     textColor: '#FFFFFF',
   },
 };
+
+const delays = [0, 0.9, 1.2, 0.3, 0.6, 1.5];
 const SustainableLandUseChart = ({
   data,
   width,
@@ -60,19 +63,22 @@ const SustainableLandUseChart = ({
       <div>
         <svg width={width} height={height}>
           <rect width={width} height={height} rx={14} fill={background} />
-          <Treemap<typeof dataParsed> root={root} size={[xMax, yMax]} tile={treemapSquarify} round>
-            {(treemap) => (
-              <Group>
-                {treemap
-                  .descendants()
-                  .reverse()
-                  .map((node, i) => {
+          <AnimatePresence>
+            <Treemap<typeof dataParsed>
+              root={root}
+              size={[xMax, yMax]}
+              tile={treemapSquarify}
+              round
+            >
+              {(treemap) => (
+                <Group>
+                  {treemap.descendants().map((node, i) => {
                     const nodeWidth = node.x1 - node.x0;
                     const nodeHeight = node.y1 - node.y0;
                     return (
-                      <Group key={`node-${i}`} top={node.y0} left={node.x0}>
+                      <Group key={node.data.id} top={node.y0} left={node.x0}>
                         {node.depth === 1 && (
-                          <rect
+                          <motion.rect
                             width={nodeWidth}
                             height={nodeHeight}
                             stroke={background}
@@ -80,15 +86,18 @@ const SustainableLandUseChart = ({
                             fill="transparent"
                           />
                         )}
-                        {node.depth > 2 && (
-                          <rect
+                        {node.depth === 1 && (
+                          <motion.rect
                             width={nodeWidth}
                             height={nodeHeight}
                             stroke={background}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: delays[i], duration: 0.01 }}
                             fill={COLORS[node.data.id].nodeColor || 0}
                           />
                         )}
-                        {node.depth > 2 && (
+                        {node.depth === 1 && nodeWidth !== 0 && nodeHeight !== 0 && (
                           <HtmlLabel
                             x={nodeWidth}
                             y={node.y1 - node.y0 - 30}
@@ -96,23 +105,27 @@ const SustainableLandUseChart = ({
                             horizontalAnchor="end"
                             verticalAnchor="middle"
                           >
-                            <p
+                            <motion.p
                               className="flex h-12 items-end justify-end p-2 pr-8 text-end text-xs font-bold uppercase"
                               style={{
                                 color: COLORS[node.data.id]?.textColor,
                                 width: nodeWidth,
                               }}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ delay: delays[i], duration: 0.01 }}
                             >
                               {node.data.id}
-                            </p>
+                            </motion.p>
                           </HtmlLabel>
                         )}
                       </Group>
                     );
                   })}
-              </Group>
-            )}
-          </Treemap>
+                </Group>
+              )}
+            </Treemap>
+          </AnimatePresence>
         </svg>
       </div>
     </div>

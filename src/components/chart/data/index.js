@@ -191,8 +191,8 @@ export const positiveImpacts = [
   },
   {
     carbonPrice: 80,
-    greenJobCreation: 546.7465386 / 1000,
-    revenueGeneration: 170950.0133,
+    greenJobCreation: 170950.0133 / 1000,
+    revenueGeneration: 546.7465386,
     carbonReduction: 6.834331732,
   },
   {
@@ -211,9 +211,7 @@ export const positiveImpacts = [
 
 export const sustainableLandUseData = {
   2019: [
-    { id: 'Chart', parent: null, size: 0 },
-    { id: 'Comedies', parent: 'Chart', size: null, color: 'red' },
-    { id: 'Land cover', parent: 'Comedies', size: 0, color: 'red' },
+    { id: 'Land cover', parent: null, size: 0 },
     { id: 'Agriculture', parent: 'Land cover', size: 10949, color: '#FAD201' },
     { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 2888, color: '#00152E' },
     { id: 'Forests', parent: 'Land cover', size: 7647, color: '#47DCAF' },
@@ -226,9 +224,7 @@ export const sustainableLandUseData = {
     { id: 'Bare high Slopes', parent: 'Land cover', size: 1554, color: '#5BCEFB' },
   ],
   2050: [
-    { id: 'Chart', parent: null, size: 0 },
-    { id: 'Comedies', parent: 'Chart', size: null, color: 'red' },
-    { id: 'Land cover', parent: 'Comedies', size: 0, color: 'red' },
+    { id: 'Land cover', parent: null, size: 0 },
     { id: 'Agriculture', parent: 'Land cover', size: 12433, color: '#FAD201' },
     { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 3980, color: '#00152E' },
     { id: 'Forests', parent: 'Land cover', size: 7725, color: '#47DCAF' },
