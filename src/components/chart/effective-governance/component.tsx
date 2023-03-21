@@ -48,8 +48,8 @@ const Chart = ({
 
   const genPoints = (length: number, radius: number) => {
     const step = (Math.PI * 2) / length;
-    const offsetAngleRwanda = Math.PI / 180 + 100;
-    const offsetAngleAfrica = Math.PI / 180 - 120;
+    const offsetAngleRwanda = Math.PI / 180 + 15;
+    const offsetAngleAfrica = Math.PI / 180 - 10;
     return [...new Array(length)].map((_, i) => ({
       rwandaX: ((radius * data[i].rwanda) / yMax) * Math.sin(i * step + offsetAngleRwanda),
       rwandaY: ((radius * data[i].rwanda) / yMax) * Math.cos(i * step + offsetAngleRwanda),
@@ -122,8 +122,8 @@ const Chart = ({
                 />
               </motion.g>
               <HtmlLabel
-                x={points[i].labelX - 10}
-                y={points[i].labelY - 15}
+                x={points[i].labelX}
+                y={points[i].labelY}
                 showAnchorLine={false}
                 horizontalAnchor="middle"
                 verticalAnchor="middle"
