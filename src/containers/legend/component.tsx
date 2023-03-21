@@ -10,10 +10,6 @@ const LegendItems = [
     label: 'Political stability',
   },
   {
-    abbreviation: 'VA',
-    label: 'Voice and accountability',
-  },
-  {
     abbreviation: 'CC',
     label: 'Control of corruption',
   },

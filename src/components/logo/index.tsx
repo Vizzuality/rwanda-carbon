@@ -10,7 +10,7 @@ import type { LogoProps } from './types';
 export const Logo: FC<LogoProps> = ({ size = 'sm', isAnimated = false }: LogoProps) => (
   <AnimatePresence>
     <motion.h1
-      className={cx('flex flex-col text-center font-serif text-xl tracking-wide text-white', {
+      className={cx('flex flex-col text-center font-serif text-xl -tracking-wide text-white', {
         [SIZE[size]]: !!size,
       })}
       initial={{ color: '#FFFF' }}

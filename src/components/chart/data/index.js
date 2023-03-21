@@ -103,12 +103,6 @@ export const effectiveGovernanceChartData = [
     rwanda: 57.7649469607429,
   },
   {
-    shortLabel: 'VA',
-    label: 'Voice and accountability',
-    africa: 38.8746331944417,
-    rwanda: 29.114049106331,
-  },
-  {
     shortLabel: 'PS',
     label: 'Political stability',
     africa: 43.3513483714081,
