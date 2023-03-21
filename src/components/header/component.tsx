@@ -19,6 +19,7 @@ import type { HeaderProps } from './types';
 export const Header: FC<HeaderProps> = ({
   className,
   isAnimated = false,
+  carbonTrackerLogo = true,
   ...restProps
 }: HeaderProps) => (
   <header
@@ -29,10 +30,10 @@ export const Header: FC<HeaderProps> = ({
     {...restProps}
   >
     <MetaTags title="Rwanda Carbon Tracker" description="" type="website" />
-    <div className="z-40 flex items-center justify-between py-4 px-6">
+    <div className="z-40 flex items-center justify-between px-6">
       <Link href="/" className="flex items-center space-x-4">
-        <Image alt="CUNDP logo" src="/images/UNDP_logo.svg" width={37} height={75} />
-        <Logo size="sm" isAnimated={isAnimated} />
+        <Image alt="UNDP logo" src="/images/UNDP_logo.svg" width={37} height={75} />
+        {carbonTrackerLogo && <Logo size="sm" isAnimated={isAnimated} />}
       </Link>
       <Tooltip
         placement="bottom-end"
