@@ -4,6 +4,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import Footer from 'containers/footer';
+import MetaTags from 'containers/meta-tags';
+
+import Header from 'components/header';
 
 const Home: FC = () => (
   <div className="m-auto h-screen bg-[url('/images/landing.png')] bg-center bg-no-repeat">
@@ -12,6 +15,10 @@ const Home: FC = () => (
       <title>Rwanda carbon tracker</title>
     </Head>
     <div className="m-auto flex h-full w-full flex-col items-center justify-center space-y-4 text-center leading-8">
+      <div>
+        <MetaTags title="Rwanda Carbon Tracker - Why Rwanda" description="" type="website" />
+        <Header carbonTrackerLogo={false} />
+      </div>
       <h1 className="font-serif text-9xl tracking-tighter text-white">
         Invest in Rwanda
         <span className="block text-yellow-0"> carbon credits</span>
