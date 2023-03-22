@@ -14,10 +14,11 @@ export const IMPACTS = [
     lineColor: '#FAD201',
     type: 'revenueGeneration',
     preUnit: '$',
+    postUnit: 'M',
   },
   {
     title: 'Carbon reduction',
-    subtitle: '(MtCO²e)',
+    subtitle: '(MtCO₂e)',
     lineColor: '#5BCEFB',
     type: 'carbonReduction',
   },
