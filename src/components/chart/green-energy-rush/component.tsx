@@ -142,7 +142,7 @@ const Chart = ({
             style={{ width: innerWidth }}
             className="flex items-center justify-end text-xs text-white"
           >
-            Higher target <span className="text-base font-bold">{usual}</span>
+            Higher target <span className="ml-2 text-base font-bold">{usual}</span>
           </p>
         </HtmlLabel>
         <HtmlLabel

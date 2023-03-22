@@ -35,7 +35,9 @@ const SmartCarbonContentPage: FC = () => {
             current="smart-carbon"
             next="sustainable-land-use"
           />
-          <p className="text-sm font-bold">Viewing emissions in MtCO2e</p>
+          <p className="text-sm font-bold">
+            Viewing emissions in MtCO<sub>2</sub>e
+          </p>
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">
           <ParentSize>
