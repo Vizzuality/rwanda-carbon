@@ -1,6 +1,9 @@
 import { FC } from 'react';
 
-import { STYLES_WRAPPER } from './constants';
+import Table from 'components/table';
+
+import { STYLES_WRAPPER } from './constants/styles';
+import { effectiveGovernanceDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
@@ -16,6 +19,7 @@ const EffectiveGovernanceModalContent: FC = () => (
       interpretation and comparison. We also calculated a mean value for each indicator across all
       other African countries as a reference for Rwanda’s indicator values..
     </p>
+    <Table data={effectiveGovernanceDataTable} />
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>

@@ -57,6 +57,10 @@ const wavesVariants: Variants = {
     transition: {
       duration: 0.5,
       delay: initialDelay,
+      type: 'spring',
+      damping: 34,
+      stiffness: 432,
+      mass: 1,
     },
   }),
   rippleLeft: ({ initialX }: CustomVariantsProps) => ({
@@ -67,7 +71,7 @@ const wavesVariants: Variants = {
     transition: {
       ease: 'easeInOut',
       duration,
-      delay: 0.5,
+      delay: 0.2,
       repeat: Infinity,
       repeatType: 'reverse',
     },
@@ -149,19 +153,35 @@ const RenewableWaterSourcesContentPage: FC = () => (
                 -
               </div>
             ))}
-            <div className="flex justify-end space-x-1 text-cobalt-0">
+            <motion.div
+              initial={{ opacity: 0, color: 'white' }}
+              animate={{ opacity: 1, color: '#002E65' }}
+              transition={{ delay: 0.5 }}
+              className="flex justify-end space-x-1"
+            >
               <span>Target 2035</span>
               <span className="font-bold">1000</span>
-            </div>
+            </motion.div>
             {[...Array(10).keys()].map((d) => (
-              <div key={d} className="flex justify-end text-cobalt-0">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                key={d}
+                className="flex justify-end text-cobalt-0"
+              >
                 -
-              </div>
+              </motion.div>
             ))}
-            <div className="flex justify-end space-x-1">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="flex justify-end space-x-1"
+            >
               <span>Baseline</span>
               <span className="font-bold">670</span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

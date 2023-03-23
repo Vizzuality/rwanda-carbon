@@ -1,11 +1,13 @@
 import { FC } from 'react';
 
-import { STYLES_WRAPPER } from './constants';
+import Table from 'components/table';
+
+import { STYLES_WRAPPER } from './constants/styles';
+import { CarbonReductionDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
-
 const SmartCarbonModalContent: FC = () => (
   <div className={STYLES_WRAPPER}>
     <Heading />
@@ -16,6 +18,7 @@ const SmartCarbonModalContent: FC = () => (
       reduction target is shown by comparing emissions from a business as usual scenario to those
       from a scenario in which Rwanda has implemented interventions to reduce emissions.
     </p>
+    <Table data={CarbonReductionDataTable} />
     <Section>
       <SmallHeading>Methodology and discussion</SmallHeading>
       <p className="text-left">

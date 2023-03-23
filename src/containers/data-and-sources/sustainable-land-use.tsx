@@ -1,6 +1,9 @@
 import { FC } from 'react';
 
-import { STYLES_WRAPPER } from './constants';
+import Table from 'components/table';
+
+import { STYLES_WRAPPER } from './constants/styles';
+import { LandCoverDataTable, LandUseDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
@@ -23,8 +26,38 @@ const SustainableLandUseModalContent: FC = () => (
       </p>
       <p>Data on land Rwanda’s land use in 2019 is shown in Table 1:</p>
       <p>Table 1. Land areas by land-use and land-cover category for 2019</p>
+      <Table data={LandUseDataTable} />
     </Section>
-    <Section>**** Table coming soon</Section>
+    <Section>
+      <p>
+        The NLUDMP analyzes, for 13 prime land uses, the current cover, long-term needs and plans
+        allocation targets for 2035 and 2050. These form the targets listed for indicator 31 of
+        Rwanda’s Vision 2050 under the pillar of Urbanization and Agglomeration.
+      </p>
+      <p>
+        The NLUDMP suggests expanding agricultural land area so that the country can grow more food
+        to support its growing population. It will also expects urban areas to expand as the country
+        grows. With relevance to land based mitigation, Rwanda plans to entirely preserve 1,389 km²
+        of natural forests and all existing 3,873 km² of forest plantations. 1,554 km² of bare high
+        slopes will be also forested. In parallel, the NLUDMP will preserve 497 km² of Wooded
+        savannah and 7km² of shrublands. 1476 km² of the last two kinds of wood will be allocated
+        for Agriculture. All the water bodies and their buffer zones and protected wetlands and
+        their buffer zones will be fully protected. Unprotected wetlands will be conditionally open
+        for agriculture, which may add 1,100 km² to the agricultural stock.
+      </p>
+      <p>
+        To be consistent with the reporting of land areas for the target in 2050, we aggregated
+        areas for 2019 in the same way. So forested areas includes buffer zones of water bodies and
+        wetlands. We also include Bare high slopes as a separate category, since the aim is for this
+        area to be forested by 2050. The re-aggregated data for 2019 and planned allocations for
+        2050 are shown in Table 2.
+      </p>
+      <p>
+        Table 2. Consistent representation of land use/land cover in 2019 and planned allocations
+        for 2050. Areas are in units of km².
+      </p>
+      <Table data={LandCoverDataTable} />
+    </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>
       <ul>
