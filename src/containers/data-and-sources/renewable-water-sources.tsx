@@ -1,6 +1,9 @@
 import { FC } from 'react';
 
-import { STYLES_WRAPPER } from './constants';
+import Table from 'components/table';
+
+import { STYLES_WRAPPER } from './constants/styles';
+import { renewableWaterDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
@@ -14,6 +17,7 @@ const RenewableWaterSourcesModalContent: FC = () => (
       Indicates the availability per person in Rwanda of rechargeable water from groundwater
       aquifers and surface water like rivers and lakes that are not over-exploited.
     </p>
+    <Table data={renewableWaterDataTable} />
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>

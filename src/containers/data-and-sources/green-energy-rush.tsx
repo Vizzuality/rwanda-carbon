@@ -1,6 +1,9 @@
 import { FC } from 'react';
 
-import { STYLES_WRAPPER } from './constants';
+import Table from 'components/table';
+
+import { STYLES_WRAPPER } from './constants/styles';
+import { greenEnergyDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
@@ -11,6 +14,7 @@ const GreenEnergyRushModalContent: FC = () => (
     <Heading />
     <Title>Green energy rush</Title>
     <p>The proportion of power generation that comes from renewable sources.</p>
+    <Table data={greenEnergyDataTable} />
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
