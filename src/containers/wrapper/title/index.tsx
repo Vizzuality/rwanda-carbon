@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react';
 
-import cx from 'classnames';
-
 import cn from 'lib/analytics/classnames';
 
 type TitleLayoutTypes = {

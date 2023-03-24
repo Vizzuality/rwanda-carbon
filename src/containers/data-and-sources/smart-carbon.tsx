@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
+
 import Table from 'components/table';
 
 import { STYLES_WRAPPER } from './constants/styles';
@@ -66,7 +68,7 @@ const SmartCarbonModalContent: FC = () => (
     </Section>
 
     <div>
-      <h3 className="font-montserrat font-bold uppercase tracking-tight">SOURCES</h3>
+      <SmallHeading>SOURCES</SmallHeading>
       <ul>
         <li>Republic of Rwanda (2020). Vision 2050.</li>
         <li>
@@ -77,11 +79,19 @@ const SmartCarbonModalContent: FC = () => (
     </div>
     <div>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      TABULAR DATA
+      Tabular data
     </div>
     <div>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      **** GRAPHIC
+      <Section>
+        <Image
+          alt="Calculation of carbon reduction, economic revenue and job creation potentials"
+          src="/images/modal/national-emissions.png"
+          width={550}
+          height={750}
+          className="m-auto"
+        />
+      </Section>
       <ul className="list-disc">
         <li>I B - International Bunkers</li>
         <li>5.B - Other (please specify)</li>

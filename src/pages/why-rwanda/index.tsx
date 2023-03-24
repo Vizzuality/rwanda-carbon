@@ -11,7 +11,6 @@ import TitleLayout from 'containers/wrapper/title';
 
 import Header from 'components/header';
 import ContentLayout from 'layouts/content';
-import cn from 'lib/analytics/classnames';
 import RwandaReasons from 'utils/constants';
 
 const WhyRwandaPage: FC = () => {

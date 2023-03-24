@@ -9,7 +9,7 @@ import { AreaStack, LinePath } from '@visx/shape';
 import { Text } from '@visx/text';
 import { extent } from 'd3-array';
 import { format } from 'd3-format';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const getXValue = (x, width) => {
   if (x > 0 && x < width) return x;
@@ -36,6 +36,30 @@ interface ChartDataTypes {
   height: number;
   margin?: MarginType;
 }
+
+const initialIntervention = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+  transition: {
+    delay: 0.1,
+  },
+};
+const initialBusiness = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+  transition: {
+    duration: 5,
+    delay: 10,
+  },
+};
 
 const Chart = ({
   data,
@@ -71,107 +95,151 @@ const Chart = ({
     domain: keys,
     range: ['#00152E', '#47DCAF'],
   });
+  const D =
+    LinePath({
+      data,
+      x: (d) => xScale(d.year),
+      y: (d) => yScale(d.business_as_usual),
+    }) || '';
 
   return (
     <svg width={width} height={height}>
-      <PatternLines
-        id="lines"
-        height={15}
-        width={15}
-        stroke="#47DCAF"
-        background="#002E65"
-        strokeWidth={3}
-        orientation={['diagonalRightToLeft']}
-      />
-      <Group top={margin.top}>
-        <AreaStack
-          data={data}
-          keys={keys}
-          x={(d) => xScale(x(d.data))}
-          y0={(d) => yScale(y0(d))}
-          y1={(d) => yScale(y1(d))}
-        >
-          {({ stacks, path }) =>
-            stacks.map((stack) => (
-              <motion.path
-                initial={false}
-                animate={{ d: path(stack) }}
-                key={`stack-${stack.key}`}
-                fill={stack.key === 'intervention' ? "url('#lines')" : colorScale(stack.key)}
-              />
-            ))
-          }
-        </AreaStack>
-        <LinePath
-          data={data}
-          x={(d) => xScale(d.year)}
-          y={(d) => yScale(d.business_as_usual)}
-          stroke="white"
+      <AnimatePresence>
+        <PatternLines
+          id="lines"
+          height={15}
+          width={15}
+          stroke="#47DCAF"
+          background="#002E65"
           strokeWidth={3}
+          orientation={['diagonalRightToLeft']}
         />
-        <HtmlLabel
-          x={width - 20}
-          y={yScale(businessWithIntervention)}
-          horizontalAnchor="end"
-          verticalAnchor="end"
-          showAnchorLine={false}
-        >
-          <p
-            style={{ width: innerWidth }}
-            className="flex items-center justify-end text-xs text-white"
+        <Group top={margin.top}>
+          <AreaStack
+            data={data}
+            keys={keys}
+            x={(d) => xScale(x(d.data))}
+            y0={(d) => yScale(y0(d))}
+            y1={(d) => yScale(y1(d))}
+            orientation="leftToRight"
           >
-            Usual business{' '}
-            <span className="ml-2 text-base font-bold">{businessWithIntervention}</span>
-          </p>
-        </HtmlLabel>
-        <HtmlLabel
-          x={width - 20}
-          y={yScale(target) + 40}
-          horizontalAnchor="end"
-          verticalAnchor="start"
-          showAnchorLine={false}
-        >
-          <p className="flex items-center text-xs text-white">
-            Target <span className="ml-2 text-base font-bold">{target}</span>
-          </p>
-        </HtmlLabel>
-        <AxisBottom
-          hideAxisLine
-          hideTicks
-          hideZero
-          scale={xScale}
-          top={innerHeight - 40}
-          tickFormat={format('d')}
-          numTicks={5}
-          tickComponent={(p) => {
-            const x = getXValue(p.x, width);
-            return (
-              <Text {...p} x={x} fill="white" fontSize={12}>
-                {p.formattedValue}
-              </Text>
-            );
-          }}
-        />
-        {/* stacked bar */}
-        <AxisLeft
-          tickComponent={(p) => {
-            return (
-              Number(p.formattedValue) < businessWithIntervention && (
-                <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
-                  {p.formattedValue}
-                </Text>
-              )
-            );
-          }}
-          orientation="right"
-          hideZero
-          scale={yScale}
-          left={60}
-          hideAxisLine
-          hideTicks
-          numTicks={5}
-        />
-      </Group>
+            {({ stacks, path }) =>
+              stacks.reverse().map((stack) => {
+                return (
+                  <motion.path
+                    d={path(stack)}
+                    initial={{
+                      pathLength: 0,
+                      opacity: 0,
+                      x: stack.key === 'intervention' ? -(width * 2) : 0,
+                      y: stack.key === 'intervention' ? height * 2 : 0,
+                    }}
+                    animate={{
+                      pathLength: 1,
+                      opacity: 1,
+                      x: 0,
+                      y: 0,
+                    }}
+                    transition={{ delay: 0.35, duration: stack.key === 'intervention' ? 3.15 : 0 }}
+                    key={`stack-${stack.key}`}
+                    fill={stack.key === 'intervention' ? "url('#lines')" : colorScale(stack.key)}
+                    orientation="rightToLeft"
+                  />
+                );
+              })
+            }
+          </AreaStack>
+          <LinePath
+            data={data}
+            x={(d) => xScale(d.year)}
+            y={(d) => yScale(d.business_as_usual)}
+            stroke="white"
+            strokeWidth={3}
+            orientation={'leftToRight'}
+          >
+            {(d) => (
+              <motion.path
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.7, duration: 3 }}
+                d={d.path(data)}
+                fill="transparent"
+                stroke-linecap="round"
+                stroke="white"
+                stroke-width="3"
+                orientation="leftToRight"
+              />
+            )}
+          </LinePath>
+          <HtmlLabel
+            x={width - 20}
+            y={yScale(businessWithIntervention)}
+            horizontalAnchor="end"
+            verticalAnchor="end"
+            showAnchorLine={false}
+          >
+            <p
+              style={{ width: innerWidth }}
+              className="flex items-center justify-end text-xs text-white"
+            >
+              Usual business{' '}
+              <span className="ml-2 text-base font-bold">{businessWithIntervention}</span>
+            </p>
+          </HtmlLabel>
+          <HtmlLabel
+            x={width - 20}
+            y={yScale(target) + 40}
+            horizontalAnchor="end"
+            verticalAnchor="start"
+            showAnchorLine={false}
+          >
+            <p className="flex items-center text-xs text-white">
+              Target <span className="ml-2 text-base font-bold">{target}</span>
+            </p>
+          </HtmlLabel>
+          <motion.g
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 0.5 }}
+          >
+            <AxisBottom
+              hideAxisLine
+              hideTicks
+              hideZero
+              scale={xScale}
+              top={innerHeight - 40}
+              tickFormat={format('d')}
+              numTicks={6}
+              tickComponent={(p) => {
+                const x = getXValue(p.x, width);
+                return (
+                  <Text {...p} x={x - 20} fill="white" fontSize={12}>
+                    {p.formattedValue}
+                  </Text>
+                );
+              }}
+            />
+            <AxisLeft
+              tickComponent={(p) => {
+                return (
+                  Number(p.formattedValue) < businessWithIntervention && (
+                    <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
+                      {p.formattedValue}
+                    </Text>
+                  )
+                );
+              }}
+              orientation="right"
+              hideZero
+              scale={yScale}
+              left={40}
+              hideAxisLine
+              hideTicks
+              numTicks={5}
+            />
+          </motion.g>
+        </Group>
+      </AnimatePresence>
     </svg>
   );
 };

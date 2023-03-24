@@ -49,7 +49,7 @@ const wavesProps = [
 ];
 
 const wavesVariants: Variants = {
-  hidden: ({ y }: CustomVariantsProps) => ({
+  hidden: () => ({
     y: '100%',
   }),
   visible: ({ y, initialDelay }: CustomVariantsProps) => ({
@@ -144,18 +144,29 @@ const RenewableWaterSourcesContentPage: FC = () => (
           </div>
 
           <div className="absolute right-5 top-1/2 z-40 -translate-y-1/2 transform text-xs">
-            <div className="m-0 flex justify-end space-x-1 p-0 text-white">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="m-0 flex justify-end space-x-1 p-0 text-white"
+            >
               <span>Target 2050</span>
               <span className="font-bold">1700</span>
-            </div>
+            </motion.div>
             {[...Array(10).keys()].map((d) => (
-              <div key={d} className="flex justify-end p-0 text-white">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                key={d}
+                className="flex justify-end p-0 text-white"
+              >
                 -
-              </div>
+              </motion.div>
             ))}
             <motion.div
-              initial={{ opacity: 0, color: 'white' }}
-              animate={{ opacity: 1, color: '#002E65' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
               className="flex justify-end space-x-1"
             >
@@ -166,7 +177,6 @@ const RenewableWaterSourcesContentPage: FC = () => (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
                 key={d}
                 className="flex justify-end text-cobalt-0"
               >
@@ -176,7 +186,6 @@ const RenewableWaterSourcesContentPage: FC = () => (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
               className="flex justify-end space-x-1"
             >
               <span>Baseline</span>

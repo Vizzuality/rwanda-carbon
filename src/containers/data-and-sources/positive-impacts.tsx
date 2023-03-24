@@ -141,7 +141,6 @@ const PositiveImpactsModalContent: FC = () => (
     <Section>
       <SmallHeading>Other info</SmallHeading>
       <p className="max-w-2xl p-4">
-        ** NEW GRAPHIC COMING SOON
         <Image
           alt="Calculation of carbon reduction, economic revenue and job creation potentials"
           src="/images/modal/carbon-calculation.png"
