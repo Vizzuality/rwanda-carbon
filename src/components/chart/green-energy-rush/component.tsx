@@ -12,6 +12,8 @@ import { extent } from 'd3-array';
 import { format } from 'd3-format';
 import { motion } from 'framer-motion';
 
+import cn from 'lib/analytics/classnames';
+
 const getXValue = (x, width) => {
   if (x > 0 && x < width) return x;
   if (x === 0) return 20;
@@ -72,7 +74,6 @@ const Chart = ({
     domain: keys,
     range: ['#00152E', '#47DCAF'],
   });
-
   return (
     <svg width={width} height={height}>
       <LinearGradient
@@ -107,12 +108,28 @@ const Chart = ({
           y1={(d) => yScale(y1(d))}
         >
           {({ stacks, path }) =>
-            stacks.map((stack) => (
+            stacks.reverse().map((stack) => (
               <motion.path
-                initial={false}
-                animate={{ d: path(stack) }}
+                offset="expand"
+                initial={{
+                  opacity: 0,
+                  d: path([]),
+                  pathLength: stack.key === 'future' ? 0 : 1,
+                  x: stack.key === 'future' ? width * 2 : 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  d: path(stack),
+                  pathLength: 1,
+                  x: 0,
+                }}
+                transition={{
+                  delay: 0.3,
+                  duration: stack.key === 'future' ? 1.2 : 0.3,
+                }}
                 key={`stack-${stack.key}`}
                 fill={stack.key === 'future' ? "url('#both')" : colorScale(stack.key)}
+                orientation={stack.key === 'future' ? 'RightToLeft' : 'vertical'}
               />
             ))
           }
@@ -123,14 +140,34 @@ const Chart = ({
           y={(d) => yScale(d.present) ?? 0}
           stroke="white"
           strokeWidth={3}
-        />
-        <LinePath
-          data={data}
-          x={(d) => xScale(d.year) ?? 0}
-          y={yScale(baseline)}
-          stroke="#47DCAF"
-          strokeDasharray="7 7"
-        />
+        >
+          {(d) => (
+            <motion.path
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+              d={d.path(data)}
+              fill="transparent"
+              stroke-linecap="round"
+              stroke="white"
+              stroke-width="3"
+              orientation="leftToRight"
+            />
+          )}
+        </LinePath>
+        <LinePath data={data} x={(d) => xScale(d.year) ?? 0} y={yScale(baseline)}>
+          {(d) => (
+            <motion.path
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              d={d.path(data)}
+              stroke="#47DCAF"
+              strokeDasharray="7 7"
+              orientation="leftToRight"
+            />
+          )}
+        </LinePath>
         <HtmlLabel
           x={width - 24}
           y={yScale(usual) - 10}
@@ -173,42 +210,48 @@ const Chart = ({
             Baseline <span className="ml-2 text-base font-bold">{baseline}</span>
           </p>
         </HtmlLabel>
-        <AxisBottom
-          hideAxisLine
-          hideTicks
-          hideZero
-          scale={xScale}
-          top={innerHeight - 40}
-          tickFormat={format('d')}
-          tickComponent={(p) => {
-            const x = getXValue(p.x, width);
-            return (
-              [2020, 2030, 2040, 2050].includes(Number(p.formattedValue)) && (
-                <Text {...p} x={x} fill="white" fontSize={12}>
-                  {p.formattedValue}
-                </Text>
-              )
-            );
-          }}
-        />
-        {/* stacked bar */}
-        <AxisLeft
-          tickComponent={(p) => {
-            return (
-              [60, 70, 80, 90].includes(Number(p.formattedValue)) && (
-                <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
-                  {p.formattedValue}
-                </Text>
-              )
-            );
-          }}
-          orientation="right"
-          hideZero
-          scale={yScale}
-          left={60}
-          hideAxisLine
-          hideTicks
-        />
+        <motion.g
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 0.5 }}
+        >
+          <AxisBottom
+            hideAxisLine
+            hideTicks
+            hideZero
+            scale={xScale}
+            top={innerHeight - 40}
+            tickFormat={format('d')}
+            tickComponent={(p) => {
+              const x = getXValue(p.x, width);
+              return (
+                [2020, 2030, 2040, 2050].includes(Number(p.formattedValue)) && (
+                  <Text {...p} x={x} fill="white" fontSize={12}>
+                    {p.formattedValue}
+                  </Text>
+                )
+              );
+            }}
+          />
+
+          <AxisLeft
+            tickComponent={(p) => {
+              return (
+                [60, 70, 80, 90].includes(Number(p.formattedValue)) && (
+                  <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
+                    {p.formattedValue}
+                  </Text>
+                )
+              );
+            }}
+            orientation="right"
+            hideZero
+            scale={yScale}
+            left={40}
+            hideAxisLine
+            hideTicks
+          />
+        </motion.g>
       </Group>
     </svg>
   );
