@@ -12,8 +12,6 @@ import { extent } from 'd3-array';
 import { format } from 'd3-format';
 import { motion } from 'framer-motion';
 
-import cn from 'lib/analytics/classnames';
-
 const getXValue = (x, width) => {
   if (x > 0 && x < width) return x;
   if (x === 0) return 20;

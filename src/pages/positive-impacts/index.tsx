@@ -3,7 +3,7 @@ import { FC, useState, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 import PositiveImpactsModalContent from 'containers/data-and-sources/positive-impacts';
 import Footer from 'containers/footer/component';

@@ -49,7 +49,7 @@ const wavesProps = [
 ];
 
 const wavesVariants: Variants = {
-  hidden: ({ y }: CustomVariantsProps) => ({
+  hidden: () => ({
     y: '100%',
   }),
   visible: ({ y, initialDelay }: CustomVariantsProps) => ({

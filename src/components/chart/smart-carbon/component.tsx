@@ -124,13 +124,23 @@ const Chart = ({
             orientation="leftToRight"
           >
             {({ stacks, path }) =>
-              stacks.map((stack, index) => {
+              stacks.reverse().map((stack) => {
                 return (
                   <motion.path
                     d={path(stack)}
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ delay: 0.7 * index, duration: 3 * index }}
+                    initial={{
+                      pathLength: 0,
+                      opacity: 0,
+                      x: stack.key === 'intervention' ? -(width * 2) : 0,
+                      y: stack.key === 'intervention' ? height * 2 : 0,
+                    }}
+                    animate={{
+                      pathLength: 1,
+                      opacity: 1,
+                      x: 0,
+                      y: 0,
+                    }}
+                    transition={{ delay: 0.35, duration: stack.key === 'intervention' ? 3.15 : 0 }}
                     key={`stack-${stack.key}`}
                     fill={stack.key === 'intervention' ? "url('#lines')" : colorScale(stack.key)}
                     orientation="rightToLeft"
@@ -187,42 +197,47 @@ const Chart = ({
               Target <span className="ml-2 text-base font-bold">{target}</span>
             </p>
           </HtmlLabel>
-          <AxisBottom
-            hideAxisLine
-            hideTicks
-            hideZero
-            scale={xScale}
-            top={innerHeight - 40}
-            tickFormat={format('d')}
-            numTicks={5}
-            tickComponent={(p) => {
-              const x = getXValue(p.x, width);
-              return (
-                <Text {...p} x={x} fill="white" fontSize={12}>
-                  {p.formattedValue}
-                </Text>
-              );
-            }}
-          />
-          {/* stacked bar */}
-          <AxisLeft
-            tickComponent={(p) => {
-              return (
-                Number(p.formattedValue) < businessWithIntervention && (
-                  <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
+          <motion.g
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 0.5 }}
+          >
+            <AxisBottom
+              hideAxisLine
+              hideTicks
+              hideZero
+              scale={xScale}
+              top={innerHeight - 40}
+              tickFormat={format('d')}
+              numTicks={6}
+              tickComponent={(p) => {
+                const x = getXValue(p.x, width);
+                return (
+                  <Text {...p} x={x - 20} fill="white" fontSize={12}>
                     {p.formattedValue}
                   </Text>
-                )
-              );
-            }}
-            orientation="right"
-            hideZero
-            scale={yScale}
-            left={60}
-            hideAxisLine
-            hideTicks
-            numTicks={5}
-          />
+                );
+              }}
+            />
+            <AxisLeft
+              tickComponent={(p) => {
+                return (
+                  Number(p.formattedValue) < businessWithIntervention && (
+                    <Text {...p} dy={-5} fill="#5BCEFB" fontSize={12}>
+                      {p.formattedValue}
+                    </Text>
+                  )
+                );
+              }}
+              orientation="right"
+              hideZero
+              scale={yScale}
+              left={40}
+              hideAxisLine
+              hideTicks
+              numTicks={5}
+            />
+          </motion.g>
         </Group>
       </AnimatePresence>
     </svg>
