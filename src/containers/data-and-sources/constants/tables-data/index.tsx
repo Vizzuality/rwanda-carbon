@@ -201,7 +201,8 @@ export const wwfILOData = {
       wwfIloCategory: 'Agroforestry including conversion of land',
     },
     {
-      measureCategory: 'Agroecology	Soil Carbon Storage croplands',
+      measureCategory: 'Agroecology',
+      roe2021Measure: 'Soil Carbon Storage croplands',
       minTotal: 500,
       maxTotal: 750,
       wwfIloCategory: 'Agroforestry including conversion of land',
@@ -244,7 +245,7 @@ export const effectiveGovernanceDataTable = {
 };
 
 export const CarbonReductionDataTable = {
-  headings: ['Historical (MtCO₂e)', 'Business as usual (MtCO₂e)', 'With intervention (MtCO₂e)'],
+  headings: ['', 'Historical (MtCO₂e)', 'Business as usual (MtCO₂e)', 'With intervention (MtCO₂e)'],
   columns: [
     { year: 2006, historical: 4.035, business: '-', withIntervention: '-' },
     { year: 2007, historical: 4.383, business: '-', withIntervention: '-' },

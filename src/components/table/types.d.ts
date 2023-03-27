@@ -5,4 +5,5 @@ type dataTypes = {
 
 export interface TableProps {
   data: dataTypes;
+  textLeft: boolean;
 }

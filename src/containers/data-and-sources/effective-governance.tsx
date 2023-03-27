@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Table from 'components/table';
 
-import { STYLES_WRAPPER } from './constants/styles';
+import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
 import { effectiveGovernanceDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
@@ -13,16 +13,22 @@ const EffectiveGovernanceModalContent: FC = () => (
   <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>EFFECTIVE GOVERNANCE</Title>
-    <p>
+    <p className="text-left text-lg">
       To indicate Rwanda’s institutional governance performance, we used the World Bank’s governance
       indicators for 2021. All indicators were rescaled to range from 0 to 100 for ease of
       interpretation and comparison. We also calculated a mean value for each indicator across all
       other African countries as a reference for Rwanda’s indicator values..
     </p>
-    <Table data={effectiveGovernanceDataTable} />
+    <div className="relative flex flex-grow flex-col overflow-hidden">
+      <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+      <div className="overflow-x-hidden overflow-y-hidden">
+        <Table textLeft data={effectiveGovernanceDataTable} />
+      </div>
+      <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+    </div>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
-      <p>
+      <p className="text-left text-lg">
         Values for indicators of governance were obtained from the World Bank governance indicator
         project (Kaufmann et al., 2010). The six aggregate indicators produced by the World Bank are
         based on over 30 underlying data sources reporting the perceptions of governance of a large
@@ -36,14 +42,15 @@ const EffectiveGovernanceModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>
-      <ul>
+      <ul className={STYLES_LIST}>
         <li>
-          Daniel Kaufmann, Aart Kraay and Massimo Mastruzzi (2010). `&quot;`The Worldwide World Bank
-          Policy Research  Working Paper No. 5430`&quot;`.
+          Daniel Kaufmann, Aart Kraay and Massimo Mastruzzi (2010). &quot;The Worldwide World Bank
+          Policy Research  Working Paper No. 5430&quot;.
           <a
             href="https://databank.worldbank.org/source/worldwide-governance-indicators"
             target="_blank"
             rel="noopener noreferrer"
+            className="block"
           >
             https://databank.worldbank.org/source/worldwide-governance-indicators
           </a>
@@ -52,6 +59,8 @@ const EffectiveGovernanceModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>DATA FORMAT</SmallHeading>
+      <p className="text-left text-lg">Tabular data</p>
+      <p className="text-left text-lg">Polar bar plot</p>
     </Section>
   </div>
 );

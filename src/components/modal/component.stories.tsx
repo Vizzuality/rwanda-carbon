@@ -63,7 +63,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="s"
+            size="default"
             open={openS}
             onOpenChange={(o) => {
               setOpenS(o);

@@ -15,7 +15,7 @@ const PositiveImpactsModalContent: FC = () => (
   <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Calculation of carbon reduction, economic revenue and job creation potentials</Title>
-    <p>
+    <p className="text-xl">
       Land-based carbon reduction potentials for Rwanda were obtained from a recent analysis by Roe
       et al. (2021) that refined and updated the mitigation potentials for 20 land-based measures in
       `&gt;`200 countries and five regions. We used estimates of the cost-effective (available up to
@@ -26,28 +26,41 @@ const PositiveImpactsModalContent: FC = () => (
       forests in Rwanda. For agricultural measures, we used data for Africa, whilst for
       agroecological measures, we used global data.
     </p>
-    <p>
+    <p className="text-xl">
       Potential revenue is calculated as the product of total carbon mitigation and the assumed
       carbon price. Job creation potential is based on WWF and ILO case study data of job creation
       for a given revenue. We linked the mitigation measures to the case study data based on the
       characteristics of the measure and to be conservative, we used the minimum job creation
       estimates.
     </p>
-    <Table data={carbonReductionPotentialData} />
+
+    <div className="relative flex flex-grow flex-col overflow-hidden">
+      <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+      <div className="overflow-x-hidden overflow-y-hidden">
+        <Table textLeft data={carbonReductionPotentialData} />
+      </div>
+      <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+    </div>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
-      <p>
+      <p className="text-xl">
         Land-based, cost-effective (available up to $100/tCO<sub>2</sub>), carbon reduction
         potentials for Rwanda were sourced from Roe et al. (2021) for the 15 measures listed in
         Table 1.
       </p>
-      <Table data={mitigationData} />
-      <p>
+      <div className="relative flex flex-grow flex-col overflow-hidden">
+        <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+        <div className="overflow-x-hidden overflow-y-hidden">
+          <Table textLeft data={mitigationData} />
+        </div>
+        <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+      </div>
+      <p className="text-xl">
         We used the mean estimate of carbon reduction potential where a range was provided, and
         where more than one study estimate was available, we used the mean value calculated by Roe
         et al (2021).
       </p>
-      <p>
+      <p className="text-xl">
         We adjusted the potential carbon reduction available for a given carbon price below
         $100/tCO2 using mitigation cost curves (Figure 1). Since cost curves vary by measure and
         geographical context, we gathered data as specific to the measures and for Rwanda as
@@ -61,24 +74,31 @@ const PositiveImpactsModalContent: FC = () => (
         potential might change with carbon price for other agroecology activities and so we followed
         the approach of Griscom et al (2017), which uses global estimate of these changes.
       </p>
-      <p>
+      <p className="text-xl">
         The carbon reduction potential for a given carbon price is calculated for each measure by
         scaling the potential at $100/tCO2eq by the fractional value for that carbon price from the
         cost curve. These price specific potentials are summed to give the total carbon reduction
         potential across measures in Rwanda for the given carbon price.
       </p>
-      <p>
+      <p className="text-xl">
         The potential revenue is then calculated simply as the product of the total carbon reduction
         potential and the price of carbon selected.
       </p>
-      <p>
+      <p className="text-xl">
         Job creation potential is based on WWF and ILO case studies of the socio-economic
         consequences of nature-based solutions. We linked the mitigation measures to the case study
         data based on the characteristics of the measure and to be conservative, we used the minimum
         job creation estimates (Table 2). The total revenue for each measure is multiplied by the
         total direct job creation potential estimate.
       </p>
-      <Table data={wwfILOData} />
+
+      <div className="relative flex flex-grow flex-col overflow-hidden">
+        <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+        <div className="overflow-x-hidden overflow-y-hidden">
+          <Table textLeft data={wwfILOData} />
+        </div>
+        <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+      </div>
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>
@@ -133,7 +153,7 @@ const PositiveImpactsModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      <p>
+      <p className="text-xl">
         The calculations produce tabular data for the carbon reduction, revenue generation and job
         creation potential of each measure and cumulatively across measures.
       </p>
@@ -155,7 +175,7 @@ const PositiveImpactsModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>Disclaimer</SmallHeading>
-      <p>
+      <p className="text-xl">
         The calculations described above are estimates using the best available data published in
         the scientific literature, they should be treated as indicative of potential carbon
         reduction, economic revenue and job creation potentials.

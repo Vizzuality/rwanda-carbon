@@ -14,7 +14,7 @@ import Icon from 'components/icon';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
 
-import ARROW_UP_SVG from 'svgs/ui/arrow-up.svg?sprite';
+import ARROW_SVG from 'svgs/ui/arrow.svg?sprite';
 
 const Chart = dynamic(() => import('components/chart/sustainable-land-use'), {
   ssr: false,
@@ -72,12 +72,12 @@ const SustainableLandUseContentPage: FC = () => {
             Viewing units of 1000 km2 in{' '}
             <button type="button" onClick={() => handleClick(2019)} className="relative">
               2019
-              {year === 2019 && <Icon icon={ARROW_UP_SVG} className="m-auto h-3 w-3" />}
+              {year === 2019 && <Icon icon={ARROW_SVG} className="m-auto h-3 w-3 rotate-90" />}
             </button>{' '}
             and{' '}
             <button type="button" onClick={() => handleClick(2050)}>
               2050
-              {year === 2050 && <Icon icon={ARROW_UP_SVG} className="m-auto h-3 w-3" />}
+              {year === 2050 && <Icon icon={ARROW_SVG} className="m-auto h-3 w-3 rotate-90" />}
             </button>
           </p>
         </Wrapper>

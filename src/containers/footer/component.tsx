@@ -48,7 +48,7 @@ const Footer: FC = () => {
                 </p>
                 <Button
                   theme="cobalt"
-                  size="s"
+                  size="base"
                   className="tracking-tight"
                   onClick={() => setModalVisibility(false)}
                 >
