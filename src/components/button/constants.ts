@@ -1,8 +1,8 @@
 export const THEME = {
   primary:
-    'border border-yellow-0 rounded-3xl bg-yellow-0 leading-6 text-cobalt-0 active:border-yellow-0 font-inter outline-4 outline-cobalt-0 outline-offset-4 hover:border-cobalt-0 border-2',
+    'border border-yellow-0 rounded-3xl bg-yellow-0 leading-6 text-cobalt-0 active:border-yellow-0 font-inter hover:outline hover:outline-2 hover:outline-cobalt-0 hover:outline-offset-[-4px] border-2',
   secondary:
-    'rounded-3xl border border-green-0 bg-green-0 leading-6 text-cobalt-0 outline-4 outline-cobalt-0 outline-offset-4 hover:border-cobalt-0 border-2',
+    'rounded-3xl border border-green-0 bg-green-0 leading-6 text-cobalt-0 hover:outline hover:outline-2 hover:outline-cobalt-0 hover:outline-offset-[-4px] border-2',
   white: 'border border-white bg-white leading-6 text-cobalt-0 font-bold',
   cobalt:
     'rounded border border-cobalt-0 bg-cobalt-0 text-white rounded-3xl hover:text-cyan-0 active:text-cyan-0 leading-6',

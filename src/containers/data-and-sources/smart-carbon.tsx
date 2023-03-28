@@ -23,7 +23,7 @@ const SmartCarbonModalContent: FC = () => (
     <div className="relative flex flex-grow flex-col overflow-hidden">
       <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
       <div className="overflow-x-hidden overflow-y-hidden">
-        <Table textLeft data={CarbonReductionDataTable} />
+        <Table data={CarbonReductionDataTable} />
       </div>
       <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
     </div>
@@ -50,11 +50,18 @@ const SmartCarbonModalContent: FC = () => (
         <li>Accountable and capable state institution</li>
       </ul>
       <p className="text-left text-lg">
-        Rwanda’s Vision 2050 also contains a set of targets and indicators related to these pillars
-        and quantified in the Vision 2050 Indicator Matrix. Under the Competitiveness and
-        integration pillar, indicator 27 states baseline GHG emissions alongside projected emissions
-        in 2035 and 2050 under a Business as Usual (BAU) scenario and under a “with interventions”
-        target scenario.
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Rwanda’s Vision 2050
+        </a>{' '}
+        also contains a set of targets and indicators related to these pillars and quantified in the
+        Vision 2050 Indicator Matrix. Under the Competitiveness and integration pillar, indicator 27
+        states baseline GHG emissions alongside projected emissions in 2035 and 2050 under a
+        Business as Usual (BAU) scenario and under a “with interventions” target scenario.
       </p>
       <p className="text-left text-lg">
         In 2018, the energy sector was the main contributor to Rwanda’s GHG emissions, excluding
@@ -92,13 +99,13 @@ const SmartCarbonModalContent: FC = () => (
       <Section>
         <Image
           alt="Calculation of carbon reduction, economic revenue and job creation potentials"
-          src="/images/modal/national-emissions.png"
+          src="/images/modal/Group.png"
           width={550}
           height={750}
           className="m-auto"
         />
       </Section>
-      <ul className="list-disc text-xs uppercase">
+      <ul className="list-disc py-5 text-xs uppercase">
         <li>I B - International Bunkers</li>
         <li>5.B - Other (please specify)</li>
         <li>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import Table from 'components/table';
 
-import { STYLES_WRAPPER } from './constants/styles';
+import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
 import { carbonReductionPotentialData, mitigationData, wwfILOData } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
@@ -37,7 +37,7 @@ const PositiveImpactsModalContent: FC = () => (
     <div className="relative flex flex-grow flex-col overflow-hidden">
       <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
       <div className="overflow-x-hidden overflow-y-hidden">
-        <Table textLeft data={carbonReductionPotentialData} />
+        <Table data={carbonReductionPotentialData} />
       </div>
       <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
     </div>
@@ -48,10 +48,16 @@ const PositiveImpactsModalContent: FC = () => (
         potentials for Rwanda were sourced from Roe et al. (2021) for the 15 measures listed in
         Table 1.
       </p>
+      <p>
+        <i>
+          Table 1. Carbon reduction potentials of land-based mitigation measures in Rwanda for
+          &lt;$100/tCO<sub>2</sub>e.
+        </i>
+      </p>
       <div className="relative flex flex-grow flex-col overflow-hidden">
         <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
         <div className="overflow-x-hidden overflow-y-hidden">
-          <Table textLeft data={mitigationData} />
+          <Table data={mitigationData} />
         </div>
         <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
       </div>
@@ -70,15 +76,16 @@ const PositiveImpactsModalContent: FC = () => (
         management and peatland restoration. For agricultural measures, cost curves for rice
         production, cropland management and livestock production were available specific to the
         African continent. For all three sectors, there is little effect of carbon prices on
-        mitigation potential below $100/tCO2e. Less information is available on how carbon reduction
-        potential might change with carbon price for other agroecology activities and so we followed
-        the approach of Griscom et al (2017), which uses global estimate of these changes.
+        mitigation potential below $100/tCO<sub>2</sub>e. Less information is available on how
+        carbon reduction potential might change with carbon price for other agroecology activities
+        and so we followed the approach of Griscom et al (2017), which uses global estimate of these
+        changes.
       </p>
       <p className="text-xl">
         The carbon reduction potential for a given carbon price is calculated for each measure by
-        scaling the potential at $100/tCO2eq by the fractional value for that carbon price from the
-        cost curve. These price specific potentials are summed to give the total carbon reduction
-        potential across measures in Rwanda for the given carbon price.
+        scaling the potential at $100/tCO<sub>2</sub>eq by the fractional value for that carbon
+        price from the cost curve. These price specific potentials are summed to give the total
+        carbon reduction potential across measures in Rwanda for the given carbon price.
       </p>
       <p className="text-xl">
         The potential revenue is then calculated simply as the product of the total carbon reduction
@@ -91,18 +98,22 @@ const PositiveImpactsModalContent: FC = () => (
         job creation estimates (Table 2). The total revenue for each measure is multiplied by the
         total direct job creation potential estimate.
       </p>
-
+      <p>
+        <i>
+          Table 2. Mapping of land based carbon reduction measure to WWF/ILO case study categories
+        </i>
+      </p>
       <div className="relative flex flex-grow flex-col overflow-hidden">
         <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
         <div className="overflow-x-hidden overflow-y-hidden">
-          <Table textLeft data={wwfILOData} />
+          <Table data={wwfILOData} />
         </div>
         <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
       </div>
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>
-      <ul>
+      <ul className={STYLES_LIST}>
         <li>
           Austin et al (2020)
           <a
@@ -160,10 +171,35 @@ const PositiveImpactsModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>Other info</SmallHeading>
-      <p className="max-w-2xl p-4">
+      <div className="w-full justify-center p-4">
+        <div className="items-left m-auto ml-20 flex flex-col justify-center p-4">
+          <div className="flex items-center space-x-2">
+            <div className="h-2 w-8 rounded-2xl bg-cobalt-0" />
+            <span className="text-xs">Ecosystems</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="h-2 w-8 rounded-2xl bg-cyan-0" />
+            <span className="text-xs">Agriculture</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-2">
+              <div className="h-2 w-3 rounded-full bg-cobalt-0"></div>
+              <div className="h-2 w-3 rounded-full bg-cyan-0"></div>
+            </div>
+            <span className="text-xs">Agroecology: Soil carbon</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-2">
+              <div className="h-2 w-3 rounded-full bg-cobalt-0"></div>
+              <div className="h-2 w-3 rounded-full bg-cyan-0"></div>
+            </div>
+            <span className="text-xs">Agroecology: Agroforestry & Biochar</span>
+          </div>
+        </div>
         <Image
           alt="Calculation of carbon reduction, economic revenue and job creation potentials"
-          src="/images/modal/carbon-calculation.png"
+          src="/images/modal/positive-impacts-chart.png"
+          className="m-auto"
           width={550}
           height={550}
         />
@@ -171,7 +207,7 @@ const PositiveImpactsModalContent: FC = () => (
           Figure 1. Carbon reduction cost curves for the measures considered for land-based carbon
           reduction in Rwanda.
         </i>
-      </p>
+      </div>
     </Section>
     <Section>
       <SmallHeading>Disclaimer</SmallHeading>

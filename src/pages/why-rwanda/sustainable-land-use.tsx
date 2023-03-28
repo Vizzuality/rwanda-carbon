@@ -69,7 +69,7 @@ const SustainableLandUseContentPage: FC = () => {
           />
           <p className="text-sm font-bold text-cobalt-0">
             {' '}
-            Viewing units of 1000 km2 in{' '}
+            Viewing units of 1000 km² in{' '}
             <button type="button" onClick={() => handleClick(2019)} className="relative">
               2019
               {year === 2019 && <Icon icon={ARROW_SVG} className="m-auto h-3 w-3 rotate-90" />}

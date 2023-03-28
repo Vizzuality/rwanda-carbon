@@ -22,7 +22,7 @@ const EffectiveGovernanceModalContent: FC = () => (
     <div className="relative flex flex-grow flex-col overflow-hidden">
       <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
       <div className="overflow-x-hidden overflow-y-hidden">
-        <Table textLeft data={effectiveGovernanceDataTable} />
+        <Table data={effectiveGovernanceDataTable} />
       </div>
       <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
     </div>

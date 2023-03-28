@@ -1,9 +1,10 @@
 type dataTypes = {
   headings: (string | number)[];
   columns?: { [key: string]: number | string }[];
+  sections?: (string | number)[];
 };
 
 export interface TableProps {
   data: dataTypes;
-  textLeft: boolean;
+  footer?: boolean;
 }

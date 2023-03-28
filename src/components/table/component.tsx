@@ -4,15 +4,16 @@ import cn from 'lib/analytics/classnames';
 
 import type { TableProps } from './types';
 
-export const Table: FC<TableProps> = ({ data, textLeft }: TableProps) => {
+export const Table: FC<TableProps> = ({ data, footer }: TableProps) => {
   const rows = data.columns.map((column, index) => {
     const cells = Object.entries(column).map(([key, value]) => (
       <td
         key={`${key}-${index}`}
         className={cn({
-          'whitespace-nowrap p-2 text-right': true,
+          'p-2 text-right align-top first:max-w-[100px] first:text-left': true,
           'bg-cobalt-0 bg-opacity-5': index % 2 !== 0,
-          'text-left': !!textLeft,
+          'pl-8': data?.sections?.includes(value),
+          'font-bold': index === data.columns.length - 1 && footer,
         })}
       >
         {value}
@@ -31,8 +32,7 @@ export const Table: FC<TableProps> = ({ data, textLeft }: TableProps) => {
                 key={heading}
                 scope="col"
                 className={cn({
-                  'min-w-[100px] px-2': true,
-                  'text-left': !!textLeft,
+                  'px-2 text-right first:text-left': true,
                 })}
               >
                 {heading}
