@@ -96,7 +96,7 @@ const ImpactsPage: FC = () => {
                 <PositiveImpactsModalContent />
                 <Button
                   theme="cobalt"
-                  size="s"
+                  size="base"
                   className="self-center tracking-tight"
                   onClick={() => setModalVisibility(false)}
                 >

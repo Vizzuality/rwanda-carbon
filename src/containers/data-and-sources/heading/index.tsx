@@ -1,5 +1,5 @@
 const Heading = () => (
-  <span className="mb-4 flex justify-center font-serif font-bold uppercase tracking-tight">
+  <span className="mb-4 flex justify-center font-montserrat font-bold uppercase tracking-tight">
     Learn more about
   </span>
 );

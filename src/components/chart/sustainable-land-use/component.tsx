@@ -82,7 +82,7 @@ const SustainableLandUseChart = ({
                             width={nodeWidth}
                             height={nodeHeight}
                             stroke={background}
-                            strokeWidth={4}
+                            strokeWidth={0}
                             fill="transparent"
                           />
                         )}
@@ -91,6 +91,7 @@ const SustainableLandUseChart = ({
                             width={nodeWidth}
                             height={nodeHeight}
                             stroke={background}
+                            strokeWidth={0}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: delays[i], duration: 0.01 }}

@@ -22,7 +22,11 @@ export const carbonReductionPotentialData = {
 };
 
 export const mitigationData = {
-  headings: ['Mitigation classification', 'Mitigation measure', 'Carbon reduction (MtCO2e/yr)'],
+  headings: [
+    'Mitigation classification',
+    'Mitigation measure',
+    'Carbon reduction (MtCO<sub>2</sub>e/yr)',
+  ],
   columns: [
     {
       mitigationClassification: 'Ecosystem-based',
@@ -201,7 +205,8 @@ export const wwfILOData = {
       wwfIloCategory: 'Agroforestry including conversion of land',
     },
     {
-      measureCategory: 'Agroecology	Soil Carbon Storage croplands',
+      measureCategory: 'Agroecology',
+      roe2021Measure: 'Soil Carbon Storage croplands',
       minTotal: 500,
       maxTotal: 750,
       wwfIloCategory: 'Agroforestry including conversion of land',
@@ -244,7 +249,12 @@ export const effectiveGovernanceDataTable = {
 };
 
 export const CarbonReductionDataTable = {
-  headings: ['Historical (MtCO₂e)', 'Business as usual (MtCO₂e)', 'With intervention (MtCO₂e)'],
+  headings: [
+    'Year',
+    'Historical (MtCO₂e)',
+    'Business as usual (MtCO₂e)',
+    'With intervention (MtCO₂e)',
+  ],
   columns: [
     { year: 2006, historical: 4.035, business: '-', withIntervention: '-' },
     { year: 2007, historical: 4.383, business: '-', withIntervention: '-' },
@@ -265,7 +275,7 @@ export const CarbonReductionDataTable = {
 };
 
 export const LandUseDataTable = {
-  headings: ['Land cover', 'Area in 2019 (km2)'],
+  headings: ['Land cover', 'Area in 2019 (km²)'],
   columns: [
     { landCover: 'Agriculture', area: 10949 },
     { landCover: '1.Agriculture (Very Suitable)', area: 8414 },
@@ -292,6 +302,26 @@ export const LandUseDataTable = {
     { landCover: '2.Wetlands (Conditioned Agri.)', area: 1283 },
     { landCover: '3.Buffer zones (20m)', area: 305 },
     { landCover: 'Balance', area: 26338 },
+  ],
+  sections: [
+    '1.Agriculture (Very Suitable)',
+    '2.Agriculture (Not Suitable)',
+    '3.Grass Land (Livestock)',
+    '1.Natural Forest',
+    '2.Forest Plantation',
+    '3.Wooded savannah',
+    '4.Shrubland + Bamboo',
+    'Bare high Slopes of abover 55%',
+    '1.Cities',
+    '2.Rurban Settlements',
+    '3.Rural Settlements (Gross)',
+    '4.Industry',
+    '5.Roads, railways & Airfields',
+    '1.Lakes & Rivers',
+    '2.Buffer zones (50m)',
+    '1.Wetlands (protected)',
+    '2.Wetlands (Conditioned Agri.)',
+    '3.Buffer zones (20m)',
   ],
 };
 

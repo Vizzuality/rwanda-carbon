@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Table from 'components/table';
 
-import { STYLES_WRAPPER } from './constants/styles';
+import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
 import { renewableWaterDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
@@ -17,7 +17,13 @@ const RenewableWaterSourcesModalContent: FC = () => (
       Indicates the availability per person in Rwanda of rechargeable water from groundwater
       aquifers and surface water like rivers and lakes that are not over-exploited.
     </p>
-    <Table data={renewableWaterDataTable} />
+    <div className="relative flex flex-grow flex-col overflow-hidden">
+      <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+      <div className="overflow-x-hidden overflow-y-hidden">
+        <Table data={renewableWaterDataTable} />
+      </div>
+      <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+    </div>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
@@ -43,14 +49,15 @@ const RenewableWaterSourcesModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>
-      <ul>
+      <ul className={STYLES_LIST}>
         <li>
           UN Statistics Division, Glossary of environment statistics,{' '}
           <a
-            href="          https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276 
+            href="https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276 
             "
             target="_blank"
             rel="noopener noreferrer"
+            className="underline"
           >
             https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276 
           </a>
@@ -64,7 +71,9 @@ const RenewableWaterSourcesModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      <p>Tabular data</p>
+      <ul className={STYLES_LIST}>
+        <li>Tabular data</li>
+      </ul>
     </Section>
   </div>
 );

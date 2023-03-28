@@ -14,7 +14,14 @@ const GreenEnergyRushModalContent: FC = () => (
     <Heading />
     <Title>Green energy rush</Title>
     <p>The proportion of power generation that comes from renewable sources.</p>
-    <Table data={greenEnergyDataTable} />
+
+    <div className="relative flex flex-grow flex-col overflow-hidden">
+      <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+      <div className="overflow-x-hidden overflow-y-hidden">
+        <Table data={greenEnergyDataTable} />
+      </div>
+      <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+    </div>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>

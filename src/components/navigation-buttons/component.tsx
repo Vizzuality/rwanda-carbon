@@ -9,12 +9,12 @@ import SmartCarbonModalContent from 'containers/data-and-sources/smart-carbon';
 import SustainableLandUseModalContent from 'containers/data-and-sources/sustainable-land-use';
 
 import Button from 'components/button';
+import { SIZE, THEME } from 'components/button/constants';
 import Icon from 'components/icon';
 import Modal from 'components/modal';
 import cn from 'lib/analytics/classnames';
 
 import ARROW from 'svgs/ui/arrow.svg?sprite';
-
 type NavigationTypes = Readonly<{
   previous?: string;
   current: string;
@@ -36,13 +36,15 @@ const NavigationButtons: FC<NavigationTypes> = ({
           href={previous}
           as={previous}
           className={cn({
-            'relative rounded-3xl border border-cyan-0 px-8 py-2': true,
-            'border border-cobalt-0 bg-cobalt-0 text-white': theme === 'cobalt',
+            relative: true,
+            [THEME.cyan]: true,
+            [SIZE.xs]: true,
+            [THEME.cobalt]: theme === 'cobalt',
           })}
         >
           <Icon
             icon={ARROW}
-            className="absolute top-1/2 right-5 h-3 w-3 -translate-y-1/2 transform text-white transition-transform"
+            className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform text-white transition-transform"
           />
         </Link>
       )}
@@ -68,7 +70,7 @@ const NavigationButtons: FC<NavigationTypes> = ({
             {current === 'green-energy-rush' && <GreenEnergyRushModalContent />}
             <Button
               theme="cobalt"
-              size="s"
+              size="base"
               className="self-center tracking-tight"
               onClick={() => setModalVisibility(false)}
             >
@@ -83,13 +85,15 @@ const NavigationButtons: FC<NavigationTypes> = ({
           href={next}
           as={next}
           className={cn({
-            'relative rounded-3xl border border-cyan-0 px-8 py-2': true,
-            'border border-cobalt-0 bg-cobalt-0 text-white': theme === 'cobalt',
+            relative: true,
+            [THEME.cyan]: true,
+            [SIZE.xs]: true,
+            [THEME.cobalt]: theme === 'cobalt',
           })}
         >
           <Icon
             icon={ARROW}
-            className="text-cobalt-500 absolute top-1/2 h-3 w-3 -translate-y-1/2 rotate-180 transform transition-transform"
+            className="text-cobalt-500 absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-180 transform transition-transform"
           />
         </Link>
       )}

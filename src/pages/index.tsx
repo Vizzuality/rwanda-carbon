@@ -6,10 +6,12 @@ import Link from 'next/link';
 import Footer from 'containers/footer';
 import MetaTags from 'containers/meta-tags';
 
+import { THEME, SIZE } from 'components/button/constants';
 import Header from 'components/header';
+import cn from 'lib/analytics/classnames';
 
 const Home: FC = () => (
-  <div className="m-auto h-screen bg-[url('/images/landing.png')] bg-center bg-no-repeat">
+  <div className="m-auto h-screen bg-[url('/images/landing.png')] bg-cover bg-no-repeat">
     <Head>
       <meta name="viewport" content="width=1024, initial-scale=1" />
       <title>Rwanda carbon tracker</title>
@@ -27,16 +29,10 @@ const Home: FC = () => (
         Accelerate socio-economic success and environmental stewardship
       </p>
       <div className="flex items-center space-x-4 p-8 font-bold text-cobalt-0">
-        <Link
-          href="positive-impacts"
-          className="cursor flex items-center justify-center rounded-3xl border border-yellow-0 bg-yellow-0 px-6 py-2 leading-6 text-cobalt-0 hover:bg-transparent hover:text-yellow-0 active:border-yellow-0 active:bg-transparent"
-        >
+        <Link href="positive-impacts" className={cn({ [THEME.primary]: true, [SIZE.base]: true })}>
           Positive impacts
         </Link>
-        <Link
-          href="/why-rwanda"
-          className="cursor flex items-center justify-center rounded-3xl border border-green-0 bg-green-0 px-6 py-2 leading-6 text-cobalt-0 hover:bg-transparent hover:text-green-0 active:border-green-0 active:bg-transparent"
-        >
+        <Link href="/why-rwanda" className={cn({ [THEME.secondary]: true, [SIZE.base]: true })}>
           Why Rwanda
         </Link>
       </div>
