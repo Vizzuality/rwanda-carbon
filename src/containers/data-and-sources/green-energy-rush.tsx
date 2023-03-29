@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Table from 'components/table';
 
-import { STYLES_WRAPPER } from './constants/styles';
+import { STYLES_LIST, STYLES_WRAPPER } from './constants/styles';
 import { greenEnergyDataTable } from './constants/tables-data';
 import Heading from './heading';
 import Section from './section';
@@ -51,7 +51,7 @@ const GreenEnergyRushModalContent: FC = () => (
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>
-      <ul>
+      <ul className={STYLES_LIST}>
         <li>
           Grafakos, S., Senshaw, D., Quezada, D., and Toro A., (2020), Employment Assessment of
           Renewable Energy: Power sector pathways compatible with NDCs and National Energy Plans,

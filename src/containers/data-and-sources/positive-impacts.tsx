@@ -18,12 +18,12 @@ const PositiveImpactsModalContent: FC = () => (
     <p className="text-xl">
       Land-based carbon reduction potentials for Rwanda were obtained from a recent analysis by Roe
       et al. (2021) that refined and updated the mitigation potentials for 20 land-based measures in
-      `&gt;`200 countries and five regions. We used estimates of the cost-effective (available up to
-      $100/tCO2) mitigation for 15 measures. We combined these estimates with data on mitigation
-      cost curves to simulate how the price of carbon might affect the amount of carbon that can be
-      mitigated. For ecosystem based activities we assume that the relative change in carbon
-      mitigation with price follows the same curve as that for planting, conserving and managing
-      forests in Rwanda. For agricultural measures, we used data for Africa, whilst for
+      &gt;200 countries and five regions. We used estimates of the cost-effective (available up to
+      $100/tCO<sub>2</sub>) mitigation for 15 measures. We combined these estimates with data on
+      mitigation cost curves to simulate how the price of carbon might affect the amount of carbon
+      that can be mitigated. For ecosystem based activities we assume that the relative change in
+      carbon mitigation with price follows the same curve as that for planting, conserving and
+      managing forests in Rwanda. For agricultural measures, we used data for Africa, whilst for
       agroecological measures, we used global data.
     </p>
     <p className="text-xl">
@@ -67,8 +67,8 @@ const PositiveImpactsModalContent: FC = () => (
         et al (2021).
       </p>
       <p className="text-xl">
-        We adjusted the potential carbon reduction available for a given carbon price below
-        $100/tCO2 using mitigation cost curves (Figure 1). Since cost curves vary by measure and
+        We adjusted the potential carbon reduction available for a given carbon price below $100/tCO
+        <sub>2</sub> using mitigation cost curves (Figure 1). Since cost curves vary by measure and
         geographical context, we gathered data as specific to the measures and for Rwanda as
         possible. For ecosystem-based measures we used data on costs associated with planting,
         preserving and managing forests in Rwanda. We are assuming that project potential changes in
