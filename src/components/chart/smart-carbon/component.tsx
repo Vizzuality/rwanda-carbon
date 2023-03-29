@@ -182,7 +182,7 @@ const Chart = ({
               style={{ width: innerWidth }}
               className="flex items-center justify-end text-xs text-white"
             >
-              Usual business{' '}
+              Business as usual{' '}
               <span className="ml-2 text-base font-bold">{businessWithIntervention}</span>
             </p>
           </HtmlLabel>

@@ -17,6 +17,17 @@ const SustainableLandUseModalContent: FC = () => (
       This visualization shows Rwanda’s land use composition in 2019 and the target compositions in
       2035 and 2050.
     </p>
+    <p>
+      Table 1. Consistent representation of land use/land cover in 2019 and planned allocations for
+      2050. Areas are in units of km².
+    </p>
+    <div className="relative flex flex-grow flex-col overflow-hidden">
+      <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
+      <div className="overflow-x-hidden overflow-y-hidden">
+        <Table data={LandCoverDataTable} />
+      </div>
+      <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
+    </div>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
@@ -25,7 +36,7 @@ const SustainableLandUseModalContent: FC = () => (
         (NLUDMP).
       </p>
       <p>Data on land Rwanda’s land use in 2019 is shown in Table 1:</p>
-      <p>Table 1. Land areas by land-use and land-cover category for 2019</p>
+      <p>Table 2. Land areas by land-use and land-cover category for 2019</p>
       <div className="relative flex flex-grow flex-col overflow-hidden">
         <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
         <div className="overflow-x-hidden overflow-y-hidden">
@@ -58,17 +69,6 @@ const SustainableLandUseModalContent: FC = () => (
         area to be forested by 2050. The re-aggregated data for 2019 and planned allocations for
         2050 are shown in Table 2.
       </p>
-      <p>
-        Table 2. Consistent representation of land use/land cover in 2019 and planned allocations
-        for 2050. Areas are in units of km².
-      </p>
-      <div className="relative flex flex-grow flex-col overflow-hidden">
-        <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
-        <div className="overflow-x-hidden overflow-y-hidden">
-          <Table data={LandCoverDataTable} />
-        </div>
-        <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
-      </div>
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>

@@ -1,6 +1,6 @@
 export const THEME = {
   primary:
-    'border border-yellow-0 rounded-3xl bg-yellow-0 leading-6 text-cobalt-0 active:border-yellow-0 font-inter hover:outline hover:outline-2 hover:outline-cobalt-0 hover:outline-offset-[-4px] border-2',
+    'border border-yellow-0 rounded-3xl bg-yellow-0 leading-6 text-cobalt-0 active:border-yellow-0 font-inter hover:outline hover:outline-2 hover:outline-cobalt-0 hover:outline-offset-[-4px]',
   secondary:
     'rounded-3xl border border-green-0 bg-green-0 leading-6 text-cobalt-0 hover:outline hover:outline-2 hover:outline-cobalt-0 hover:outline-offset-[-4px] border-2',
   white: 'border border-white bg-white leading-6 text-cobalt-0 font-bold',
@@ -12,6 +12,6 @@ export const THEME = {
 };
 
 export const SIZE = {
-  xs: 'text-sm px-6 py-0.5 leading-6',
+  xs: 'text-sm px-4 py-0.5 leading-6',
   base: 'px-6 py-2',
 };

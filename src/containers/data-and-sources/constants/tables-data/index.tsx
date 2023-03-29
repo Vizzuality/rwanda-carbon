@@ -349,19 +349,19 @@ export const renewableWaterDataTable = {
 };
 
 export const greenEnergyDataTable = {
-  headings: ['Share of renewable energy in power generation mix (%)', 2020, 2035, 2050],
+  headings: ['Share of renewable energy in power generation mix (%)', '2020', '2035', '2050'],
   columns: [
     {
       energyPower: 'Maximum',
-      2020: 53.78,
-      2035: ~70,
-      2050: ~90,
+      year1: 53.78,
+      year2: '~70',
+      year3: '~90',
     },
     {
       energyPower: 'Minimum (the targets from Vision 2050)',
-      2020: 53.78,
-      2035: '>=60',
-      2050: '>=60',
+      year1: 53.78,
+      year2: '>=60',
+      year3: '>=60',
     },
   ],
 };

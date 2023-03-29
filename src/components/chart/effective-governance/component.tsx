@@ -6,6 +6,7 @@ import { GridRadial } from '@visx/grid';
 import { Group } from '@visx/group';
 import { scaleLinear } from '@visx/scale';
 import { Line, Circle } from '@visx/shape';
+import { format } from 'd3-format';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type MarginType = {
@@ -28,7 +29,7 @@ interface ChartDataTypes {
   height: number;
   margin?: MarginType;
 }
-
+const numberFormat = format(',.0f');
 const Chart = ({
   data,
   width,
@@ -50,19 +51,27 @@ const Chart = ({
     const step = (Math.PI * 2) / length;
     const offsetAngleRwanda = Math.PI / 180 + 15;
     const offsetAngleAfrica = Math.PI / 180 - 10;
+    const offsetAngleCategory = Math.PI / 180 - 10;
     return [...new Array(length)].map((_, i) => ({
       rwandaX: ((radius * data[i].rwanda) / yMax) * Math.sin(i * step + offsetAngleRwanda),
       rwandaY: ((radius * data[i].rwanda) / yMax) * Math.cos(i * step + offsetAngleRwanda),
       africaX: ((radius * data[i].africa) / yMax) * Math.sin(i * step + offsetAngleAfrica),
       africaY: ((radius * data[i].africa) / yMax) * Math.cos(i * step + offsetAngleAfrica),
-      labelX: radius * ((data[i].rwanda + 5) / yMax) * Math.sin(i * step + offsetAngleRwanda),
-      labelY: radius * ((data[i].rwanda + 5) / yMax) * Math.cos(i * step + offsetAngleRwanda),
+      labelRwandaX: radius * ((data[i].rwanda + 5) / yMax) * Math.sin(i * step + offsetAngleRwanda),
+      labelRwandaY: radius * ((data[i].rwanda + 5) / yMax) * Math.cos(i * step + offsetAngleRwanda),
+      labelAfricaX: radius * ((data[i].africa + 5) / yMax) * Math.sin(i * step + offsetAngleAfrica),
+      labelAfricaY: radius * ((data[i].africa + 5) / yMax) * Math.cos(i * step + offsetAngleAfrica),
+      labelCategoryX: radius * (data[i].rwanda / yMax) * Math.sin(i * step + offsetAngleCategory),
+      labelCategoryY: radius * (data[i].rwanda / yMax) * Math.cos(i * step + offsetAngleCategory),
       label: data[i].shortLabel,
     }));
   };
   const reverseYScale = radialScale.copy().range(radialScale.range().reverse());
 
   const points = genPoints(data.length, radius);
+
+  const animationDelay = 1;
+  const animationDuration = 0;
   return (
     <svg width={width} height={height}>
       <Group top={innerHeight / 2} left={innerWidth - innerWidth / 4}>
@@ -92,7 +101,6 @@ const Chart = ({
               }}
             />
           </motion.g>
-
           {data.map((a, i) => (
             <g key={a.label}>
               <motion.g
@@ -100,8 +108,12 @@ const Chart = ({
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
                 transition={{
-                  delay: 0.1,
+                  delay: 0.7,
                   duration: 1,
+                  type: 'spring',
+                  damping: 17,
+                  stiffness: 432,
+                  mass: 1,
                 }}
               >
                 <Line
@@ -122,15 +134,61 @@ const Chart = ({
                 />
               </motion.g>
               <HtmlLabel
-                x={points[i].labelX}
-                y={points[i].labelY}
+                x={points[i].labelRwandaX}
+                y={points[i].labelRwandaY}
                 showAnchorLine={false}
                 horizontalAnchor="middle"
                 verticalAnchor="middle"
               >
-                <p className="flex rounded-full bg-cobalt-0 p-2 text-xs text-cyan-0">
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    delay: animationDelay,
+                    duration: animationDuration,
+                  }}
+                  className="flex rounded-full bg-cobalt-0 px-2 py-1 text-xs text-cyan-0"
+                >
+                  {numberFormat(a.rwanda)}
+                </motion.p>
+              </HtmlLabel>
+              <HtmlLabel
+                x={points[i].labelAfricaX}
+                y={points[i].labelAfricaY}
+                showAnchorLine={false}
+                horizontalAnchor="middle"
+                verticalAnchor="middle"
+              >
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    delay: animationDelay,
+                    duration: animationDuration,
+                  }}
+                  className="flex rounded-full bg-cobalt-0 px-2 py-1 text-xs text-cyan-0"
+                >
+                  {numberFormat(a.africa)}
+                </motion.p>
+              </HtmlLabel>
+              <HtmlLabel
+                x={points[i].labelCategoryX}
+                y={points[i].labelCategoryY}
+                showAnchorLine={false}
+                horizontalAnchor="middle"
+                verticalAnchor="middle"
+              >
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    delay: animationDelay,
+                    duration: animationDuration,
+                  }}
+                  className="flex rounded-full bg-cyan-0 px-2 py-1 text-xs text-cobalt-0"
+                >
                   {a.shortLabel}
-                </p>
+                </motion.p>
               </HtmlLabel>
             </g>
           ))}

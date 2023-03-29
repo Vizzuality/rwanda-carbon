@@ -5,6 +5,7 @@ import cn from 'lib/analytics/classnames';
 import type { TableProps } from './types';
 
 export const Table: FC<TableProps> = ({ data, footer }: TableProps) => {
+  console.log(data);
   const rows = data.columns.map((column, index) => {
     const cells = Object.entries(column).map(([key, value]) => (
       <td
