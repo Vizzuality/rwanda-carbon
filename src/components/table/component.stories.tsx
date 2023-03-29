@@ -17,8 +17,8 @@ export const Default = Template.bind({});
 Default.args = {
   data: {
     headings: [
-      'Carbon price (USD/tCO2)',
-      'Carbon reduction (MtCO2/yr)',
+      'Carbon price (USD/tCO₂)',
+      'Carbon reduction (MtCO₂/yr)',
       'Revenue (million USD/yr)',
       'Jobs (FTE supported/yr)',
     ],

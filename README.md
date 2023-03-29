@@ -6,7 +6,7 @@ Invest in Rwanda Carbon Credits is an engaging and user-friendly online platform
 
 ![RwandaCarbonTracker](https://user-images.githubusercontent.com/33252015/221893127-1b0c19ec-1267-438f-95f3-990f250e8cca.jpg)
 
-The website was inspired by UNDP's vision of a better, more sustainable future for Rwanda. It includes estimations of the potential impacts of carbon market investment in terms of CO2 reduction, revenue generation, and job creation. The platform showcases a series of national goals for carbon reduction, land use, water management, and energy efficiency. Invest in Rwanda Carbon Credits serves as a starting point to monitor Rwanda's carbon-related commitments as part of the national plan to achieve a carbon-neutral economy.
+The website was inspired by UNDP's vision of a better, more sustainable future for Rwanda. It includes estimations of the potential impacts of carbon market investment in terms of CO₂ reduction, revenue generation, and job creation. The platform showcases a series of national goals for carbon reduction, land use, water management, and energy efficiency. Invest in Rwanda Carbon Credits serves as a starting point to monitor Rwanda's carbon-related commitments as part of the national plan to achieve a carbon-neutral economy.
 
 ## Project implementation
 

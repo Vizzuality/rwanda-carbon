@@ -100,7 +100,7 @@ const SmartCarbonModalContent: FC = () => (
       <li>4.B - Biological Treatment of Solid Waste</li>
       <li>4.A - Solid Waste Disposal</li>
       <li>3.0 - Other</li>
-      <li>3.C - Aggregate sources and non-CO2 emissions sources on land</li>
+      <li>3.C - Aggregate sources and non-CO₂ emissions sources on land</li>
       <li>3.8 - Land</li>
       <li>3.A - Livestock</li>
       <li>2.H - Other</li>
