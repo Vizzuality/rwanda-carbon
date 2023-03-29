@@ -61,7 +61,7 @@ const ImpactsPage: FC = () => {
             Potential positive impacts of carbon market investment
           </TitleLayout>
           <section className="m-auto space-y-6">
-            <SmallHeading title="Carbon price" subtitle="(US$ per ton of CO2)" />
+            <SmallHeading title="Carbon price" subtitle="(US$ per ton of CO₂)" />
 
             <div className="relative m-auto flex max-w-2xl space-x-2 tracking-tight">
               <span className="text-xs">{minCarbonPriceValue}</span>
