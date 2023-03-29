@@ -24,22 +24,22 @@ const wavesProps = [
     background: 'Wave',
     y: '-40%',
     initialDelay: 0.8,
-    initialX: '-48%',
+    initialX: '-42%',
     x: '-45%',
-    scale: 1,
-    initialScale: 0.5,
     duration: 10,
+    scale: 1,
+    initialScale: 0,
   },
   {
     zIndex: 'z-20',
     background: 'Wave_cyan',
     y: '-20%',
     initialDelay: 0.4,
-    initialX: '-42%',
-    x: '-58%',
+    initialX: '-58%',
+    x: '-42%',
+    duration: 4,
     scale: 1,
-    initialScale: 0.5,
-    duration: 6,
+    initialScale: 0,
   },
   {
     zIndex: 'z-30',
@@ -47,10 +47,10 @@ const wavesProps = [
     y: 0,
     initialDelay: 0,
     initialX: '-40%',
-    x: '-65%',
+    x: '-60%',
+    duration: 2,
     scale: 1,
-    initialScale: 0.5,
-    duration: 4,
+    initialScale: 0,
   },
 ];
 
@@ -116,7 +116,10 @@ const RenewableWaterSourcesContentPage: FC = () => (
           next="green-energy-rush"
           theme="cobalt"
         />
-        <p className="text-sm font-bold text-cobalt-0"> Viewing m3 per capita per annum</p>
+        <p className="text-sm font-bold text-cobalt-0">
+          {' '}
+          Viewing m<sub>3</sub> per capita per annum
+        </p>
       </Wrapper>
       <div className="fixed bottom-0 -left-0 flex h-screen w-full flex-col items-end justify-end overflow-hidden">
         <div className="relative h-screen w-full">
@@ -138,9 +141,8 @@ const RenewableWaterSourcesContentPage: FC = () => (
                   initial="hidden"
                   animate="visible"
                   variants={wavesVariants}
-                  className={`absolute bottom-0 left-1/2 ${zIndex} h-full w-[4000px] -translate-x-1/2 translate-y-0`}
+                  className={`absolute bottom-0 left-1/2 ${zIndex} h-full w-[3000px] -translate-x-1/2 translate-y-0`}
                   custom={{
-                    scale,
                     y,
                     initialDelay,
                   }}
@@ -153,6 +155,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
                     style={{ backgroundImage: `url(/images/${background}.svg)` }}
                     custom={{
                       initialScale,
+                      scale,
                       initialX,
                       x,
                       duration,

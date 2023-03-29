@@ -18,7 +18,7 @@ const PositiveImpactsModalContent: FC = () => (
     <p className="text-xl">
       Land-based carbon reduction potentials for Rwanda were obtained from a recent analysis by Roe
       et al. (2021) that refined and updated the mitigation potentials for 20 land-based measures in
-      &gt;200 countries and five regions. We used estimates of the cost-effective (available up to
+      over 200 countries and five regions. We used estimates of the cost-effective (available up to
       $100/tCO<sub>2</sub>) mitigation for 15 measures. We combined these estimates with data on
       mitigation cost curves to simulate how the price of carbon might affect the amount of carbon
       that can be mitigated. For ecosystem based activities we assume that the relative change in

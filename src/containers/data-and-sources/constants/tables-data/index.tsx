@@ -328,11 +328,11 @@ export const LandUseDataTable = {
 export const LandCoverDataTable = {
   headings: ['Land cover', 2019, 2050],
   columns: [
-    { landCover: 'Agriculture', 2019: 10949, 2050: 12433 },
-    { landCover: 'Built up areas & Infrastructure', 2019: 2888, 2050: 3980 },
-    { landCover: 'Forests', 2019: 7647, 2050: 7725 },
-    { landCover: 'Water bodies and protected wetlands', 2019: 3300, 2050: 2200 },
-    { landCover: 'Bare high Slopes', 2019: 1554, 2050: 0 },
+    { landCover: 'Agriculture', year1: 10949, year2: 12433 },
+    { landCover: 'Built up areas & Infrastructure', year1: 2888, year2: 3980 },
+    { landCover: 'Forests', year1: 7647, year2: 7725 },
+    { landCover: 'Water bodies and protected wetlands', year1: 3300, year2: 2200 },
+    { landCover: 'Bare high Slopes', year1: 1554, year2: 0 },
   ],
 };
 
@@ -360,8 +360,8 @@ export const greenEnergyDataTable = {
     {
       energyPower: 'Minimum (the targets from Vision 2050)',
       year1: 53.78,
-      year2: '>=60',
-      year3: '>=60',
+      year2: '≥60',
+      year3: '≥60',
     },
   ],
 };

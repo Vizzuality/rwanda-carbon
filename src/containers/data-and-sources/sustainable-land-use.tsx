@@ -67,7 +67,7 @@ const SustainableLandUseModalContent: FC = () => (
         areas for 2019 in the same way. So forested areas includes buffer zones of water bodies and
         wetlands. We also include Bare high slopes as a separate category, since the aim is for this
         area to be forested by 2050. The re-aggregated data for 2019 and planned allocations for
-        2050 are shown in Table 2.
+        2050 are shown in Table 1.
       </p>
     </Section>
     <Section>
