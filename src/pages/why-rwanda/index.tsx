@@ -71,7 +71,7 @@ const WhyRwandaPage: FC = () => {
               <TitleLayout small className="max-w-lg">
                 Why Rwanda
               </TitleLayout>
-              <article className="max-w-md space-y-3 text-xl">
+              <article className="max-w-md space-y-3">
                 <p>
                   Energized by upward socio-economic momentum, Rwanda is poised to modernize its
                   economy and elevate the lives of all Rwandans.

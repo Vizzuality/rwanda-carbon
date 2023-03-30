@@ -28,7 +28,7 @@ const EffectiveGovernanceContentPage: FC = () => {
           <TitleLayout small className="max-w-lg pr-5">
             Effective governance
           </TitleLayout>
-          <article className="max-w-md text-xl">
+          <article className="max-w-md tracking-wide">
             Rwanda has reduced poverty, strengthened the rule of law, and raised living standards.
             Mindful of fiscal transparency, equality, and security, Rwanda has emerged a trusted
             partner.

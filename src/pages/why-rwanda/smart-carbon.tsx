@@ -25,7 +25,7 @@ const SmartCarbonContentPage: FC = () => {
       <ContentLayout half>
         <Wrapper className="max-w-sm">
           <TitleLayout small>Smart carbon</TitleLayout>
-          <article className="text-xl">
+          <article className="tracking-wide">
             Rwanda is carving out a clear path forward to curb future emissions in ambitious yet
             attainable ways. Africa’s largest green investment fund stands to help in turning this
             pledge into a reality.
@@ -35,7 +35,7 @@ const SmartCarbonContentPage: FC = () => {
             current="smart-carbon"
             next="sustainable-land-use"
           />
-          <p className="text-sm font-bold">
+          <p className="text-xs font-bold">
             Viewing emissions in MtCO<sub>2</sub>e
           </p>
         </Wrapper>

@@ -14,7 +14,7 @@ const TitleLayout: FC<TitleLayoutTypes> = (props: TitleLayoutTypes) => {
   return (
     <div
       className={cn({
-        'max-w-2xl justify-center font-serif text-5xl text-white': true,
+        'max-w-2xl justify-center font-serif text-5xl tracking-tighter text-white': true,
         'max-w-xs': small,
         [className]: !!className,
       })}

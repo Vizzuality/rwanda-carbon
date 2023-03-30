@@ -98,7 +98,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
           animate={{ color: '#002E65' }}
           exit={{ color: '#FFFF' }}
           transition={{ delay: 0.6, duration: 0.4 }}
-          className="max-w-md text-xl"
+          className="max-w-md tracking-wide"
         >
           Rwanda’s pristine lakes and rivers will undergo renewed conservation efforts. The
           benefactor will be society whose share of rechargeable fresh water sources will increase
@@ -110,7 +110,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
           next="green-energy-rush"
           theme="cobalt"
         />
-        <p className="text-sm font-bold text-cobalt-0">
+        <p className="text-xs font-bold text-cobalt-0">
           {' '}
           Viewing m<sub>3</sub> per capita per annum
         </p>

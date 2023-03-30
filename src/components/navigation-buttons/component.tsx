@@ -49,7 +49,7 @@ const NavigationButtons: FC<NavigationTypes> = ({
         </Link>
       )}
 
-      <div className="flex space-x-5 py-0">
+      <div className="flex max-w-md space-x-5 py-0 tracking-widest">
         <Button theme={theme} size="xs" onClick={() => setModalVisibility(!isModalOpen)}>
           DATA AND SOURCES
         </Button>
