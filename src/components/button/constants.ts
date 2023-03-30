@@ -12,6 +12,6 @@ export const THEME = {
 };
 
 export const SIZE = {
-  xs: 'text-sm px-4 py-0.5 leading-6',
+  xs: 'text-xs px-4 py-0.5 leading-6',
   base: 'px-6 py-2',
 };

@@ -31,13 +31,13 @@ const GreenEnergyRushContentPage: FC = () => {
           <TitleLayout small className="max-w-lg pr-5">
             Green energy rush
           </TitleLayout>
-          <article className="max-w-md text-xl">
+          <article className="max-w-md tracking-wide">
             Off-grid solar and micro-hydro plants are leading the way. Future innovation and foreign
             direct investment will boost renewables to make up over 60% of Rwanda’s energy mix by
             2035, even as overall generation ramps up to power the country’s development.
           </article>
           <NavigationButtons current="green-energy-rush" previous="renewable-water-sources" />
-          <p className="text-sm font-bold">Viewing % of renewable energy in power regeneration.</p>
+          <p className="text-xs font-bold">Viewing % of renewable energy in power regeneration.</p>
         </Wrapper>
         <div className="absolute top-0 left-0 h-full w-full">
           <ParentSize>

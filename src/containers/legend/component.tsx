@@ -24,7 +24,7 @@ const LegendItems = [
 ];
 const Legend: FC = () => {
   return (
-    <div className="w-full space-y-5 text-sm font-bold">
+    <div className="w-full space-y-5 text-xs font-bold">
       <div className="flex space-x-5">
         <div className="flex items-center space-x-3">
           <div className="h-3 w-5 rounded-2xl bg-cyan-0" />

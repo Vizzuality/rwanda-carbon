@@ -53,7 +53,7 @@ const SustainableLandUseContentPage: FC = () => {
               animate={{ color: '#002E65' }}
               exit={{ color: '#FFFF' }}
               transition={{ delay, duration: 0.01 }}
-              className="max-w-md text-xl"
+              className="max-w-md tracking-wide"
             >
               Numerous wetland and forest conservation areas illustrate Rwanda’s environmental
               integrity. With sustainable agroforestry drives and forestry training schemes
@@ -67,7 +67,7 @@ const SustainableLandUseContentPage: FC = () => {
             next="renewable-water-sources"
             theme="cobalt"
           />
-          <p className="text-sm font-bold text-cobalt-0">
+          <p className="text-xs font-bold text-cobalt-0">
             {' '}
             Viewing units of 1000 km² in{' '}
             <button type="button" onClick={() => handleClick(2019)} className="relative">

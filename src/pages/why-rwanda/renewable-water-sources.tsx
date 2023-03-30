@@ -22,35 +22,29 @@ const wavesProps = [
   {
     zIndex: 'z-10',
     background: 'Wave',
-    y: '-40%',
+    y: '-30%',
     initialDelay: 0.8,
-    initialX: '-42%',
-    x: '-45%',
+    initialX: '-45%',
+    x: '-60%',
     duration: 10,
-    scale: 1,
-    initialScale: 0,
   },
   {
     zIndex: 'z-20',
     background: 'Wave_cyan',
-    y: '-20%',
+    y: '-15%',
     initialDelay: 0.4,
-    initialX: '-58%',
+    initialX: '-60%',
     x: '-42%',
-    duration: 4,
-    scale: 1,
-    initialScale: 0,
+    duration: 6,
   },
   {
     zIndex: 'z-30',
     background: 'Wave_white',
-    y: 0,
+    y: '10%',
     initialDelay: 0,
     initialX: '-40%',
     x: '-60%',
     duration: 2,
-    scale: 1,
-    initialScale: 0,
   },
 ];
 
@@ -104,7 +98,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
           animate={{ color: '#002E65' }}
           exit={{ color: '#FFFF' }}
           transition={{ delay: 0.6, duration: 0.4 }}
-          className="max-w-md text-xl"
+          className="max-w-md tracking-wide"
         >
           Rwanda’s pristine lakes and rivers will undergo renewed conservation efforts. The
           benefactor will be society whose share of rechargeable fresh water sources will increase
@@ -116,7 +110,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
           next="green-energy-rush"
           theme="cobalt"
         />
-        <p className="text-sm font-bold text-cobalt-0">
+        <p className="text-xs font-bold text-cobalt-0">
           {' '}
           Viewing m<sub>3</sub> per capita per annum
         </p>
@@ -124,46 +118,32 @@ const RenewableWaterSourcesContentPage: FC = () => (
       <div className="fixed bottom-0 -left-0 flex h-screen w-full flex-col items-end justify-end overflow-hidden">
         <div className="relative h-screen w-full">
           <div className="absolute -bottom-[12.5%] left-0 h-full w-full">
-            {wavesProps.map(
-              ({
-                zIndex,
-                background,
-                y,
-                initialDelay,
-                initialX,
-                x,
-                duration,
-                scale,
-                initialScale,
-              }) => (
+            {wavesProps.map(({ zIndex, background, y, initialDelay, initialX, x, duration }) => (
+              <motion.div
+                key={background}
+                initial="hidden"
+                animate="visible"
+                variants={wavesVariants}
+                className={`absolute bottom-0 left-1/2 ${zIndex} h-full w-[4000px] -translate-x-1/2 translate-y-0`}
+                custom={{
+                  y,
+                  initialDelay,
+                }}
+              >
                 <motion.div
-                  key={background}
-                  initial="hidden"
-                  animate="visible"
+                  initial="rippleLeft"
+                  animate="rippleRight"
                   variants={wavesVariants}
-                  className={`absolute bottom-0 left-1/2 ${zIndex} h-full w-[3000px] -translate-x-1/2 translate-y-0`}
+                  className={`absolute top-0 left-0 h-full w-full bg-bottom bg-no-repeat`}
+                  style={{ backgroundImage: `url(/images/${background}.svg)` }}
                   custom={{
-                    y,
-                    initialDelay,
+                    initialX,
+                    x,
+                    duration,
                   }}
-                >
-                  <motion.div
-                    initial="rippleLeft"
-                    animate="rippleRight"
-                    variants={wavesVariants}
-                    className={`absolute top-0 left-0 h-full w-full bg-bottom bg-no-repeat`}
-                    style={{ backgroundImage: `url(/images/${background}.svg)` }}
-                    custom={{
-                      initialScale,
-                      scale,
-                      initialX,
-                      x,
-                      duration,
-                    }}
-                  />
-                </motion.div>
-              )
-            )}
+                />
+              </motion.div>
+            ))}
           </div>
 
           <div className="absolute right-5 top-1/2 z-40 -translate-y-1/2 transform text-xs">
