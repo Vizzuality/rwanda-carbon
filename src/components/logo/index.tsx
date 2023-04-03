@@ -16,7 +16,7 @@ export const Logo: FC<LogoProps> = ({ size = 'sm', isAnimated = false }: LogoPro
       initial={{ color: '#FFFF' }}
       animate={!isAnimated ? { color: '#FFFF' } : { color: '#002E65' }}
       exit={!isAnimated ? { color: '#FFFF' } : { color: '#002E65' }}
-      transition={{ delay: 1.3, duration: 0.01 }}
+      transition={{ delay: 0.8, duration: 0.01 }}
     >
       Invest in Rwanda
       <motion.span
@@ -24,7 +24,7 @@ export const Logo: FC<LogoProps> = ({ size = 'sm', isAnimated = false }: LogoPro
         initial={{ color: '#FAD201' }}
         animate={!isAnimated ? { color: '#FAD201' } : { color: '#002E65' }}
         exit={!isAnimated ? { color: '#FAD201' } : { color: '#002E65' }}
-        transition={{ delay: 1.3, duration: 0.01 }}
+        transition={{ delay: 0.8, duration: 0.01 }}
       >
         carbon credits
       </motion.span>

@@ -34,7 +34,7 @@ const SustainableLandUseContentPage: FC = () => {
       setYear(2019);
     }, 4500);
   }, []);
-  const delay = 1;
+  const delay = 0.8;
   return (
     <div>
       <div>

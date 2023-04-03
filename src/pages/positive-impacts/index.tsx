@@ -46,7 +46,7 @@ const ImpactsPage: FC = () => {
       ref.current = false;
       setFirstRender(false);
     }
-  });
+  }, []);
 
   const handleChange = useCallback((e) => setValue(e), []);
   return (

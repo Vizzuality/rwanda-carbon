@@ -43,7 +43,7 @@ const COLORS = {
   },
 };
 
-const delays = [0, 0.9, 1.2, 0.3, 0.6, 1.5];
+const delays = [0, 0.6, 0.8, 0.2, 0.4, 1];
 const SustainableLandUseChart = ({
   data,
   width,
@@ -94,7 +94,7 @@ const SustainableLandUseChart = ({
                             strokeWidth={0}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ type: 'linear', delay: delays[i], duration: 0.1 }}
+                            transition={{ type: 'linear', delay: delays[i], duration: 0.2 }}
                             fill={COLORS[node.data.id].nodeColor || 0}
                           />
                         )}
