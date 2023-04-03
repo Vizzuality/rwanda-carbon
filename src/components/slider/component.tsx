@@ -27,21 +27,17 @@ const Slider = forwardRef<
     >
       <SliderPrimitive.Track
         className={cn({
-          'relative h-4 w-full grow overflow-hidden rounded-full': true,
-          'rounded-full bg-transparent after:absolute after:top-1/2 after:h-2 after:w-full after:-translate-y-1/2 after:bg-white after:bg-opacity-20':
-            true,
+          'relative h-[8px] grow rounded-full bg-cobalt-3 after:bg-cobalt-3': true,
         })}
       >
         <SliderPrimitive.Range
           className={cn({
-            'absolute h-full': true,
-            'rounded-full after:absolute after:top-1/2 after:h-2 after:w-full after:-translate-y-1/2 after:bg-white':
-              true,
+            'absolute h-full rounded-full bg-white after:bg-cobalt-3': true,
           })}
         />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb asChild>
-        <span className="relative z-50 block h-4 w-4 rounded-full border-2 border-cobalt-0 bg-white transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50">
+        <span className="z-50 block h-4 w-4 rounded-full border-2 border-cobalt-0 bg-white focus:outline-none disabled:pointer-events-none disabled:opacity-50">
           <span className="text-xxs absolute top-full left-1/2 -translate-x-1/2 text-white">
             ${value}
           </span>

@@ -29,10 +29,10 @@ const SustainableLandUseContentPage: FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setYear(2050);
-    }, 2800);
+    }, 1500);
     setTimeout(() => {
       setYear(2019);
-    }, 4500);
+    }, 2500);
   }, []);
   const delay = 0.8;
   return (
