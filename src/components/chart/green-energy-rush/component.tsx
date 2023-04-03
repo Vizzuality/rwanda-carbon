@@ -72,6 +72,8 @@ const Chart = ({
     domain: keys,
     range: ['#00152E', '#47DCAF'],
   });
+
+  if (width === 0) return null;
   return (
     <svg width={width} height={height}>
       <LinearGradient

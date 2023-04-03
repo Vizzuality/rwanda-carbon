@@ -95,13 +95,8 @@ const Chart = ({
     domain: keys,
     range: ['#00152E', '#47DCAF'],
   });
-  const D =
-    LinePath({
-      data,
-      x: (d) => xScale(d.year),
-      y: (d) => yScale(d.business_as_usual),
-    }) || '';
 
+  if (width === 0) return null;
   return (
     <svg width={width} height={height}>
       <AnimatePresence>
