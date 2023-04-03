@@ -1,6 +1,9 @@
 const forms = require('@tailwindcss/forms');
 const lineClamp = require('@tailwindcss/line-clamp');
 
+// Default theme
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /**
  * @type {import('tailwindcss').Config}
  */
@@ -15,10 +18,13 @@ module.exports = {
   plugins: [forms, lineClamp],
   theme: {
     extend: {
+      // fontFamily: {
+      //
+      //   serif: ['DM Serif Display'],
+      // },
       fontFamily: {
-        inter: ['Inter'],
+        inter: ['var(--font-inter)'],
         serif: ['DM Serif Display'],
-        montserrat: ['Montserrat'],
       },
       colors: {
         yellow: {
@@ -31,6 +37,7 @@ module.exports = {
         cobalt: {
           0: '#002E65',
           1: '#00489D',
+          2: '#315682',
         },
         cyan: {
           0: '#5BCEFB',

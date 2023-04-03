@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react';
+import { FC, useCallback, useState, useEffect } from 'react';
 
 import dynamic from 'next/dynamic';
 
@@ -13,19 +13,28 @@ import Header from 'components/header';
 import Icon from 'components/icon';
 import NavigationButtons from 'components/navigation-buttons';
 import ContentLayout from 'layouts/content';
+import cn from 'lib/analytics/classnames';
 
 import ARROW_SVG from 'svgs/ui/arrow.svg?sprite';
-
 const Chart = dynamic(() => import('components/chart/sustainable-land-use'), {
   ssr: false,
 });
 
 const SustainableLandUseContentPage: FC = () => {
   const [year, setYear] = useState(2019);
-  const handleClick = useCallback((e) => {
-    setYear(e);
+  const handleClick = useCallback((year) => {
+    setYear(year);
   }, []);
-  const delay = 1.3;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setYear(2050);
+    }, 2800);
+    setTimeout(() => {
+      setYear(2019);
+    }, 4500);
+  }, []);
+  const delay = 1;
   return (
     <div>
       <div>
@@ -67,17 +76,28 @@ const SustainableLandUseContentPage: FC = () => {
             next="renewable-water-sources"
             theme="cobalt"
           />
-          <p className="text-xs font-bold text-cobalt-0">
+          <p className="relative flex text-xs font-bold text-cobalt-0">
             {' '}
             Viewing units of 1000 km² in{' '}
-            <button type="button" onClick={() => handleClick(2019)} className="relative">
-              2019
-              {year === 2019 && <Icon icon={ARROW_SVG} className="m-auto h-3 w-3 rotate-90" />}
-            </button>{' '}
-            and{' '}
-            <button type="button" onClick={() => handleClick(2050)}>
+            <button type="button" onClick={() => handleClick(2019)} className="ml-1.5 flex">
+              {' '}
+              2019{' '}
+              <motion.div
+                initial={{ x: 0 }}
+                animate={year === 2019 ? { x: -20 } : { x: 45 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Icon
+                  icon={ARROW_SVG}
+                  className={cn({
+                    'absolute top-4 m-auto h-3 w-3 rotate-90 cursor-pointer': true,
+                  })}
+                />
+              </motion.div>
+            </button>
+            <span className="mx-1.5"> and </span>
+            <button type="button" onClick={() => handleClick(2050)} className="flex">
               2050
-              {year === 2050 && <Icon icon={ARROW_SVG} className="m-auto h-3 w-3 rotate-90" />}
             </button>
           </p>
         </Wrapper>

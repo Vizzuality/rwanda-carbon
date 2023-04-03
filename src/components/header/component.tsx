@@ -61,9 +61,9 @@ export const Header: FC<HeaderProps> = ({
         }
       >
         <div>
-          <Button theme="white" size="base">
-            <p className="pl-6">Menu</p>
-            <span className="m-auto h-full px-4">
+          <Button theme="white" size="base" className="items-center space-x-3">
+            <p>Menu</p>
+            <span className="m-auto h-full">
               <Icon icon={MENU} className={'mt-1 h-3 w-4'} />
             </span>
           </Button>

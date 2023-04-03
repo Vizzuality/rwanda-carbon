@@ -1,3 +1,10 @@
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
 type ApplicationLayoutProps = {
   children: React.ReactNode;
 };
@@ -7,7 +14,7 @@ const ApplicationLayout: React.FC<ApplicationLayoutProps> = (props: ApplicationL
 
   return (
     <div className="flex min-h-screen flex-col bg-cobalt-0">
-      <main className="grow">
+      <main className={`${inter.variable} grow`}>
         {/* Content */}
         {children}
       </main>

@@ -51,19 +51,19 @@ const PositiveImpactsChart = withTooltip(
         <svg width={width} height={height + 40}>
           <Group width={width + 20} height={height + 20} top={margin.top}>
             <LinePath
-              data={dataFiltered}
+              data={data}
               x={(d) => xScale(d.carbonPrice) ?? 0}
               y={(d) => yScale(d[type]) ?? 0}
-              stroke={lineColor}
+              stroke="rgba(0, 0, 0, 20%)"
               strokeWidth={strokeWidth}
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <LinePath
-              data={data}
+              data={dataFiltered}
               x={(d) => xScale(d.carbonPrice) ?? 0}
               y={(d) => yScale(d[type]) ?? 0}
-              stroke="rgba(0, 0, 0, 20%)"
+              stroke={lineColor}
               strokeWidth={strokeWidth}
               strokeLinecap="round"
               strokeLinejoin="round"
