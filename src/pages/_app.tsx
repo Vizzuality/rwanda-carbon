@@ -15,13 +15,6 @@ const inter = Inter({
   display: 'block',
 });
 
-// const serif = Serif({
-//   weight: ['400', '700'],
-//   style: ['normal'],
-//   subsets: ['latin'],
-//   variable: '--font-serif',
-//   display: 'block',
-// });
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => (
   <>
     <style jsx global>{`
