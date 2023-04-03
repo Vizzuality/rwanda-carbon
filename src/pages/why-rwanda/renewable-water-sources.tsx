@@ -112,7 +112,7 @@ const RenewableWaterSourcesContentPage: FC = () => (
         />
         <p className="text-xs font-bold text-cobalt-0">
           {' '}
-          Viewing m<sub>3</sub> per capita per annum
+          Viewing m<sup>3</sup> per capita per annum
         </p>
       </Wrapper>
       <div className="fixed bottom-0 -left-0 flex h-screen w-full flex-col items-end justify-end overflow-hidden">
