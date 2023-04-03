@@ -29,6 +29,7 @@ const NavigationButtons: FC<NavigationTypes> = ({
   theme = 'cyan',
 }: NavigationTypes) => {
   const [isModalOpen, setModalVisibility] = useState(false);
+
   return (
     <div className="flex space-x-2">
       {previous && (
@@ -37,14 +38,18 @@ const NavigationButtons: FC<NavigationTypes> = ({
           as={previous}
           className={cn({
             relative: true,
-            [THEME.cyan]: true,
+            [THEME.cyan]: theme === 'cyan',
             [SIZE.xs]: true,
             [THEME.cobalt]: theme === 'cobalt',
           })}
         >
           <Icon
             icon={ARROW}
-            className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform text-white transition-transform"
+            className={cn({
+              'absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform text-white transition-transform':
+                true,
+              'hover:text-cyan-0': theme === 'cobalt',
+            })}
           />
         </Link>
       )}
@@ -63,19 +68,19 @@ const NavigationButtons: FC<NavigationTypes> = ({
           }}
         >
           <div className="md:max-w-8xl m-auto flex min-h-screen w-full flex-col space-y-10 py-28 lg:max-w-7xl">
-            {current === 'effective-governance' && <EffectiveGovernanceModalContent />}
-            {current === 'smart-carbon' && <SmartCarbonModalContent />}
-            {current === 'sustainable-land-use' && <SustainableLandUseModalContent />}
-            {current === 'renewable-water-sources' && <RenewableWaterSourcesModalContent />}
-            {current === 'green-energy-rush' && <GreenEnergyRushModalContent />}
-            <Button
-              theme="cobalt"
-              size="base"
-              className="self-center tracking-tight"
-              onClick={() => setModalVisibility(false)}
-            >
-              Close
-            </Button>
+            {current === 'effective-governance' && (
+              <EffectiveGovernanceModalContent onClick={setModalVisibility} />
+            )}
+            {current === 'smart-carbon' && <SmartCarbonModalContent onClick={setModalVisibility} />}
+            {current === 'sustainable-land-use' && (
+              <SustainableLandUseModalContent onClick={setModalVisibility} />
+            )}
+            {current === 'renewable-water-sources' && (
+              <RenewableWaterSourcesModalContent onClick={setModalVisibility} />
+            )}
+            {current === 'green-energy-rush' && (
+              <GreenEnergyRushModalContent onClick={setModalVisibility} />
+            )}
           </div>
         </Modal>
       </div>
@@ -86,14 +91,18 @@ const NavigationButtons: FC<NavigationTypes> = ({
           as={next}
           className={cn({
             relative: true,
-            [THEME.cyan]: true,
+            [THEME.cyan]: theme === 'cyan',
             [SIZE.xs]: true,
             [THEME.cobalt]: theme === 'cobalt',
           })}
         >
           <Icon
             icon={ARROW}
-            className="text-cobalt-500 absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-180 transform transition-transform"
+            className={cn({
+              'absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-180 transform transition-transform':
+                true,
+              'hover:text-cyan-0': theme === 'cobalt',
+            })}
           />
         </Link>
       )}

@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
+import Button from 'components/button';
 import Table from 'components/table';
 
 import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
@@ -10,7 +11,12 @@ import Heading from './heading';
 import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
-const SmartCarbonModalContent: FC = () => (
+
+type ModalTypes = {
+  onClick: (boolean) => void;
+};
+
+const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
   <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Smart carbon</Title>
@@ -28,7 +34,7 @@ const SmartCarbonModalContent: FC = () => (
       <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
     </div>
     <Section>
-      <SmallHeading>Methodology and discussion</SmallHeading>
+      <SmallHeading>METHODOLOGY AND DISCUSSION</SmallHeading>
       <p className="text-left text-lg">
         We wanted to highlight Rwanda’s vision for reducing emissions whilst expanding its economy
         between 2020 and 2050. We sourced historic emissions from national GHG inventory reporting
@@ -130,6 +136,14 @@ const SmartCarbonModalContent: FC = () => (
       <SmallHeading>DATA FORMAT</SmallHeading>
       Tabular data
     </div>
+    <Button
+      theme="cobalt"
+      size="base"
+      className="m-auto self-center tracking-tight"
+      onClick={() => onClick(false)}
+    >
+      Close
+    </Button>
   </div>
 );
 

@@ -94,7 +94,7 @@ const SustainableLandUseChart = ({
                             strokeWidth={0}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: delays[i], duration: 0.01 }}
+                            transition={{ type: 'linear', delay: delays[i], duration: 0.1 }}
                             fill={COLORS[node.data.id].nodeColor || 0}
                           />
                         )}
@@ -114,7 +114,7 @@ const SustainableLandUseChart = ({
                               }}
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
-                              transition={{ delay: delays[i], duration: 0.01 }}
+                              transition={{ type: 'linear', delay: delays[i], duration: 0.1 }}
                             >
                               {node.data.id}
                             </motion.p>

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Button from 'components/button';
 import Table from 'components/table';
 
 import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
@@ -9,7 +10,11 @@ import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
-const RenewableWaterSourcesModalContent: FC = () => (
+type ModalTypes = {
+  onClick: (boolean) => void;
+};
+
+const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
   <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Renewable water sources</Title>
@@ -75,6 +80,14 @@ const RenewableWaterSourcesModalContent: FC = () => (
         <li>Tabular data</li>
       </ul>
     </Section>
+    <Button
+      theme="cobalt"
+      size="base"
+      className="m-auto self-center tracking-tight"
+      onClick={() => onClick(false)}
+    >
+      Close
+    </Button>
   </div>
 );
 

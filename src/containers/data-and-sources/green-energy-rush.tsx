@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Button from 'components/button';
 import Table from 'components/table';
 
 import { STYLES_LIST, STYLES_WRAPPER } from './constants/styles';
@@ -9,7 +10,10 @@ import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
-const GreenEnergyRushModalContent: FC = () => (
+type ModalTypes = {
+  onClick: (boolean) => void;
+};
+const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
   <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Green energy rush</Title>
@@ -85,6 +89,14 @@ const GreenEnergyRushModalContent: FC = () => (
         that the target is to be above 60%.
       </p>
     </Section>
+    <Button
+      theme="cobalt"
+      size="base"
+      className="m-auto self-center tracking-tight"
+      onClick={() => onClick(false)}
+    >
+      Close
+    </Button>
   </div>
 );
 

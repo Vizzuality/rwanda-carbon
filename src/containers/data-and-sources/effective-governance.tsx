@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Button from 'components/button';
 import Table from 'components/table';
 
 import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
@@ -9,10 +10,14 @@ import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
-const EffectiveGovernanceModalContent: FC = () => (
+type ModalTypes = {
+  onClick: (boolean) => void;
+};
+
+const EffectiveGovernanceModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
   <div className={STYLES_WRAPPER}>
     <Heading />
-    <Title>EFFECTIVE GOVERNANCE</Title>
+    <Title>Effective Governance</Title>
     <p className="text-left text-lg">
       To indicate Rwanda’s institutional governance performance, we used the World Bank’s governance
       indicators for 2021. All indicators were rescaled to range from 0 to 100 for ease of
@@ -62,6 +67,14 @@ const EffectiveGovernanceModalContent: FC = () => (
       <p className="text-left text-lg">Tabular data</p>
       <p className="text-left text-lg">Polar bar plot</p>
     </Section>
+    <Button
+      theme="cobalt"
+      size="base"
+      className="m-auto self-center tracking-tight"
+      onClick={() => onClick(false)}
+    >
+      Close
+    </Button>
   </div>
 );
 

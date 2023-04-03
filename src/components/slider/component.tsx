@@ -28,14 +28,14 @@ const Slider = forwardRef<
       <SliderPrimitive.Track
         className={cn({
           'relative h-4 w-full grow overflow-hidden rounded-full': true,
-          'rounded-full after:absolute after:top-1/2 after:h-2 after:w-full after:-translate-y-1/2 after:bg-black after:bg-opacity-20':
+          'rounded-full bg-transparent after:absolute after:top-1/2 after:h-2 after:w-full after:-translate-y-1/2 after:bg-white after:bg-opacity-20':
             true,
         })}
       >
         <SliderPrimitive.Range
           className={cn({
             'absolute h-full': true,
-            'after:absolute after:top-1/2 after:h-2 after:w-full after:-translate-y-1/2 after:bg-white':
+            'rounded-full after:absolute after:top-1/2 after:h-2 after:w-full after:-translate-y-1/2 after:bg-white':
               true,
           })}
         />
