@@ -115,58 +115,53 @@ const PositiveImpactsModalContent: FC = () => (
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          Austin et al (2020)
           <a
             href="https://doi.org/10.1038/s41467-020-19578-z"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://doi.org/10.1038/s41467-020-19578-z
+            Austin et al (2020).
           </a>
         </li>
         <li>
-          Beach (2015)
           <a
             href="https://doi.org/10.1080/1943815X.2015.1110183"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://doi.org/10.1080/1943815X.2015.1110183
+            Beach (2015).
           </a>
         </li>
         <li>
-          Griscom et al (2017)
           <a
             href="https://doi.org/10.1073/pnas.171046511"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://doi.org/10.1073/pnas.171046511
+            Griscom et al (2017).
           </a>
         </li>
         <li>
-          Roe et al (2021)
           <a
             href="https://dx.doi.org/10.1111/gcb.15873"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://dx.doi.org/10.1111/gcb.15873
+            Roe et al (2021).
           </a>
         </li>
         <li>
-          WWF/ILO report NATURE HIRES: How Nature-based Solutions can power a green jobs recovery{' '}
           <a
             href="https://www.ilo.org/employment/units/emp-invest/rural-urban-job-creation/WCMS_757823/lang--en/index.htm"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://www.ilo.org/employment/units/emp-invest/rural-urban-job-creation/WCMS_757823/lang--en/index.htm
+            WWF/ILO report NATURE HIRES: How Nature-based Solutions can power a green jobs recovery.
           </a>
         </li>
       </ul>

@@ -102,16 +102,7 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
             rel="noopener noreferrer"
             className="underline"
           >
-            Republic of Rwanda (2020).{' '}
-            <a
-              href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Vision 2050
-            </a>
-            . Republic of Rwanda, Kigali.
+            Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali.
           </a>
         </li>
         <li>
@@ -132,7 +123,7 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
       <SmallHeading>DATA FORMAT</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          Tabular data of to land uses/land covers areas in 2019 and planned allocation for 2050
+          Tabular data of to land uses/land covers areas in 2019 and planned allocation for 2050.
         </li>
       </ul>
     </Section>

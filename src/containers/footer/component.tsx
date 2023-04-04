@@ -56,7 +56,7 @@ const Footer: FC = () => {
                     >
                       United Nations Development Programme
                     </a>{' '}
-                    or follow at <span className="underline">@UNDP</span>.
+                    or follow at <span>@UNDP</span>.
                   </p>
                   <p>
                     Designed and developed by{' '}

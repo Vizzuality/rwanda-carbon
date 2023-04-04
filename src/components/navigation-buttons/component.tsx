@@ -46,7 +46,7 @@ const NavigationButtons: FC<NavigationTypes> = ({
           <Icon
             icon={ARROW}
             className={cn({
-              'absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform text-white transition-transform':
+              'absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform tracking-widest text-white transition-transform':
                 true,
               'hover:text-cyan-0': theme === 'cobalt',
             })}
@@ -94,6 +94,7 @@ const NavigationButtons: FC<NavigationTypes> = ({
             [THEME.cyan]: theme === 'cyan',
             [SIZE.xs]: true,
             [THEME.cobalt]: theme === 'cobalt',
+            'font-bold': true,
           })}
         >
           <Icon

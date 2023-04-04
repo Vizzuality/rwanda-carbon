@@ -49,23 +49,22 @@ const EffectiveGovernanceModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          Daniel Kaufmann, Aart Kraay and Massimo Mastruzzi (2010). &quot;The Worldwide World Bank
-          Policy Research  Working Paper No. 5430&quot;.
           <a
             href="https://databank.worldbank.org/source/worldwide-governance-indicators"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
           >
-            https://databank.worldbank.org/source/worldwide-governance-indicators
+            Daniel Kaufmann, Aart Kraay and Massimo Mastruzzi (2010). &quot;The Worldwide World Bank
+            Policy Research  Working Paper No. 5430&quot;.
           </a>
         </li>
       </ul>
     </Section>
     <Section>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      <p className="text-left text-lg">Tabular data</p>
-      <p className="text-left text-lg">Polar bar plot</p>
+      <p className="text-left text-lg">Tabular data.</p>
+      <p className="text-left text-lg">Polar bar plot.</p>
     </Section>
     <Button
       theme="cobalt"

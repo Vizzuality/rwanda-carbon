@@ -36,7 +36,7 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
           rel="noopener noreferrer"
           className="underline"
         >
-          Vision 2050
+          Vision 2050.
         </a>{' '}
         (Indicator 35) and further interpretation from Rwanda’s Energy Sector Capacity Development
         Strategy 2019-2024 and information from Rwanda Energy Group.
@@ -47,20 +47,11 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
         solar power.
       </p>
       <p>
-        Rwanda’s{' '}
-        <a
-          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Vision 2050
-        </a>{' '}
-        makes clear that for the country to meet its development targets, energy generation will
-        need to expand to meet these demands. It estimates that capacity might need to grow to 3,788
-        MW by 2035 and 13,981 MW by 2050, to cater for the growing demand. Reaching and maintaining
-        a 60% of renewable energy generation therefore requires considerable expansion of renewable
-        energy sources.
+        Rwanda’s Vision 2050 makes clear that for the country to meet its development targets,
+        energy generation will need to expand to meet these demands. It estimates that capacity
+        might need to grow to 3,788 MW by 2035 and 13,981 MW by 2050, to cater for the growing
+        demand. Reaching and maintaining a 60% of renewable energy generation therefore requires
+        considerable expansion of renewable energy sources.
       </p>
       <p>
         The targets for 2035 provide a lower bound for the share of renewable energy in the
@@ -80,36 +71,33 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
         </li>
         <li>
           Republic of Rwanda (2019). Energy Sector Capacity Development Strategy. Republic of
-          Rwanda, Kigali
+          Rwanda, Kigali.
         </li>
         <li>
-          Republic of Rwanda (2020).{' '}
           <a
             href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            Vision 2050
+            Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali.
           </a>
-          . Republic of Rwanda, Kigali
         </li>
         <li>
-          Rwanda Energy Group.{' '}
           <a
             href="https://www.reg.rw/fileadmin/user_upload/Rwanda_Least_Cost_Power_Development_Plan_2022-2040_Updated_June_2022.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://www.reg.rw/fileadmin/user_upload/Rwanda_Least_Cost_Power_Development_Plan_2022-2040_Updated_June_2022.pdf
+            Rwanda Energy Group.
           </a>
         </li>
       </ul>
     </Section>
     <Section>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      <p>Tabular data</p>
+      <p>Tabular dat.</p>
     </Section>
     <Section>
       <SmallHeading>Disclaimer</SmallHeading>

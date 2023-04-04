@@ -111,57 +111,55 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
       />
     </Section>
     <ul className="list-disc py-5 text-xs uppercase">
-      <li>I B - International Bunkers</li>
-      <li>5.B - Other (please specify)</li>
+      <li>I B - International Bunkers.</li>
+      <li>5.B - Other (please specify).</li>
       <li>
-        5.A - Indirect N20 emissions from the atmospheric deposition of nitrogen in NOX and NH3{' '}
+        5.A - Indirect N20 emissions from the atmospheric deposition of nitrogen in NOX and NH3.
       </li>
-      <li>4.E - Other (please specify)</li>
-      <li>4.D - Wastewater Treatment and Discharge</li>
-      <li>4.C - Incineration and Open Burning of Waste</li>
-      <li>4.B - Biological Treatment of Solid Waste</li>
-      <li>4.A - Solid Waste Disposal</li>
-      <li>3.0 - Other</li>
-      <li>3.C - Aggregate sources and non-CO₂ emissions sources on land</li>
-      <li>3.8 - Land</li>
-      <li>3.A - Livestock</li>
-      <li>2.H - Other</li>
-      <li>2.G - Other Product Manufacture and Use</li>
-      <li>2.F - Product Uses as Substitutes for Ozone Depleting Substances</li>
-      <li>2.E - Electronics Industry</li>
-      <li>2.D - Non-Energy Products from Fuels and Solvent Use</li>
-      <li>2.C - Metal Industry</li>
-      <li>2.B - Chemical Industry</li>
-      <li>2.A - Mineral Industry</li>
-      <li>1.C - Carbon dioxide Transport and Storage</li>
-      <li>1.8 - Fugitive emissions from fuels</li>
-      <li>1.A - Fuel Combustion Activities</li>
+      <li>4.E - Other (please specify).</li>
+      <li>4.D - Wastewater Treatment and Discharge.</li>
+      <li>4.C - Incineration and Open Burning of Waste.</li>
+      <li>4.B - Biological Treatment of Solid Waste.</li>
+      <li>4.A - Solid Waste Disposal.</li>
+      <li>3.0 - Other.</li>
+      <li>3.C - Aggregate sources and non-CO₂ emissions sources on land.</li>
+      <li>3.8 - Land.</li>
+      <li>3.A - Livestock.</li>
+      <li>2.H - Other.</li>
+      <li>2.G - Other Product Manufacture and Use.</li>
+      <li>2.F - Product Uses as Substitutes for Ozone Depleting Substances.</li>
+      <li>2.E - Electronics Industry.</li>
+      <li>2.D - Non-Energy Products from Fuels and Solvent Use.</li>
+      <li>2.C - Metal Industry.</li>
+      <li>2.B - Chemical Industry.</li>
+      <li>2.A - Mineral Industry.</li>
+      <li>1.C - Carbon dioxide Transport and Storage.</li>
+      <li>1.8 - Fugitive emissions from fuels.</li>
+      <li>1.A - Fuel Combustion Activities.</li>
     </ul>
 
     <div>
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          Republic of Rwanda (2020).{' '}
           <a
             href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            Vision 2050
+            Republic of Rwanda (2020). Vision 2050.
           </a>
-          .
         </li>
         <li>
           Republic of Rwanda, Kigali Republic of Rwanda (2021). Rwanda’s First Biennial Update under
-          the United Nations Framework Convention on Climate Change. Republic of Rwanda, Kigali
+          the United Nations Framework Convention on Climate Change. Republic of Rwanda, Kigali.
         </li>
       </ul>
     </div>
     <div>
       <SmallHeading>DATA FORMAT</SmallHeading>
-      Tabular data
+      Tabular data.
     </div>
     <Button
       theme="cobalt"

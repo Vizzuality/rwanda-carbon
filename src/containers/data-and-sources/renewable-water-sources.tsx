@@ -65,7 +65,7 @@ const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTyp
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          UN Statistics Division, Glossary of environment statistics,{' '}
+          {' '}
           <a
             href="https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276 
             "
@@ -73,31 +73,30 @@ const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTyp
             rel="noopener noreferrer"
             className="underline"
           >
-            https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276 
+            UN Statistics Division, Glossary of environment statistics.
           </a>
         </li>
         <li>
           Republic of Rwanda (2015). Rwanda National Water Resources Master Plan. Republic of
-          Rwanda, Kigali
+          Rwanda, Kigali.
         </li>
         <li>
-          Republic of Rwanda (2020).{' '}
+          {' '}
           <a
             href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            Vision 2050
+            Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali.
           </a>
-          . Republic of Rwanda, Kigali
         </li>
       </ul>
     </Section>
     <Section>
       <SmallHeading>DATA FORMAT</SmallHeading>
       <ul className={STYLES_LIST}>
-        <li>Tabular data</li>
+        <li>Tabular data.</li>
       </ul>
     </Section>
     <Button
