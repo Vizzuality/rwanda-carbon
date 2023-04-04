@@ -17,7 +17,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ['var(--font-inter)'],
-        serif: ['DM Serif Display'],
+        serif: ['var(--font-serif)'],
       },
       colors: {
         yellow: {
