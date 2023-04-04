@@ -22,7 +22,7 @@ const EffectiveGovernanceModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes
       To indicate Rwanda’s institutional governance performance, we used the World Bank’s governance
       indicators for 2021. All indicators were rescaled to range from 0 to 100 for ease of
       interpretation and comparison. We also calculated a mean value for each indicator across all
-      other African countries as a reference for Rwanda’s indicator values..
+      other African countries as a reference for Rwanda’s indicator values.
     </p>
     <div className="relative flex flex-grow flex-col overflow-hidden">
       <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />

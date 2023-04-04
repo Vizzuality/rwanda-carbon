@@ -43,10 +43,18 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
         First Biennial Update Report for the years 2006 to 2018.
       </p>
       <p className="text-left text-lg">
-        Future emissions were extracted from Rwanda’s Vision 2050, which articulates Rwanda’s
-        ambitions and strategic direction for achieving them. The strategy has two overarching goals
-        of promoting economic growth and prosperity, and achieving a high quality of life for
-        Rwandans. It is arranged under 5 pillars:
+        Future emissions were extracted from Rwanda’s{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>
+        , which articulates Rwanda’s ambitions and strategic direction for achieving them. The
+        strategy has two overarching goals of promoting economic growth and prosperity, and
+        achieving a high quality of life for Rwandans. It is arranged under 5 pillars:
       </p>
       <ul className={STYLES_LIST}>
         <li>Human development</li>
@@ -64,10 +72,18 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
         >
           Rwanda’s Vision 2050
         </a>{' '}
-        also contains a set of targets and indicators related to these pillars and quantified in the
-        Vision 2050 Indicator Matrix. Under the Competitiveness and integration pillar, indicator 27
-        states baseline GHG emissions alongside projected emissions in 2035 and 2050 under a
-        Business as Usual (BAU) scenario and under a “with interventions” target scenario.
+        also contains a set of targets and indicators related to these pillars and quantified in the{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>{' '}
+        Indicator Matrix. Under the Competitiveness and integration pillar, indicator 27 states
+        baseline GHG emissions alongside projected emissions in 2035 and 2050 under a Business as
+        Usual (BAU) scenario and under a “with interventions” target scenario.
       </p>
       <p className="text-left text-lg">
         In 2018, the energy sector was the main contributor to Rwanda’s GHG emissions, excluding
@@ -125,7 +141,18 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
     <div>
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
-        <li>Republic of Rwanda (2020). Vision 2050.</li>
+        <li>
+          Republic of Rwanda (2020).{' '}
+          <a
+            href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Vision 2050
+          </a>
+          .
+        </li>
         <li>
           Republic of Rwanda, Kigali Republic of Rwanda (2021). Rwanda’s First Biennial Update under
           the United Nations Framework Convention on Climate Change. Republic of Rwanda, Kigali

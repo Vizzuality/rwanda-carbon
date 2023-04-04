@@ -37,8 +37,16 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
         To understand Rwanda’s current land use composition and its future targets we extracted
-        information from Rwanda’s Vision 2050 and its National Land Use and Development Master Plan
-        (NLUDMP).
+        information from Rwanda’s{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>{' '}
+        and its National Land Use and Development Master Plan (NLUDMP).
       </p>
       <p>Data on land Rwanda’s land use in 2019 is shown in Table 1:</p>
       <p>Table 2. Land areas by land-use and land-cover category for 2019</p>
@@ -54,7 +62,16 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
       <p>
         The NLUDMP analyzes, for 13 prime land uses, the current cover, long-term needs and plans
         allocation targets for 2035 and 2050. These form the targets listed for indicator 31 of
-        Rwanda’s Vision 2050 under the pillar of Urbanization and Agglomeration.
+        Rwanda’s{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>{' '}
+        under the pillar of Urbanization and Agglomeration.
       </p>
       <p>
         The NLUDMP suggests expanding agricultural land area so that the country can grow more food
@@ -79,19 +96,25 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali.
           <a
             href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf{' '}
+            Republic of Rwanda (2020).{' '}
+            <a
+              href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Vision 2050
+            </a>
+            . Republic of Rwanda, Kigali.
           </a>
         </li>
         <li>
-          Republic of Rwanda (2020). National Land Use and Development Master Plan (NLUDMP)
-          2020-2050, Integrative Plan. Republic of Rwanda, Kigali.
           <a
             href="https://www.environment.gov.rw/index.php?eID=dumpFile&t=f&f=10551&token=ef94f9c2e05dfb6b5e43acfdaaefa0dfe0071380
             "
@@ -99,7 +122,8 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
             rel="noopener noreferrer"
             className="underline"
           >
-            https://www.environment.gov.rw/index.php?eID=dumpFile&t=f&f=10551&token=ef94f9c2e05dfb6b5e43acfdaaefa0dfe0071380
+            Republic of Rwanda (2020). National Land Use and Development Master Plan (NLUDMP)
+            2020-2050, Integrative Plan. Republic of Rwanda, Kigali.{' '}
           </a>
         </li>
       </ul>

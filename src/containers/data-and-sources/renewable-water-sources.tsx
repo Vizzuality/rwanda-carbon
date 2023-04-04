@@ -32,12 +32,21 @@ const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTyp
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
-        The data for this indicator is taken from Rwanda’s Vision 2050 (Indicator 32) and from
-        Rwanda’s National Water Resources Master Plan (NWRMP). The general objective of the Master
-        Plan is to ensure a sustainable water resources development, utilization and management in
-        the country. It is intended to be “a blueprint for a process of sustainable water, land and
-        related resources development and management with the aim to maximize economic and social
-        welfare in an equitable manner while safeguarding the environment”.
+        The data for this indicator is taken from Rwanda’s{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>{' '}
+        (Indicator 32) and from Rwanda’s National Water Resources Master Plan (NWRMP). The general
+        objective of the Master Plan is to ensure a sustainable water resources development,
+        utilization and management in the country. It is intended to be “a blueprint for a process
+        of sustainable water, land and related resources development and management with the aim to
+        maximize economic and social welfare in an equitable manner while safeguarding the
+        environment”.
       </p>
       <p>
         Renewable water resources are resources that are “rechargeable due to the hydrological cycle
@@ -71,7 +80,18 @@ const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTyp
           Republic of Rwanda (2015). Rwanda National Water Resources Master Plan. Republic of
           Rwanda, Kigali
         </li>
-        <li>Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali</li>
+        <li>
+          Republic of Rwanda (2020).{' '}
+          <a
+            href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Vision 2050
+          </a>
+          . Republic of Rwanda, Kigali
+        </li>
       </ul>
     </Section>
     <Section>

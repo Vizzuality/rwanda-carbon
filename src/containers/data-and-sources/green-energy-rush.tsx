@@ -29,9 +29,17 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p>
-        Data for this indicator was sourced from Rwanda’s Vision 2050 (Indicator 35) and further
-        interpretation from Rwanda’s Energy Sector Capacity Development Strategy 2019-2024 and
-        information from Rwanda Energy Group.
+        Data for this indicator was sourced from Rwanda’s{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>{' '}
+        (Indicator 35) and further interpretation from Rwanda’s Energy Sector Capacity Development
+        Strategy 2019-2024 and information from Rwanda Energy Group.
       </p>
       <p>
         In 2019, Rwanda had 224 MW of installed electricity generation capacity, of which 53% is
@@ -39,11 +47,20 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
         solar power.
       </p>
       <p>
-        Rwanda’s Vision 2050 makes clear that for the country to meet its development targets,
-        energy generation will need to expand to meet these demands. It estimates that capacity
-        might need to grow to 3,788 MW by 2035 and 13,981 MW by 2050, to cater for the growing
-        demand. Reaching and maintaining a 60% of renewable energy generation therefore requires
-        considerable expansion of renewable energy sources.
+        Rwanda’s{' '}
+        <a
+          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Vision 2050
+        </a>{' '}
+        makes clear that for the country to meet its development targets, energy generation will
+        need to expand to meet these demands. It estimates that capacity might need to grow to 3,788
+        MW by 2035 and 13,981 MW by 2050, to cater for the growing demand. Reaching and maintaining
+        a 60% of renewable energy generation therefore requires considerable expansion of renewable
+        energy sources.
       </p>
       <p>
         The targets for 2035 provide a lower bound for the share of renewable energy in the
@@ -65,15 +82,27 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
           Republic of Rwanda (2019). Energy Sector Capacity Development Strategy. Republic of
           Rwanda, Kigali
         </li>
-        <li>Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali</li>
         <li>
-          Rwanda Energy Group.
+          Republic of Rwanda (2020).{' '}
           <a
-            href="          https://www.reg.rw/what-we-do/generation/"
+            href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            className="underline"
           >
-            https://www.reg.rw/what-we-do/generation/
+            Vision 2050
+          </a>
+          . Republic of Rwanda, Kigali
+        </li>
+        <li>
+          Rwanda Energy Group.{' '}
+          <a
+            href="https://www.reg.rw/fileadmin/user_upload/Rwanda_Least_Cost_Power_Development_Plan_2022-2040_Updated_June_2022.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            https://www.reg.rw/fileadmin/user_upload/Rwanda_Least_Cost_Power_Development_Plan_2022-2040_Updated_June_2022.pdf
           </a>
         </li>
       </ul>

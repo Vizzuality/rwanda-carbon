@@ -120,6 +120,7 @@ const PositiveImpactsModalContent: FC = () => (
             href="https://doi.org/10.1038/s41467-020-19578-z"
             target="_blank"
             rel="noopener noreferrer"
+            className="underline"
           >
             https://doi.org/10.1038/s41467-020-19578-z
           </a>
@@ -130,6 +131,7 @@ const PositiveImpactsModalContent: FC = () => (
             href="https://doi.org/10.1080/1943815X.2015.1110183"
             target="_blank"
             rel="noopener noreferrer"
+            className="underline"
           >
             https://doi.org/10.1080/1943815X.2015.1110183
           </a>
@@ -140,13 +142,19 @@ const PositiveImpactsModalContent: FC = () => (
             href="https://doi.org/10.1073/pnas.171046511"
             target="_blank"
             rel="noopener noreferrer"
+            className="underline"
           >
             https://doi.org/10.1073/pnas.171046511
           </a>
         </li>
         <li>
           Roe et al (2021)
-          <a href="https://dx.doi.org/10.1111/gcb.15873" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://dx.doi.org/10.1111/gcb.15873"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
             https://dx.doi.org/10.1111/gcb.15873
           </a>
         </li>
@@ -156,6 +164,7 @@ const PositiveImpactsModalContent: FC = () => (
             href="https://www.ilo.org/employment/units/emp-invest/rural-urban-job-creation/WCMS_757823/lang--en/index.htm"
             target="_blank"
             rel="noopener noreferrer"
+            className="underline"
           >
             https://www.ilo.org/employment/units/emp-invest/rural-urban-job-creation/WCMS_757823/lang--en/index.htm
           </a>
