@@ -56,7 +56,7 @@ const SustainableLandUseChart = ({
     .sum((d) => d.size ?? 0);
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
-  const root = hierarchy(dataParsed).sort((a, b) => (b.value || 0) - (a.value || 0));
+  const root = hierarchy(dataParsed);
 
   return (
     <div>
@@ -75,22 +75,38 @@ const SustainableLandUseChart = ({
                   {treemap.descendants().map((node, i) => {
                     const nodeWidth = node.x1 - node.x0;
                     const nodeHeight = node.y1 - node.y0;
+
+                    console.log({ treemap });
+
                     return (
-                      <Group key={node.data.id} top={node.y0} left={node.x0}>
+                      <Group key={node.data.id}>
                         {node.depth === 1 && (
                           <motion.rect
                             stroke={background}
                             strokeWidth={0}
-                            initial={{ opacity: 0, width: 0, height: 0 }}
-                            animate={{ opacity: 1, width: nodeWidth, height: nodeHeight }}
-                            transition={{ duration: 0.2 }}
+                            initial={{
+                              opacity: 0,
+                              width: nodeWidth,
+                              height: nodeHeight,
+                              x: node.x0,
+                              y: node.y0,
+                            }}
+                            animate={{
+                              opacity: 1,
+                              width: nodeWidth,
+                              height: nodeHeight,
+                              x: node.x0,
+                              y: node.y0,
+                            }}
+                            transition={{ duration: 0.3 }}
                             fill={COLORS[node.data.id].nodeColor || 0}
                           />
                         )}
-                        {node.depth === 1 && nodeWidth !== 0 && nodeHeight !== 0 && (
+
+                        {node.depth === 1 && (
                           <HtmlLabel
-                            x={nodeWidth}
-                            y={node.y1 - node.y0 - 30}
+                            x={nodeWidth + node.x0}
+                            y={node.y0 + 30}
                             showAnchorLine={false}
                             horizontalAnchor="end"
                             verticalAnchor="middle"
