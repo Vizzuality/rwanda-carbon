@@ -79,22 +79,11 @@ const SustainableLandUseChart = ({
                       <Group key={node.data.id} top={node.y0} left={node.x0}>
                         {node.depth === 1 && (
                           <motion.rect
-                            width={nodeWidth}
-                            height={nodeHeight}
                             stroke={background}
                             strokeWidth={0}
-                            fill="transparent"
-                          />
-                        )}
-                        {node.depth === 1 && (
-                          <motion.rect
-                            width={nodeWidth}
-                            height={nodeHeight}
-                            stroke={background}
-                            strokeWidth={0}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ type: 'linear', delay: delays[i], duration: 0.2 }}
+                            initial={{ opacity: 0, width: 0, height: 0 }}
+                            animate={{ opacity: 1, width: nodeWidth, height: nodeHeight }}
+                            transition={{ duration: 0.2 }}
                             fill={COLORS[node.data.id].nodeColor || 0}
                           />
                         )}
@@ -114,7 +103,7 @@ const SustainableLandUseChart = ({
                               }}
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
-                              transition={{ type: 'linear', delay: delays[i], duration: 0.1 }}
+                              transition={{ type: 'linear', delay: delays[i], duration: 0.2 }}
                             >
                               {node.data.id}
                             </motion.p>
