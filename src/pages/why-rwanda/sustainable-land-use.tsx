@@ -29,13 +29,13 @@ const SustainableLandUseContentPage: FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setYear(2050);
-    }, 2800);
+    }, 3700);
     setTimeout(() => {
       setYear(2019);
-    }, 4100);
+    }, 5000);
   }, []);
-  const delay = 1;
-  const duration = 0.3;
+  const delay = 1.6;
+  const duration = 0.4;
   return (
     <div>
       <div>
@@ -63,7 +63,7 @@ const SustainableLandUseContentPage: FC = () => {
               animate={{ color: '#002E65' }}
               exit={{ color: '#FFFF' }}
               transition={{ delay, duration }}
-              className="max-w-md tracking-wide"
+              className="max-w-sm tracking-wide"
             >
               Numerous wetland and forest conservation areas illustrate Rwanda’s environmental
               integrity. With sustainable agroforestry drives and forestry training schemes

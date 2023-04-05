@@ -325,9 +325,9 @@ export const LandCoverDataTable = {
   headings: ['Land cover', 2019, 2050],
   columns: [
     { landCover: 'Agriculture', year1: 10949, year2: 12433 },
+    { landCover: 'Water bodies and protected wetlands', year1: 3300, year2: 2200 },
     { landCover: 'Built up areas & Infrastructure', year1: 2888, year2: 3980 },
     { landCover: 'Forests', year1: 7647, year2: 7725 },
-    { landCover: 'Water bodies and protected wetlands', year1: 3300, year2: 2200 },
     { landCover: 'Bare high Slopes', year1: 1554, year2: 0 },
   ],
 };
