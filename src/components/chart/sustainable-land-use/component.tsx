@@ -43,7 +43,7 @@ const COLORS = {
   },
 };
 
-const delays = [0, 0.6, 0.8, 0.2, 0.4, 1];
+const delays = [0, 0.9, 1.2, 0.3, 0.6, 1.5];
 const SustainableLandUseChart = ({
   data,
   width,
