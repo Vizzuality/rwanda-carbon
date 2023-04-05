@@ -13,7 +13,7 @@ const ApplicationLayout: React.FC<ApplicationLayoutProps> = (props: ApplicationL
   const { children } = props;
 
   return (
-    <div className="flex min-h-screen flex-col bg-cobalt-0">
+    <div className="flex min-h-screen flex-col overflow-x-auto bg-cobalt-0">
       <main className={`${inter.variable} grow`}>
         {/* Content */}
         {children}

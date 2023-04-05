@@ -12,7 +12,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = (props: ContentLayoutProps) 
   return (
     <div
       className={cn({
-        'relative m-auto flex h-screen w-full py-24 pr-6 pl-44': true,
+        'relative m-auto flex h-screen w-full py-24 pr-6 sm:pl-10 md:pl-28 lg:pl-44': true,
         'items-center justify-between': half,
         [className]: !!className,
       })}
