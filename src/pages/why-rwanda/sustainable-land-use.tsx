@@ -29,12 +29,13 @@ const SustainableLandUseContentPage: FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setYear(2050);
-    }, 1500);
+    }, 2800);
     setTimeout(() => {
       setYear(2019);
-    }, 2500);
+    }, 4100);
   }, []);
-  const delay = 0.8;
+  const delay = 1;
+  const duration = 0.3;
   return (
     <div>
       <div>
@@ -53,7 +54,7 @@ const SustainableLandUseContentPage: FC = () => {
               initial={{ color: '#FFFF' }}
               animate={{ color: '#002E65' }}
               exit={{ color: '#FFFF' }}
-              transition={{ delay, duration: 0.01 }}
+              transition={{ delay, duration }}
             >
               Sustainable land use
             </motion.p>
@@ -61,7 +62,7 @@ const SustainableLandUseContentPage: FC = () => {
               initial={{ color: '#FFFF' }}
               animate={{ color: '#002E65' }}
               exit={{ color: '#FFFF' }}
-              transition={{ delay, duration: 0.01 }}
+              transition={{ delay, duration }}
               className="max-w-md tracking-wide"
             >
               Numerous wetland and forest conservation areas illustrate Rwanda’s environmental
