@@ -57,7 +57,7 @@ export const Modal = (props: ModalProps) => {
                 <>
                   <Media
                     lessThan="sm"
-                    className="pointer-events-none absolute flex h-full w-full grow flex-col bg-cobalt-2"
+                    className="pointer-events-none absolute flex h-screen w-full grow flex-col overflow-hidden bg-cobalt-0 bg-opacity-70"
                   >
                     <ModalContent
                       {...props}
@@ -67,7 +67,7 @@ export const Modal = (props: ModalProps) => {
                   </Media>
                   <Media
                     greaterThanOrEqual="sm"
-                    className="pointer-events-none absolute flex h-full w-full grow flex-col bg-cobalt-2"
+                    className="pointer-events-none absolute flex h-screen w-full grow flex-col overflow-hidden bg-cobalt-0 bg-opacity-70"
                   >
                     <ModalContent
                       {...props}

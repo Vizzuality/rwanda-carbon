@@ -67,7 +67,7 @@ const NavigationButtons: FC<NavigationTypes> = ({
             setModalVisibility(o);
           }}
         >
-          <div className="md:max-w-8xl top-0 bottom-0 m-auto flex min-h-screen w-full flex-col space-y-10 overflow-y-auto py-28 lg:max-w-7xl">
+          <div className="md:max-w-8xl top-0 bottom-0 m-auto flex min-h-screen w-full flex-col space-y-10 overflow-y-auto lg:max-w-7xl">
             {current === 'effective-governance' && (
               <EffectiveGovernanceModalContent onClick={setModalVisibility} />
             )}
