@@ -56,7 +56,7 @@ const SustainableLandUseChart = ({
     .sum((d) => d.size ?? 0);
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
-  const root = hierarchy(dataParsed).sort((a, b) => (b.value || 0) - (a.value || 0));
+  const root = hierarchy(dataParsed);
   const variants = {
     hidden: { opacity: 0 },
     show: ({ index, id }) => ({
