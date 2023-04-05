@@ -103,7 +103,7 @@ const SustainableLandUseChart = ({
                     const nodeHeight = node.y1 - node.y0;
                     return (
                       <Group key={node.data.id}>
-                        {node.depth === 1 && nodeWidth !== 0 && nodeHeight !== 0 && (
+                        {node.depth === 1 && (
                           <motion.rect
                             stroke={background}
                             strokeWidth={0}
