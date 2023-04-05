@@ -41,7 +41,7 @@
 }
 
 .flicking-viewport:not(.vertical) {
-  @apply w-full h-full;
+  @apply w-full h-full overflow-y-auto;
 }
 
 .flicking-camera {

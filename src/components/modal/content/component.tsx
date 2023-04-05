@@ -53,7 +53,7 @@ export const ModalContent: FC<ModalContentProps> = ({
           onClick={() => {
             onOpenChange(false);
           }}
-          className="absolute top-0 -right-12 z-10 flex h-screen translate-y-0 transform items-center bg-transparent px-4 py-4"
+          className="absolute top-0 -right-12 z-10 flex h-screen translate-y-0 transform items-center overflow-y-auto bg-transparent px-4 py-4"
         >
           <Icon icon={CLOSE_SVG} className="inline-block h-3.5 w-3.5 text-white" />
         </button>

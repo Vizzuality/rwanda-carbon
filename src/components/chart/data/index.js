@@ -207,27 +207,27 @@ export const sustainableLandUseData = {
   2019: [
     { id: 'Land cover', parent: null, size: 0 },
     { id: 'Agriculture', parent: 'Land cover', size: 10949, color: '#FAD201' },
-    { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 2888, color: '#00152E' },
-    { id: 'Forests', parent: 'Land cover', size: 7647, color: '#47DCAF' },
     {
       id: 'Water bodies and protected wetlands',
       parent: 'Land cover',
       size: 3300,
       color: '#002E65',
     },
+    { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 2888, color: '#00152E' },
+    { id: 'Forests', parent: 'Land cover', size: 7647, color: '#47DCAF' },
     { id: 'Bare high Slopes', parent: 'Land cover', size: 1554, color: '#5BCEFB' },
   ],
   2050: [
     { id: 'Land cover', parent: null, size: 0 },
     { id: 'Agriculture', parent: 'Land cover', size: 12433, color: '#FAD201' },
-    { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 3980, color: '#00152E' },
-    { id: 'Forests', parent: 'Land cover', size: 7725, color: '#47DCAF' },
     {
       id: 'Water bodies and protected wetlands',
       parent: 'Land cover',
       size: 2200,
       color: '#002E65',
     },
+    { id: 'Built up areas & Infrastructure', parent: 'Land cover', size: 3980, color: '#00152E' },
+    { id: 'Forests', parent: 'Land cover', size: 7725, color: '#47DCAF' },
     { id: 'Bare high Slopes', parent: 'Land cover', size: 0, color: '#5BCEFB' },
   ],
 };
