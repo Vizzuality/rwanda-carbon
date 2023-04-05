@@ -64,26 +64,11 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
         <li>Accountable and capable state institution</li>
       </ul>
       <p className="text-left text-lg">
-        <a
-          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Rwanda’s Vision 2050
-        </a>{' '}
-        also contains a set of targets and indicators related to these pillars and quantified in the{' '}
-        <a
-          href="https://www.minecofin.gov.rw/fileadmin/user_upload/Minecofin/Publications/REPORTS/National_Development_Planning_and_Research/Vision_2050/English-Vision_2050_Abridged_version_WEB_Final.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Vision 2050
-        </a>{' '}
-        Indicator Matrix. Under the Competitiveness and integration pillar, indicator 27 states
-        baseline GHG emissions alongside projected emissions in 2035 and 2050 under a Business as
-        Usual (BAU) scenario and under a “with interventions” target scenario.
+        Rwanda’s Vision 2050 also contains a set of targets and indicators related to these pillars
+        and quantified in the Vision 2050 Indicator Matrix. Under the Competitiveness and
+        integration pillar, indicator 27 states baseline GHG emissions alongside projected emissions
+        in 2035 and 2050 under a Business as Usual (BAU) scenario and under a “with interventions”
+        target scenario.
       </p>
       <p className="text-left text-lg">
         In 2018, the energy sector was the main contributor to Rwanda’s GHG emissions, excluding
@@ -152,8 +137,16 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
           </a>
         </li>
         <li>
-          Republic of Rwanda, Kigali Republic of Rwanda (2021). Rwanda’s First Biennial Update under
-          the United Nations Framework Convention on Climate Change. Republic of Rwanda, Kigali.
+          <a
+            href="https://unfccc.int/sites/default/files/resource/Rwanda%20First%20Biennial%20Update%20Report_Final_V.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Republic of Rwanda, Kigali Republic of Rwanda (2021). Rwanda’s First Biennial Update
+            under the United Nations Framework Convention on Climate Change. Republic of Rwanda,
+            Kigali.
+          </a>
         </li>
       </ul>
     </div>

@@ -53,7 +53,7 @@ const EffectiveGovernanceModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes
             href="https://databank.worldbank.org/source/worldwide-governance-indicators"
             target="_blank"
             rel="noopener noreferrer"
-            className="block"
+            className="block underline"
           >
             Daniel Kaufmann, Aart Kraay and Massimo Mastruzzi (2010). &quot;The Worldwide World Bank
             Policy Research  Working Paper No. 5430&quot;.

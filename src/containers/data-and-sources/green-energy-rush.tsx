@@ -65,13 +65,27 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
       <SmallHeading>SOURCES</SmallHeading>
       <ul className={STYLES_LIST}>
         <li>
-          Grafakos, S., Senshaw, D., Quezada, D., and Toro A., (2020), Employment Assessment of
-          Renewable Energy: Power sector pathways compatible with NDCs and National Energy Plans,
-          Global Green Growth Institute, Seoul.
+          <a
+            href="https://gggi.org/report/employment-assessment-of-renewable-energy-power-sector-pathways-compatible-with-ndcs-and-national-energy-plans/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Grafakos, S., Senshaw, D., Quezada, D., and Toro A., (2020), Employment Assessment of
+            Renewable Energy: Power sector pathways compatible with NDCs and National Energy Plans,
+            Global Green Growth Institute, Seoul.
+          </a>
         </li>
         <li>
-          Republic of Rwanda (2019). Energy Sector Capacity Development Strategy. Republic of
-          Rwanda, Kigali.
+          <a
+            href="https://www.mininfra.gov.rw/index.php?eID=dumpFile&t=f&f=15686&token=2d147acd6ae1086546ddc7c6245a8de6cf282130#:~:text=The%20strategy%20aims%20at%20transforming,performing%20organizations%20will%20be%20required"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Republic of Rwanda (2019). Energy Sector Capacity Development Strategy. Republic of
+            Rwanda, Kigali.
+          </a>
         </li>
         <li>
           <a
@@ -81,16 +95,6 @@ const GreenEnergyRushModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
             className="underline"
           >
             Republic of Rwanda (2020). Vision 2050. Republic of Rwanda, Kigali.
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.reg.rw/fileadmin/user_upload/Rwanda_Least_Cost_Power_Development_Plan_2022-2040_Updated_June_2022.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            Rwanda Energy Group.
           </a>
         </li>
       </ul>

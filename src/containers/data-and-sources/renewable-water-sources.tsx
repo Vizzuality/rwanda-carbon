@@ -67,8 +67,7 @@ const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTyp
         <li>
           {' '}
           <a
-            href="https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276 
-            "
+            href="https://unstats.un.org/unsd/environmentgl/gesform.asp?getitem=1276"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
@@ -77,8 +76,15 @@ const RenewableWaterSourcesModalContent: FC<ModalTypes> = ({ onClick }: ModalTyp
           </a>
         </li>
         <li>
-          Republic of Rwanda (2015). Rwanda National Water Resources Master Plan. Republic of
-          Rwanda, Kigali.
+          <a
+            href="https://www.rwb.rw/fileadmin/user_upload/RWRB/Publications/Policies/Rwanda_National_Water_Resources_Master_Plan.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Republic of Rwanda (2015). Rwanda National Water Resources Master Plan. Republic of
+            Rwanda, Kigali.
+          </a>
         </li>
         <li>
           {' '}

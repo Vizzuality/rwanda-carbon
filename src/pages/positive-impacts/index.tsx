@@ -212,8 +212,8 @@ const ImpactsPage: FC = () => {
                     setModalVisibility(o);
                   }}
                 >
-                  <div className="md:max-w-8xl z-50 m-auto flex min-h-screen w-full flex-col space-y-10 py-28 lg:max-w-7xl">
-                    <PositiveImpactsModalContent />
+                  <div className="md:max-w-8xl z-50 m-auto flex min-h-screen w-full flex-col space-y-10 lg:max-w-7xl">
+                    <PositiveImpactsModalContent onClick={setModalVisibility} />
                     <Button
                       theme="cobalt"
                       size="base"

@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
+import Button from 'components/button';
 import Table from 'components/table';
 
 import { STYLES_WRAPPER, STYLES_LIST } from './constants/styles';
@@ -11,7 +12,11 @@ import Section from './section';
 import SmallHeading from './small-heading';
 import Title from './title';
 
-const PositiveImpactsModalContent: FC = () => (
+type ModalTypes = {
+  onClick: (boolean) => void;
+};
+
+const PositiveImpactsModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
   <div className={STYLES_WRAPPER}>
     <Heading />
     <Title>Calculation of carbon reduction, economic revenue and job creation potentials</Title>
@@ -136,7 +141,7 @@ const PositiveImpactsModalContent: FC = () => (
         </li>
         <li>
           <a
-            href="https://doi.org/10.1073/pnas.171046511"
+            href="https://doi.org/10.1073/pnas.1710465114"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
@@ -221,6 +226,14 @@ const PositiveImpactsModalContent: FC = () => (
         reduction, economic revenue and job creation potentials.
       </p>
     </Section>
+    <Button
+      theme="cobalt"
+      size="base"
+      className="m-auto self-center tracking-tight"
+      onClick={() => onClick(false)}
+    >
+      Close
+    </Button>
   </div>
 );
 
