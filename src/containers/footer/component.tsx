@@ -9,14 +9,14 @@ const Footer: FC = () => {
   const [isModalOpen, setModalVisibility] = useState(false);
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full">
+    <footer className="fixed bottom-0 w-full">
       <div className="m-auto flex justify-center space-x-8 p-2 font-inter text-xs tracking-wide text-white">
         <div className="flex items-center space-x-5 py-0">
           <div>
             <button
               type="button"
               onClick={() => setModalVisibility(!isModalOpen)}
-              className="m-auto flex justify-center space-x-8 p-2 font-inter text-xs tracking-wide text-white"
+              className="m-auto flex w-[160px] justify-end space-x-8 p-2 font-inter text-xs tracking-wide text-white"
             >
               About
             </button>
@@ -87,6 +87,7 @@ const Footer: FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.undp.org/copyright-terms-use"
+            className="w-[160px]"
           >
             Privacy policy
           </a>

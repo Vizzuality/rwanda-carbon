@@ -28,28 +28,26 @@ const Home: FC = () => (
       <p className="font-inter text-xl leading-8 text-white">
         Accelerate socio-economic success and environmental stewardship
       </p>
-      <div className="flex items-center space-x-4 p-8 font-bold text-cobalt-0">
-        <div className="relative w-[182px]">
+      <div className="m-auto flex w-full max-w-md items-center justify-between p-8 font-bold text-cobalt-0">
+        <div className="relative mr-2 w-[182px]">
           <Link
             href="positive-impacts"
             className={cn({
               [THEME.primary]: true,
               [SIZE.base]: true,
-              'after:absolute after:top-[-8px] after:left-[-8px] after:bottom-[-8px] after:w-[250px]':
-                true,
+              'after:absolute after:top-[-8px] after:left-0 after:bottom-[-8px] after:w-full': true,
             })}
           >
             Positive impacts
           </Link>
         </div>
-        <div className="relative w-[160px]">
+        <div className="relative ml-2 w-[182px]">
           <Link
             href="/why-rwanda"
             className={cn({
               [THEME.secondary]: true,
               [SIZE.base]: true,
-              'after:absolute after:top-[-8px] after:right-[-8px] after:left-[-8px] after:bottom-[-8px]':
-                true,
+              'after:absolute after:top-[-8px] after:left-[-8px] after:bottom-[-8px]': true,
             })}
           >
             Why Rwanda
