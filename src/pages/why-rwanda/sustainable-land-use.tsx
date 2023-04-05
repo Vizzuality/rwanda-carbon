@@ -102,7 +102,7 @@ const SustainableLandUseContentPage: FC = () => {
             </button>
           </p>
         </Wrapper>
-        <div className="absolute top-0 left-0 h-full w-full">
+        <div className="absolute top-0 bottom-0 left-0 w-full">
           <ParentSize>
             {({ width, height }) => <Chart width={width} height={height} data={data[year]} />}
           </ParentSize>
