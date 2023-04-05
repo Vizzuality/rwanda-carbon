@@ -44,7 +44,7 @@ const COLORS = {
 };
 
 const delays = [0.4, 1.6, 0, 2.6, 0.8, 2];
-const ratio = 0.85;
+const ratio = 1.25;
 const SustainableLandUseChart = ({
   data,
   width,
