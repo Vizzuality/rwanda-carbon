@@ -43,7 +43,7 @@ const COLORS = {
   },
 };
 
-const delays = [1.5, 0.9, 0, 0.3, 0.6, 1.2];
+const delays = [0, 0.9, 1.2, 0.3, 0.6, 1.5];
 const SustainableLandUseChart = ({
   data,
   width,
@@ -56,7 +56,7 @@ const SustainableLandUseChart = ({
     .sum((d) => d.size ?? 0);
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
-  const root = hierarchy(dataParsed);
+  const root = hierarchy(dataParsed).sort((a, b) => (b.value || 0) - (a.value || 0));
   const variants = {
     hidden: { opacity: 0 },
     show: ({ index, id }) => ({
