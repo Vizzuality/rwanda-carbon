@@ -29,12 +29,32 @@ const Home: FC = () => (
         Accelerate socio-economic success and environmental stewardship
       </p>
       <div className="flex items-center space-x-4 p-8 font-bold text-cobalt-0">
-        <Link href="positive-impacts" className={cn({ [THEME.primary]: true, [SIZE.base]: true })}>
-          Positive impacts
-        </Link>
-        <Link href="/why-rwanda" className={cn({ [THEME.secondary]: true, [SIZE.base]: true })}>
-          Why Rwanda
-        </Link>
+        <div className="relative w-[182px]">
+          <Link
+            href="positive-impacts"
+            className={cn({
+              [THEME.primary]: true,
+              [SIZE.base]: true,
+              'after:absolute after:top-[-8px] after:left-[-8px] after:bottom-[-8px] after:w-[250px]':
+                true,
+            })}
+          >
+            Positive impacts
+          </Link>
+        </div>
+        <div className="relative w-[160px]">
+          <Link
+            href="/why-rwanda"
+            className={cn({
+              [THEME.secondary]: true,
+              [SIZE.base]: true,
+              'after:absolute after:top-[-8px] after:right-[-8px] after:left-[-8px] after:bottom-[-8px]':
+                true,
+            })}
+          >
+            Why Rwanda
+          </Link>
+        </div>
       </div>
     </div>
     <Footer />

@@ -100,7 +100,7 @@ const PositiveImpactsModalContent: FC = () => (
       </p>
       <p>
         <i>
-          Table 2. Mapping of land based carbon reduction measure to WWF/ILO case study categories
+          Table 2. Mapping of land based carbon reduction measure to WWF/ILO case study categories.
         </i>
       </p>
       <div className="relative flex flex-grow flex-col overflow-hidden">

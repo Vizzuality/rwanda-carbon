@@ -79,7 +79,7 @@ const WhyRwandaPage: FC = () => {
                 <p>
                   As a result of two transformative decades, the country has become a hub of
                   stability and peace, a poster child for economic development and environmental
-                  conservation, and a champion of women’s empowerment and equality.  The
+                  conservation, and a champion of women’s empowerment and equality.
                 </p>
                 <p>
                   <a
@@ -88,7 +88,7 @@ const WhyRwandaPage: FC = () => {
                     rel="noopener noreferrer"
                     className="text-yellow-0 underline"
                   >
-                    Nationally Determined Contribution (NDC)
+                    The Nationally Determined Contribution (NDC)
                   </a>{' '}
                   details Rwanda’s climate commitments and serves as a cobaltprint for climate
                   action in key sectors.
