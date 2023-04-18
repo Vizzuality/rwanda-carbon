@@ -37,7 +37,7 @@ const EffectiveGovernanceModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes
         Values for indicators of governance were obtained from the World Bank governance indicator
         project (Kaufmann et al., 2010). The aggregate indicators produced by the World Bank are
         based on over 30 underlying data sources reporting the perceptions of governance of a large
-        number of survey  respondents and expert assessments worldwide. The raw indicator values
+        number of survey-respondents and expert assessments worldwide. The raw indicator values
         range from -2.5 (poor performance) to 2.5 (strong performance). The raw values for each
         indicator were re-scaled to lie with the range 0 to 100 using the following:
         (xi-min(x))/(max(x)-min(x))*100, where i indicates the value of indicator x for a given

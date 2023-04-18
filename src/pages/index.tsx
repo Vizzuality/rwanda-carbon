@@ -11,7 +11,7 @@ import Header from 'components/header';
 import cn from 'lib/analytics/classnames';
 
 const Home: FC = () => (
-  <div className="m-auto h-screen bg-[url('/images/landing.png')] bg-cover bg-no-repeat">
+  <div className="m-auto h-screen bg-[url('/images/home.jpg')] bg-cover bg-no-repeat">
     <Head>
       <meta name="viewport" content="width=1024, initial-scale=1" />
       <title>Rwanda carbon tracker</title>

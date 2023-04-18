@@ -21,15 +21,14 @@ const PositiveImpactsModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
     <Heading />
     <Title>Calculation of carbon reduction, economic revenue and job creation potentials</Title>
     <p className="text-xl">
-      Land-based carbon reduction potentials for Rwanda were obtained from a recent analysis by Roe
-      et al. (2021) that refined and updated the mitigation potentials for 20 land-based measures in
-      over 200 countries and five regions. We used estimates of the cost-effective (available up to
-      $100/tCO<sub>2</sub>) mitigation for 15 measures. We combined these estimates with data on
-      mitigation cost curves to simulate how the price of carbon might affect the amount of carbon
-      that can be mitigated. For ecosystem based activities we assume that the relative change in
-      carbon mitigation with price follows the same curve as that for planting, conserving and
-      managing forests in Rwanda. For agricultural measures, we used data for Africa, whilst for
-      agroecological measures, we used global data.
+      Rwanda is currently on the move to benefit from the existing carbon potentials from a range of
+      opportunities as enshrined under mitigation measures in the updated NDCs. We used estimates of
+      the cost-effective (available up to $100/tCO<sub>2</sub>) mitigation for 15 measures. We
+      combined these estimates with data on mitigation cost curves to simulate how the price of
+      carbon might affect the amount of carbon that can be mitigated. For ecosystem-based activities
+      we assume that the relative change in carbon mitigation with price follows the same curve as
+      that for planting, conserving and managing forests in Rwanda. For agricultural measures, we
+      used data for Africa, whilst for agroecological measures, we used global data.
     </p>
     <p className="text-xl">
       Potential revenue is calculated as the product of total carbon mitigation and the assumed
@@ -49,7 +48,7 @@ const PositiveImpactsModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
     <Section>
       <SmallHeading>METHODOLOGY</SmallHeading>
       <p className="text-xl">
-        Land-based, cost-effective (available up to $100/tCO<sub>2</sub>), carbon reduction
+        Cost-effective carbon potential (available up to $100/tCO<sub>2</sub>) and carbon reduction
         potentials for Rwanda were sourced from Roe et al. (2021) for the 15 measures listed in
         Table 1.
       </p>
@@ -104,9 +103,7 @@ const PositiveImpactsModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
         total direct job creation potential estimate.
       </p>
       <p>
-        <i>
-          Table 2. Mapping of land based carbon reduction measure to WWF/ILO case study categories.
-        </i>
+        <i>Table 2. Mapping of carbon reduction measure to WWF/ILO case study categories.</i>
       </p>
       <div className="relative flex flex-grow flex-col overflow-hidden">
         <div className="pointer-events-none absolute top-0 -left-2 z-20 h-full w-4 bg-gradient-to-r from-white via-[#EEE] opacity-50" />
@@ -115,6 +112,17 @@ const PositiveImpactsModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) =>
         </div>
         <div className="pointer-events-none absolute top-0 -right-2 z-20 h-full w-6 bg-gradient-to-l from-[#EEE] via-white opacity-50" />
       </div>
+      <p>
+        Please note that to calculate carbon reduction, revenue and job creation potentials, we
+        used, as mentioned previously, estimates compiled by Roe et al (2021) for Rwanda (as one of
+        200 countries analysed) but these estimates are only available up to $100/tCO<sub>2</sub>,
+        the price considered broadly in the UNFCCC community as a cost-effectice price. Clearly the
+        market price for carbon price could extend beyond $100/tCO<sub>2</sub>, however, at this
+        point we cannot extrapolate the carbon reduction potential for prices above $100/tCO
+        <sub>2</sub> due to a lack of information to support accurate estimates. We hope to be able
+        to update these values, increasing the carbon price threshold, once the detailed
+        calculations in the IPCC 6th Assessment report are available.
+      </p>
     </Section>
     <Section>
       <SmallHeading>SOURCES</SmallHeading>

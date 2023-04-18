@@ -80,10 +80,10 @@ const SmartCarbonModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes) => (
         Emissions from agriculture, especially enteric fermentation from livestock, and removals of
         carbon by forest lands make up substantial contributions to Rwanda’s overall GHG emissions.
         In 2018, enteric fermentation emissions equated to 47% of the national non-FOLU emissions
-        whilst forest land removals amounted to -105% of those same emissions. Therefore investments
-        from the carbon market which stimulate the implementation of land-based mitigation measures
-        that target emissions from livestock and increasing uptake in forest lands have the
-        potential to accelerate Rwanda’s decarbonisation.
+        whilst forest land removals amounted to -105% of those same emissions. Therefore,
+        investments from the carbon market which stimulate the implementation of land-based
+        mitigation measures that target emissions from livestock and increasing uptake in forest
+        lands have the potential to accelerate Rwanda’s decarbonization.
       </p>
     </Section>
     <Section>

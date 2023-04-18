@@ -75,7 +75,7 @@ const SustainableLandUseModalContent: FC<ModalTypes> = ({ onClick }: ModalTypes)
       </p>
       <p>
         The NLUDMP suggests expanding agricultural land area so that the country can grow more food
-        to support its growing population. It will also expects urban areas to expand as the country
+        to support its growing population. It will also expect urban areas to expand as the country
         grows. With relevance to land based mitigation, Rwanda plans to entirely preserve 1,389 km²
         of natural forests and all existing 3,873 km² of forest plantations. 1,554 km² of bare high
         slopes will be also forested. In parallel, the NLUDMP will preserve 497 km² of Wooded
